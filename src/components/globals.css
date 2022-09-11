@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "Roboto Regular";
+  src: url(../assets/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Roboto Medium";
+  src: url(../assets/fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Roboto Light";
+  src: url(../assets/fonts/Roboto-Light.ttf);
+}
+
+:root {
+  --color-text-light: #f5f5f5;
+  --color-text-dark: #0a0a0a;
+  --color-accentuation: #f99418;
+  --background-radial: radial-gradient(ellipse at 0 0, #27241f, #040404);
+}
+
+.button {
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Regular";
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  background-color: black;
+  color: var(--color-text-light);
+}
+
+a {
+  color: var(--color-accentuation);
+}

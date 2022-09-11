@@ -1,0 +1,23 @@
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  column-gap: 96px;
+}
+
+.nav-links a {
+  color: var(--color-text-light);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--color-accentuation);
+}
+
+.nav-socials {
+  display: flex;
+  column-gap: 24px;
+}
