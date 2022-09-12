@@ -1,0 +1,9 @@
+.button-icon {
+  color: var(--color-text-light);
+  text-decoration: none;
+}
+
+.button-icon:hover svg path,
+.button-icon:hover svg rect {
+  fill: var(--color-accentuation);
+}

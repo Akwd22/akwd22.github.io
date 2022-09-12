@@ -1,0 +1,41 @@
+.slider-buttons {
+  display: flex;
+  column-gap: 40px;
+}
+
+.slider-buttons .button {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.slider-buttons .button.active {
+  color: var(--color-accentuation);
+}
+
+.slider-bar {
+  position: relative;
+  width: 300px;
+  margin-top: 8px;
+}
+
+.slider-entire-bar,
+.slider-inner-bar {
+  position: absolute;
+  display: inline-block;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+}
+
+.slider-entire-bar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.slider-inner-bar {
+  /* width: 50%; */
+  background-color: var(--color-accentuation);
+}
+
+.slider-content {
+  margin-top: 38px;
+}

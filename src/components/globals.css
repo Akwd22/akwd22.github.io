@@ -20,23 +20,68 @@
   --background-radial: radial-gradient(ellipse at 0 0, #27241f, #040404);
 }
 
+.title-1 {
+  font-family: "Roboto Light", sans-serif;
+  font-size: 96px;
+  letter-spacing: -1.5px;
+  font-weight: 300;
+}
+
+.title-2 {
+  font-family: "Roboto Regular", sans-serif;
+  font-size: 34px;
+  letter-spacing: 0.25px;
+  font-weight: 400;
+}
+
+.title-4 {
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.15px;
+  font-weight: 500;
+}
+
 .button {
   font-family: "Roboto Medium", sans-serif;
   font-size: 16px;
   letter-spacing: 1.25px;
   text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: var(--color-accentuation);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: "Roboto Regular";
   font-size: 16px;
   letter-spacing: 0.5px;
+  font-weight: 400;
   background-color: black;
   color: var(--color-text-light);
 }
 
 a {
   color: var(--color-accentuation);
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-image: url(assets/imgs/icons/list-marker.svg);
+  list-style-position: inside;
+  margin-top: 8px;
 }

@@ -1,0 +1,9 @@
+.slide-my-skills {
+  display: flex;
+  flex-direction: row;
+  column-gap: 96px;
+}
+
+.slide-my-skills .title-4 {
+  margin-bottom: 16px;
+}

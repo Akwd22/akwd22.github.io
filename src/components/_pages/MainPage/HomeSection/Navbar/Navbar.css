@@ -13,10 +13,6 @@
   text-decoration: none;
 }
 
-.nav-links a:hover {
-  color: var(--color-accentuation);
-}
-
 .nav-socials {
   display: flex;
   column-gap: 24px;

@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 
-import usePageTitle from "../../hooks/usePageTitle";
+import usePageTitle from "hooks/usePageTitle";
 import HomeSection from "./HomeSection/HomeSection";
 
 interface MainPageProps {}

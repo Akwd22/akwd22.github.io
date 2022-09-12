@@ -1,0 +1,7 @@
+#logo img {
+  border-radius: 100%;
+  border: 4px var(--color-text-light) solid;
+  max-width: 480px;
+  max-height: 480px;
+  width: 100%;
+}
