@@ -26,16 +26,9 @@ const HomeSection: FunctionComponent<HomeSectionProps> = () => {
           </div>
         </div>
       </div>
-      <div id="button-to-projects" className="button">
-        <ButtonIcon
-          icon={
-            <div>
-              <p>Mes projets</p>
-              <ArrowIcon />
-            </div>
-          }
-          href="#mes-projets"
-        />
+      <div id="button-to-projects">
+        <p>Mes projets</p>
+        <ButtonIcon icon={<ArrowIcon />} href="#mes-projets" />
       </div>
     </section>
   );

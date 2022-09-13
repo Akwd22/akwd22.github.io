@@ -3,7 +3,8 @@ section.home {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  padding: 64px 160px;
+  /* padding: 64px 160px; */
+  padding: clamp(24px, 3.3vw, 64px) clamp(32px, 8.3vw, 160px);
   height: 100vh;
 }
 
@@ -59,4 +60,8 @@ section.home {
 #button-to-projects {
   align-self: center;
   text-align: center;
+  font-family: "Roboto Medium", sans-serif;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
