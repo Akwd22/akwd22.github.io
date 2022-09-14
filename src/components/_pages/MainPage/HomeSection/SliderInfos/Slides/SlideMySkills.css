@@ -1,9 +1,12 @@
 .slide-my-skills {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   column-gap: 96px;
+  row-gap: 16px;
 }
 
 .slide-my-skills .title-4 {
   margin-bottom: 16px;
 }
+

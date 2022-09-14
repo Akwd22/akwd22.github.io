@@ -39,3 +39,15 @@
 .slider-content {
   margin-top: 38px;
 }
+
+@media only screen and (max-width: 768px) {
+  .slider-bar {
+    width: 250px;
+  }
+
+  .slider-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

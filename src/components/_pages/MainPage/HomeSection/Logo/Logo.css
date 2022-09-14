@@ -5,3 +5,13 @@
   max-height: 480px;
   width: 25vw;
 }
+
+@media only screen and (max-width: 768px) {
+  #logo {
+    align-self: center;
+  }
+
+  #logo img {
+    border-width: 2px;
+  }
+}

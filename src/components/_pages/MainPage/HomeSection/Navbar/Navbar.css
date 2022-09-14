@@ -1,6 +1,13 @@
-.nav-header {
+.header,
+.header-icons {
   display: flex;
   justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+
+.header-compact {
+  display: none;
 }
 
 .nav-links {
@@ -16,4 +23,37 @@
 .nav-socials {
   display: flex;
   column-gap: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    display: none;
+  }
+
+  .header-compact {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 8px;
+  }
+
+  .social-bar {
+    justify-content: flex-end;
+    margin-top: 16px;
+    column-gap: 16px;
+  }
+
+  .menu-burger {
+    position: absolute;
+    background: linear-gradient(135deg, #373532, #211e1b);
+    border-radius: 5px;
+    margin-top: 32px;
+    padding: 16px;
+    width: fit-content;
+    align-self: flex-end;
+  }
 }

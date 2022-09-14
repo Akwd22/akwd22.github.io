@@ -17,10 +17,12 @@ const HomeSection: FunctionComponent<HomeSectionProps> = () => {
       <div className="home-infos">
         <Logo />
         <div className="home-infos-content">
-          <h1 className="title-1">
-            Salut, c’est <span id="eddy">Eddy</span>
-          </h1>
-          <h2 className="title-2">Développeur web full-stack</h2>
+          <div className="home-infos-titles">
+            <h1 className="title-1">
+              Salut, c’est <span id="eddy">Eddy</span>
+            </h1>
+            <h2 className="title-2">Développeur web full-stack</h2>
+          </div>
           <div className="home-infos-slider">
             <SliderInfos />
           </div>

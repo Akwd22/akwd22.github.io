@@ -1,4 +1,6 @@
 section.home {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -64,4 +66,37 @@ section.home {
   letter-spacing: 1.25px;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+@media only screen and (max-width: 768px) {
+  section.home {
+    height: auto;
+    row-gap: 32px;
+  }
+
+  .home-infos {
+    flex-direction: column;
+  }
+
+  .home-infos-content {
+    margin-left: 0;
+    margin-top: 32px;
+    width: 100%;
+  }
+
+  .home-infos-content .title-1,
+  .home-infos-content .title-2 {
+    text-align: center;
+  }
+
+  .home-infos-slider {
+    margin-top: 32px;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  section.home {
+    height: auto;
+    row-gap: 32px;
+  }
 }
