@@ -1,0 +1,32 @@
+.project-card {
+  background-color: rgba(27, 18, 7, 0.5);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  display: flex;
+}
+
+.project-card:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.project-card-header {
+  background: linear-gradient(rgba(60, 60, 60, 0), rgba(10, 10, 10, 0.8));
+  height: fit-content;
+  width: 100%;
+  padding: 32px;
+  align-self: flex-end;
+}
+
+.project-card-header h1 {
+  margin-bottom: 8px;
+  margin-top: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+  .project-card-header {
+    padding: 24px;
+  }
+}

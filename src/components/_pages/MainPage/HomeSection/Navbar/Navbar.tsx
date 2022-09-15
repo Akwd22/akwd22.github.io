@@ -16,7 +16,7 @@ const LINKS = (
       <a href="/" className="button">
         À propos
       </a>
-      <a href="/" className="button">
+      <a href="#mes-projets" className="button">
         Projets
       </a>
       <a href="/" className="button">
