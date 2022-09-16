@@ -13,9 +13,15 @@ export interface TProject {
 }
 
 export async function fetch(): Promise<TProject[]> {
-  return [bitflase, placeholder, bitflase];
+  return [bitflase, placeholder];
+}
+
+export async function fetchOne(slug: string): Promise<TProject | null> {
+  const project = (await fetch()).find((project) => project.slug === slug);
+  return project || null;
 }
 
 export default {
   fetch,
+  fetchOne,
 };

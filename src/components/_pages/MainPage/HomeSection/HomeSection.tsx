@@ -6,6 +6,7 @@ import Logo from "./Logo/Logo";
 import SliderInfos from "./SliderInfos/SliderInfos";
 import { ReactComponent as ArrowIcon } from "assets/imgs/icons/arrow.svg";
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
+import { Link } from "react-router-dom";
 
 interface HomeSectionProps {}
 
