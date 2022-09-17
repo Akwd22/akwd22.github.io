@@ -6,7 +6,7 @@ import useOutsideClick from "hooks/useOutsideClick";
 import { FunctionComponent, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate, useParams } from "react-router-dom";
-import { ReactComponent as CloseIcon } from "assets/imgs/icons/close.svg";
+import { ReactComponent as CloseIcon } from "assets/imgs/icons/close-black.svg";
 import { ReactComponent as GitHubIcon } from "assets/imgs/icons/github.svg";
 import { ReactComponent as ExternalIcon } from "assets/imgs/icons/external.svg";
 import "./ProjectPopup.css";
@@ -29,6 +29,7 @@ interface ProjectPopupProps {}
 const ProjectPopup: FunctionComponent<ProjectPopupProps> = (props) => {
   const { slug } = useParams();
   const [project, setProject] = useState<TProject>(null);
+  const [visible, setVisible] = useState(true);
   const popupRef = useRef<HTMLDivElement>();
   const navigate = useNavigate();
 
@@ -49,7 +50,7 @@ const ProjectPopup: FunctionComponent<ProjectPopupProps> = (props) => {
   return (
     project &&
     createPortal(
-      <div className="project-popup" ref={popupRef}>
+      <div className="project-popup" ref={popupRef} style={{ visibility: visible ? "visible" : "hidden" }}>
         <header className="project-popup-header">
           <div className="project-popup-title">
             <h1 className="title-2">{project.title}</h1>
@@ -67,7 +68,7 @@ const ProjectPopup: FunctionComponent<ProjectPopupProps> = (props) => {
           </div>
         </main>
         <div className="project-popup-carousel">
-          <MediaCarousel videos={project.videos} images={project.images} />
+          <MediaCarousel medias={project.medias} onFullscreen={(isFullscreen) => setVisible(!isFullscreen)} />
         </div>
       </div>,
       document.getElementById("popup")

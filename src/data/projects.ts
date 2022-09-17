@@ -6,9 +6,12 @@ export interface TProjectLink {
   url: string;
 }
 
-export interface TProjectVideo {
-  thumbnail: string;
-  url: string;
+export interface TProjectVideo {}
+
+export interface TProjectMedia {
+  type: "image" | "video";
+  imageUrl: string;
+  videoUrl?: string;
 }
 
 export interface TProject {
@@ -19,8 +22,7 @@ export interface TProject {
   thumbnail?: string;
   description: string;
   links: TProjectLink[];
-  videos: TProjectVideo[];
-  images: string[];
+  medias: TProjectMedia[];
 }
 
 export async function fetch(): Promise<TProject[]> {

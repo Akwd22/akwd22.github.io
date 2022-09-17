@@ -7,11 +7,12 @@ interface ButtonIconProps {
   target?: React.HTMLAttributeAnchorTarget;
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
   tooltip?: string;
+  id?: string;
 }
 
 const ButtonIcon: FunctionComponent<ButtonIconProps> = (props) => {
   return (
-    <a href={props.href} target={props.target} rel="noreferrer" onClick={props.onClick} title={props.tooltip} className="button-icon">
+    <a id={props.id} href={props.href} target={props.target} rel="noreferrer" onClick={props.onClick} title={props.tooltip} className="button-icon">
       {props.icon}
     </a>
   );

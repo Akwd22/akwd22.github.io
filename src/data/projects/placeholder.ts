@@ -10,7 +10,88 @@ const project: TProject = {
   summary:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
   tags: ["Tag 1", "Tag 2"],
-  description: `Blabla...`,
+  description: `Blabla..
+  fqz
+  fqzqz
+
+  fzqzqfges
+
+  esghes
+
+  egs
+  hrd
+
+
+
+  egsges
+  esg
+  sgsetfh
+
+  ges
+  gse
+
+  ges
+
+  ge
+
+  g
+
+  g
+
+  g
+
+  jtf
+
+  ulkhul
+
+  ettde
+
+
+  tfuutf
+  tse
+
+  yrd
+  qzffz
+
+  gse
+
+  gesg.
+
+  f
+
+  f
+
+  f
+
+  f
+
+  f
+
+  f
+
+  f
+
+  f
+
+  g
+
+  e
+
+  u
+
+  i
+
+  a
+
+  e
+
+  y
+
+  u
+
+  i
+
+  o`,
   links: [
     {
       type: "repository",
@@ -21,13 +102,16 @@ const project: TProject = {
       url: "https://www.eddydruet.fr/graph-degeneracy/",
     },
   ],
-  videos: [
-    {
-      thumbnail: Image2,
-      url: "https://www.youtube.com/watch?v=tgVmvoZSV00",
-    },
+  medias: [
+    { type: "video", imageUrl: Image2, videoUrl: "https://www.youtube-nocookie.com/embed/tgVmvoZSV00" },
+    { type: "image", imageUrl: Image1 },
+    { type: "image", imageUrl: Image2 },
+    { type: "image", imageUrl: Image3 },
+    { type: "image", imageUrl: Image4 },
+    { type: "image", imageUrl: Image1 },
+    { type: "image", imageUrl: Image2 },
+    { type: "image", imageUrl: Image3 },
   ],
-  images: [Image1, Image2, Image3, Image4, Image1, Image2, Image3],
 };
 
 export default project;

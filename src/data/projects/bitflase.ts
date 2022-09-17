@@ -10,8 +10,7 @@ const project: TProject = {
   thumbnail: Thumbnail,
   description: "",
   links: [],
-  videos: [],
-  images: [],
+  medias: [],
 };
 
 export default project;
