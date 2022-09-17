@@ -1,6 +1,40 @@
 .project-popup {
   position: fixed;
-  background-color: red;
-  width: 80vw;
-  height: 50vh;
+  background: var(--background-radial);
+  width: clamp(0px, 80vw, 1100px);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.project-popup-header {
+  background: var(--background-header);
+  padding: 24px 32px;
+}
+
+.project-popup-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.project-popup-content {
+  padding: 24px 32px;
+  height: 100%;
+}
+
+.project-popup-links {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .project-popup {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
 }

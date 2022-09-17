@@ -1,6 +1,16 @@
 import bitflase from "./projects/bitflase";
 import placeholder from "./projects/placeholder";
 
+export interface TProjectLink {
+  type: "repository" | "website";
+  url: string;
+}
+
+export interface TProjectVideo {
+  thumbnail: string;
+  url: string;
+}
+
 export interface TProject {
   slug: string;
   title: string;
@@ -8,7 +18,8 @@ export interface TProject {
   tags: string[];
   thumbnail?: string;
   description: string;
-  videos: string[];
+  links: TProjectLink[];
+  videos: TProjectVideo[];
   images: string[];
 }
 

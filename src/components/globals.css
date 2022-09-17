@@ -18,6 +18,7 @@
   --color-text-dark: #0a0a0a;
   --color-accentuation: #f99418;
   --background-radial: radial-gradient(ellipse at 0 0, #27241f, #040404);
+  --background-header: radial-gradient(ellipse at 0 0, rgba(249, 91, 24, 0.5), rgba(249, 91, 24, 0.8));
 }
 
 .title-1 {
