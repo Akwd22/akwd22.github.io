@@ -2,7 +2,7 @@
   position: fixed;
   background: var(--background-radial);
   width: clamp(0px, 80vw, 1100px);
-  border-radius: 20px;
+  border-radius: var(--radius-large);
   overflow: hidden;
   height: 80vh;
   display: flex;
@@ -40,7 +40,7 @@
   height: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .project-popup {
     width: 100vw;
     height: 100vh;

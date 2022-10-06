@@ -1,8 +1,11 @@
 import { FunctionComponent, useState } from "react";
-import "./SliderInfos.css";
+
 import SlideAboutMe from "./Slides/SlideAboutMe";
 import SlideMySkills from "./Slides/SlideMySkills";
 
+import "./SliderInfos.css";
+
+/** Liste des diapositives du slider. */
 const SLIDES = [
   {
     buttonLabel: "Moi",
@@ -14,11 +17,12 @@ const SLIDES = [
   },
 ];
 
-interface SliderInfosProps {}
-
-const SliderInfos: FunctionComponent<SliderInfosProps> = (props) => {
+/** Composant du diaporama contenant des diapositives résumant des informations sur moi. */
+const SliderInfos: FunctionComponent = () => {
+  /** Index du diaporama actif. */
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  /** Afficher les boutons de transition vers chaque diaporama du slider. */
   const sliderButtons = () => {
     return SLIDES.map((slide, index) => {
       const isActive = index === currentSlide;
@@ -31,10 +35,12 @@ const SliderInfos: FunctionComponent<SliderInfosProps> = (props) => {
     });
   };
 
+  /** Retourner le composant du diaporama actuellement actif. */
   const activeSlider = () => {
     return SLIDES[currentSlide].component;
   };
 
+  /** Calculer le pourcentage de remplissage de la barre du slider. */
   const barPercent = () => {
     return ((currentSlide + 1) / SLIDES.length) * 100 + "%";
   };

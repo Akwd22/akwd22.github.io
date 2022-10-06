@@ -1,0 +1,16 @@
+#home-logo img {
+  max-height: 480px;
+  width: 25vw;
+  border: 4px var(--color-light-text) solid;
+  border-radius: 100%;
+}
+
+@media screen and (max-width: 960px) {
+  #home-logo {
+    align-self: center;
+  }
+
+  #home-logo img {
+    border-width: 2px;
+  }
+}

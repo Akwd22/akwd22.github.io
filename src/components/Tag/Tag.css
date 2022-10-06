@@ -1,6 +1,6 @@
 .tag {
-  background-color: var(--color-text-light);
-  color: var(--color-text-dark);
-  border-radius: 20px;
+  background-color: var(--color-light-text);
+  color: var(--color-dark-text);
+  border-radius: var(--radius-large);
   padding: 4px 16px;
 }

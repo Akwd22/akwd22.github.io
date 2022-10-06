@@ -5,11 +5,11 @@ footer {
   flex-direction: column;
   align-items: center;
   row-gap: 16px;
-  border-top: 1px var(--color-text-light) solid;
+  border-top: 1px var(--color-light-text) solid;
   text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   footer {
     padding: 24px 8px;
   }

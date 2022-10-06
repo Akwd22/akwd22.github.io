@@ -1,9 +1,9 @@
 import { FunctionComponent } from "react";
+
 import "./SlideMySkills.css";
 
-interface SlideMySkillsProps {}
-
-const SlideMySkills: FunctionComponent<SlideMySkillsProps> = (props) => {
+/** Composant du diaporama affichant la liste de mes compétences de développeur. */
+const SlideMySkills: FunctionComponent = () => {
   return (
     <div className="slide-my-skills">
       <div>

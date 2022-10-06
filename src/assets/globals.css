@@ -1,0 +1,186 @@
+/* -------------------------------------------------------------------------- */
+/*                             Variables globales                             */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  /* Couleurs. */
+  --color-light-text: #f5f5f5;
+  --color-dark-text: #0a0a0a;
+  --color-accentuation: #f99418;
+
+  /* Dégradés d'arrière-plan. */
+  --background-radial: radial-gradient(ellipse at 0 0, rgb(39, 36, 31), rgb(4, 4, 4));
+  --background-header: radial-gradient(ellipse at 0 0, rgba(249, 91, 24, 0.5), rgba(249, 91, 24, 0.8));
+
+  /* Rayons de bordure. */
+  --radius-large: 20px;
+  --radius-small: 5px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           Définition des polices                           */
+/* -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Roboto Regular";
+  src: url(fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Roboto Medium";
+  src: url(fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Roboto Light";
+  src: url(fonts/Roboto-Light.ttf);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Classes globales                              */
+/* -------------------------------------------------------------------------- */
+
+.title-1 {
+  font-family: "Roboto Light", sans-serif;
+  font-size: 96px;
+  font-weight: 300;
+  letter-spacing: -1.5px;
+}
+
+.title-2 {
+  font-family: "Roboto Regular", sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+}
+
+.title-4 {
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+}
+
+.body-2 {
+  font-family: "Roboto Regular";
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+}
+
+.button {
+  font-family: "Roboto Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: var(--color-accentuation);
+}
+
+@media screen and (max-width: 768px) {
+  .title-1 {
+    font-family: "Roboto Regular", sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+  }
+
+  .title-2 {
+    font-family: "Roboto Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.15px;
+  }
+
+  .title-4 {
+    font-family: "Roboto Medium", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Styles par défaut                             */
+/* -------------------------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+
+  /* Police par défaut. */
+  font-family: "Roboto Regular";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--color-light-text);
+}
+
+a {
+  color: var(--color-accentuation);
+}
+
+li {
+  margin-top: 8px;
+  list-style-image: url(imgs/icons/list-marker.svg);
+  list-style-position: inside;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-family: "Roboto Regular";
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+  }
+}
+
+/* -------------------------- Conteneur des popups -------------------------- */
+
+#popup {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#popup:empty {
+  display: none; /* Cacher le conteneur si aucun popup ouvert. */
+}
+
+/* --------------------------- Barre de défilement -------------------------- */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: var(--radius-small);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: var(--radius-small);
+  background: rgb(150, 150, 150);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8);
+}

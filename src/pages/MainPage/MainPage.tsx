@@ -1,23 +1,25 @@
 import { FunctionComponent } from "react";
-
-import usePageTitle from "hooks/usePageTitle";
-import HomeSection from "./HomeSection/HomeSection";
-import ProjectsSection from "./ProjectsSection/ProjectsSection";
-import Footer from "components/Footer/Footer";
 import { Outlet } from "react-router-dom";
 
-interface MainPageProps {}
+import Footer from "components/Footer/Footer";
+import HomeSection from "./HomeSection/HomeSection";
+import ProjectsSection from "./ProjectsSection/ProjectsSection";
 
-const MainPage: FunctionComponent<MainPageProps> = () => {
+import usePageTitle from "hooks/usePageTitle";
+
+/** Composant de la page principale contenant les sections d'accueil et des projets. */
+const MainPage: FunctionComponent = () => {
   usePageTitle("Eddy Druet – Portfolio");
 
   return (
     <>
       <Outlet />
+
       <main>
         <HomeSection />
         <ProjectsSection />
       </main>
+
       <Footer />
     </>
   );
