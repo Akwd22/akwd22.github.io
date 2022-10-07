@@ -38,20 +38,15 @@ const NavbarDesktop: FunctionComponent = () => {
 /** Composant de la barre de navigation compacte pour petit écran. */
 const NavbarMobile: FunctionComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const menuRef = useRef<HTMLDivElement>();
   useOutsideClick(menuRef, () => setIsMenuOpen(false));
 
   return (
     <>
       <div className="navbar-content">
-        <ButtonIcon icon={<AkwdIcon />} href="/" />
-        <ButtonIcon
-          icon={<BurgerIcon />}
-          onClick={(e) => {
-            setIsMenuOpen(!isMenuOpen);
-            e.stopPropagation();
-          }}
-        />
+        <ButtonIcon icon={<AkwdIcon />} href="/" tooltip="Aller à l'accueil" />
+        <ButtonIcon icon={<BurgerIcon />} tooltip="Ouvrir le menu de navigation" onClick={() => setIsMenuOpen(!isMenuOpen)} />
       </div>
 
       {isMenuOpen && (

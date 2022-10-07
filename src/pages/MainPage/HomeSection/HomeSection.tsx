@@ -35,7 +35,7 @@ const HomeSection: FunctionComponent = () => {
 
       <div id="my-projects-button">
         <p>Mes projets</p>
-        <ButtonIcon icon={<ArrowIcon />} href="#mes-projets" />
+        <ButtonIcon icon={<ArrowIcon />} href="#mes-projets" tooltip="Voir la liste de mes projets" />
       </div>
     </section>
   );

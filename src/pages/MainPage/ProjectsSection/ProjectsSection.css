@@ -1,6 +1,7 @@
 .projects {
   display: flex;
   flex-wrap: wrap;
+  background-color: #191919;
 }
 
 .project-card {

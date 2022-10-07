@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { FunctionComponent, useState } from "react";
 
 import SlideAboutMe from "./Slides/SlideAboutMe";
@@ -28,7 +29,7 @@ const SliderInfos: FunctionComponent = () => {
       const isActive = index === currentSlide;
 
       return (
-        <span onClick={() => setCurrentSlide(index)} className={"button" + (isActive ? " active" : "")} key={slide.buttonLabel}>
+        <span onClick={() => setCurrentSlide(index)} className={classNames("button", { active: isActive })} key={slide.buttonLabel}>
           {slide.buttonLabel}
         </span>
       );
