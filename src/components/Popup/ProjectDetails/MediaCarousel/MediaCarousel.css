@@ -8,16 +8,21 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  padding: 0px 24px;
   display: flex;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 2;
   align-items: center;
   pointer-events: none;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent 100px), linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent 100px);
 }
 
+.media-carousel-controls .button-icon {
+  width: 48px;
+  height: 48px;
+}
+
 .media-carousel-controls > * {
-  padding: 0px 24px;
   pointer-events: auto;
 }
 
@@ -58,6 +63,7 @@
 
 .media-carousel-play-icon {
   position: absolute;
+  height: 30%;
   z-index: 1;
   pointer-events: none;
 }

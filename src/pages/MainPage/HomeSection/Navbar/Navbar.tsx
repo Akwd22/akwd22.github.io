@@ -45,8 +45,8 @@ const NavbarMobile: FunctionComponent = () => {
   return (
     <>
       <div className="navbar-content">
-        <ButtonIcon icon={<AkwdIcon />} href="/" tooltip="Aller à l'accueil" />
-        <ButtonIcon icon={<BurgerIcon />} tooltip="Ouvrir le menu de navigation" onClick={() => setIsMenuOpen(!isMenuOpen)} />
+        <ButtonIcon id="akwd-button" icon={<AkwdIcon />} href="/" tooltip="Aller à l'accueil" />
+        <ButtonIcon id="menu-button" icon={<BurgerIcon />} tooltip="Ouvrir le menu de navigation" onClick={() => setIsMenuOpen(!isMenuOpen)} />
       </div>
 
       {isMenuOpen && (

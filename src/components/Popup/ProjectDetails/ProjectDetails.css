@@ -34,10 +34,20 @@
   column-gap: 16px;
 }
 
+.project-details-links .button-icon {
+  width: 32px;
+  height: 32px;
+}
+
 .project-details-description {
   height: 0;
   flex: 1 0 auto;
   overflow-y: auto;
+}
+
+#close-details-button {
+  width: 40px;
+  height: 40px;
 }
 
 @media screen and (max-width: 768px) {
@@ -53,5 +63,15 @@
 
   .project-details-content {
     padding: 24px;
+  }
+
+  .project-details-links .button-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  #close-details-button {
+    width: 32px;
+    height: 32px;
   }
 }

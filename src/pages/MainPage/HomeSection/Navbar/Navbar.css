@@ -14,11 +14,6 @@
   text-decoration: none;
 }
 
-.navbar-socials {
-  display: flex;
-  column-gap: 24px;
-}
-
 @media screen and (max-width: 768px) {
   .navbar {
     display: block;
@@ -50,5 +45,13 @@
     padding: 16px;
     background: linear-gradient(135deg, #373532, #211e1b);
     border-radius: var(--radius-small);
+  }
+
+  #akwd-button {
+    width: 48px;
+  }
+
+  #menu-button {
+    width: 24px;
   }
 }

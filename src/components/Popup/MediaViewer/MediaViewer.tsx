@@ -46,9 +46,9 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = (props) => {
   return createPortal(
     <div className="media-viewer" ref={viewerRef}>
       <div className="media-viewer-controls">
-        <ButtonIcon id="close-media-viewer" icon={<CloseIcon width={48} height={48} />} onClick={() => props.onClose()} tooltip="Fermer le carrousel" />
-        <ButtonIcon id="prev-media-viewer" icon={<ArrowLeftIcon width={64} height={64} />} onClick={() => switchMedia("previous")} tooltip="Voir l'image précédente" />
-        <ButtonIcon id="next-media-viewer" icon={<ArrowRightIcon width={64} height={64} />} onClick={() => switchMedia("next")} tooltip="Voir l'image suivante" />
+        <ButtonIcon id="close-viewer-button" icon={<CloseIcon />} onClick={() => props.onClose()} tooltip="Fermer la visionneuse" />
+        <ButtonIcon id="prev-viewer-button" icon={<ArrowLeftIcon />} onClick={() => switchMedia("previous")} tooltip="Voir l'image précédente" />
+        <ButtonIcon id="next-viewer-button" icon={<ArrowRightIcon />} onClick={() => switchMedia("next")} tooltip="Voir l'image suivante" />
       </div>
 
       {props.medias[currentIndex].type === "image" ? (

@@ -18,11 +18,11 @@ import "./ProjectDetails.css";
 
 const LINK_TYPE_MAP = {
   repository: {
-    icon: <GitHubIcon width={32} height={32} />,
+    icon: <GitHubIcon />,
     tooltip: "Voir le dépôt GitHub",
   },
   website: {
-    icon: <ExternalIcon width={32} height={32} />,
+    icon: <ExternalIcon />,
     tooltip: "Voir le projet en ligne",
   },
 };
@@ -70,7 +70,7 @@ const ProjectDetails: FunctionComponent = () => {
         <header className="project-details-header">
           <div className="project-details-title">
             <h1 className="title-2">{project.title}</h1>
-            <ButtonIcon icon={<CloseIcon width={40} height={40} />} tooltip="Fermer le projet" onClick={() => navigate("..")} />
+            <ButtonIcon id="close-details-button" icon={<CloseIcon />} tooltip="Fermer le projet" onClick={() => navigate("..")} />
           </div>
 
           <TagList>{tags()}</TagList>

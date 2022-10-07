@@ -26,19 +26,42 @@
   justify-content: space-between;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent 250px), linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent 250px);
   pointer-events: none;
+  padding: 0 40px;
 }
 
-.media-viewer-controls > * {
+.media-viewer-controls .button-icon {
   pointer-events: all;
 }
 
-#close-media-viewer {
+#close-viewer-button {
   position: absolute;
   top: 40px;
   right: 40px;
+  width: 48px;
+  height: 48px;
 }
 
-#next-media-viewer,
-#prev-media-viewer {
-  padding: 0 40px;
+#next-viewer-button,
+#prev-viewer-button {
+  width: 64px;
+  height: 64px;
+}
+
+@media screen and (max-width: 768px), screen and (max-height: 458px) {
+  .media-viewer-controls {
+    padding: 0 24px;
+  }
+
+  #close-viewer-button {
+    width: 24px;
+    height: 24px;
+    top: 24px;
+    right: 24px;
+  }
+
+  #next-viewer-button,
+  #prev-viewer-button {
+    width: 32px;
+    height: 32px;
+  }
 }

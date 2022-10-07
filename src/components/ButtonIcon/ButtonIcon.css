@@ -1,4 +1,5 @@
 .button-icon {
+  display: block;
   color: var(--color-light-text);
   text-decoration: none;
   cursor: pointer;

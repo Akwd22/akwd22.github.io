@@ -1,4 +1,9 @@
-.social-bar {
+.navbar-socials {
   display: flex;
   column-gap: 24px;
+}
+
+.navbar-socials .button-icon {
+  width: 24px;
+  height: 24px;
 }
