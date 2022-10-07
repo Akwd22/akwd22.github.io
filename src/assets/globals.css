@@ -81,6 +81,10 @@
   color: var(--color-accentuation);
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 @media screen and (max-width: 768px) {
   .title-1 {
     font-family: "Roboto Regular", sans-serif;
@@ -91,9 +95,9 @@
 
   .title-2 {
     font-family: "Roboto Regular", sans-serif;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 400;
-    letter-spacing: 0.15px;
+    letter-spacing: 0px;
   }
 
   .title-4 {

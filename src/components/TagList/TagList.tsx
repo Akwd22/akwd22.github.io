@@ -1,13 +1,23 @@
-import { TagProps } from "components/Tag/Tag";
+import classNames from "classnames";
 import { FunctionComponent, ReactElement } from "react";
+import { PropsWithIdAndClass } from "types";
+
+import { TagProps } from "components/Tag/Tag";
+
 import "./TagList.css";
 
-interface TagListProps {
+interface TagListProps extends PropsWithIdAndClass {
+  /** Un ou plusieurs éléments de composant `Tag`. */
   children: ReactElement<TagProps> | ReactElement<TagProps>[];
 }
 
-const TagList: FunctionComponent<TagListProps> = ({ children }) => {
-  return <div className="tag-list">{children}</div>;
+/** Composant d'une liste de tags. */
+const TagList: FunctionComponent<TagListProps> = (props) => {
+  return (
+    <div id={props.id} className={classNames("tag-list", props.className)}>
+      {props.children}
+    </div>
+  );
 };
 
 export default TagList;

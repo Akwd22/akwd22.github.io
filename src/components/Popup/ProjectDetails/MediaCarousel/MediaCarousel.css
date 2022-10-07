@@ -1,17 +1,19 @@
 .media-carousel {
   position: relative;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .media-carousel-controls {
   position: absolute;
-  display: flex;
-  justify-content: space-between;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
   align-items: center;
   pointer-events: none;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent 100px), linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent 100px);
-  z-index: 1;
 }
 
 .media-carousel-controls > * {
@@ -21,6 +23,7 @@
 
 .media-carousel-thumbnails {
   display: flex;
+  height: 100%;
   overflow-y: hidden;
   overflow-x: scroll;
   -ms-overflow-style: none;
@@ -33,11 +36,11 @@
 }
 
 .media-carousel-thumbnails img {
-  width: 350px;
   height: 100%;
 }
 
-.media-carousel-thumbnails img:hover {
+.media-carousel-video:hover,
+.media-carousel-image:hover {
   filter: brightness(0.6);
   cursor: pointer;
 }

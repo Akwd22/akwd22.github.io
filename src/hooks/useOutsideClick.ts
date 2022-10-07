@@ -13,10 +13,10 @@ const useOutsideClick = (ref: MutableRefObject<Node>, callback: (event: Event) =
       }
     };
 
-    document.addEventListener("click", listener);
+    document.addEventListener("mousedown", listener);
 
     return () => {
-      document.removeEventListener("click", listener);
+      document.removeEventListener("mousedown", listener);
     };
   }, [ref, callback]);
 };

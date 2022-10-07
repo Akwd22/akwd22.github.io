@@ -1,15 +1,17 @@
-import SocialBar from "components/SocialBar/SocialBar";
-import useIsDesktop from "hooks/useIsDesktop";
 import { FunctionComponent } from "react";
+
+import SocialBar from "components/SocialBar/SocialBar";
+
+import useIsDesktop from "hooks/useIsDesktop";
+
 import "./Footer.css";
 
-interface FooterProps {}
-
-const Footer: FunctionComponent<FooterProps> = (props) => {
+/** Composant du pied de page du site. */
+const Footer: FunctionComponent = () => {
   const isDesktop = useIsDesktop();
 
   return (
-    <footer>
+    <footer className="page-footer">
       <SocialBar />
       <p>
         Développé par <a href="/">Eddy Druet</a>
