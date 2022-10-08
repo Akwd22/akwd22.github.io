@@ -91,7 +91,7 @@ const project: TProject = {
 
   i
 
-  o`,
+  FIN`,
   links: [
     {
       type: "repository",

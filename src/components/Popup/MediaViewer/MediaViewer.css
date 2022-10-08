@@ -5,6 +5,8 @@
   overflow: hidden;
   user-select: none;
   background: var(--background-radial);
+  min-height: 40%;
+  min-width: 40%;
 }
 
 .media-viewer img {
