@@ -37,7 +37,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: -100;
+  z-index: -1;
   background-image: url(assets/imgs/bg-noise.png), url(assets/imgs/bg-pattern.svg), var(--background-radial);
   background-repeat: repeat, no-repeat, no-repeat;
   background-position: top left, bottom left, top left;

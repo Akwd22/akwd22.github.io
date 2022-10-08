@@ -1,6 +1,5 @@
 .media-viewer {
   position: fixed;
-  z-index: 1;
   border-radius: var(--radius-large);
   overflow: hidden;
   user-select: none;

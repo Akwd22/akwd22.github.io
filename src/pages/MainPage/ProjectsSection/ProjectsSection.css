@@ -1,5 +1,5 @@
 .projects {
   display: flex;
   flex-wrap: wrap;
-  background-color: #191919;
+  background-color: rgba(255, 255, 255, 2%);
 }
