@@ -1,6 +1,7 @@
 .project-card {
   position: relative;
   display: flex;
+  min-height: 250px;
   height: 50vh;
   width: 50%;
   flex-grow: 1;
@@ -38,11 +39,5 @@
 @media screen and (max-width: 960px) {
   .project-card {
     width: 100%;
-  }
-}
-
-@media screen and (max-height: 550px) {
-  .project-card {
-    height: auto;
   }
 }
