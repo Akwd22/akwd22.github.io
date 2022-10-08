@@ -1,4 +1,5 @@
-import classNames from "classnames";
+import cn from "classnames";
+import notification from "notification";
 import { FunctionComponent } from "react";
 import { PropsWithIdAndClass } from "types";
 
@@ -11,11 +12,33 @@ import "./SocialBar.css";
 
 /** Composant de la barre contenant les liens vers mes réseaux sociaux. */
 const SocialBar: FunctionComponent<PropsWithIdAndClass> = (props) => {
+  /** Copier l'e-mail dans le presse-papier. */
+  const copyEmail = async () => {
+    const email = "eddydruet93@gmail.com";
+
+    let notificationText: string;
+
+    try {
+      await navigator.clipboard.writeText(email);
+      notificationText = "Copiée dans le presse-papier :";
+    } catch {
+      notificationText = "Mon e-mail :";
+    }
+
+    notification.notify({
+      text: (
+        <>
+          {notificationText} <a href="mailto:eddydruet93@gmail.com">eddydruet93@gmail.com</a>
+        </>
+      ),
+    });
+  };
+
   return (
-    <nav id={props.id} className={classNames("navbar-socials", props.className)}>
+    <nav id={props.id} className={cn("navbar-socials", props.className)}>
       <ButtonIcon icon={<LinkedInIcon />} href="https://www.linkedin.com/in/eddy-druet-b5b065207" target="_blank" tooltip="Aller sur mon LinkedIn" />
       <ButtonIcon icon={<GitHubIcon />} href="https://github.com/Akwd22" target="_blank" tooltip="Aller sur mon GitHub" />
-      <ButtonIcon icon={<EmailIcon />} href="mailto:eddydruet93@gmail.com" tooltip="Voir mon adresse e-mail" />
+      <ButtonIcon icon={<EmailIcon />} tooltip="Voir mon adresse e-mail" onClick={copyEmail} />
     </nav>
   );
 };

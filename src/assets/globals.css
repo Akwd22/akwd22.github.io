@@ -172,6 +172,29 @@ li {
   display: none; /* Cacher le conteneur si aucun popup ouvert. */
 }
 
+/* ----------------------- Conteneur des notifications ---------------------- */
+
+#notification {
+  position: fixed;
+  right: 48px;
+  bottom: 64px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+  #notification {
+    right: 0;
+    left: 0;
+    bottom: 32px;
+    margin: 0 16px;
+    align-items: center;
+  }
+}
+
 /* --------------------------- Barre de défilement -------------------------- */
 
 ::-webkit-scrollbar {

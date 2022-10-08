@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import NotificationManager from "components/NotificationManager/NotificationManager";
 import ProjectDetails from "components/Popup/ProjectDetails/ProjectDetails";
 import MainPage from "pages/MainPage/MainPage";
 
@@ -18,5 +19,7 @@ root.render(
         </Route>
       </Routes>
     </BrowserRouter>
+
+    <NotificationManager />
   </React.StrictMode>
 );

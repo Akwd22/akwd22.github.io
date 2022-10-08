@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import cn from "classnames";
 import { FunctionComponent } from "react";
 import { PropsWithIdAndClass } from "types";
 
@@ -12,7 +12,7 @@ export interface TagProps extends PropsWithIdAndClass {
 /** Composant d'un tag contenant du texte. */
 const Tag: FunctionComponent<TagProps> = (props) => {
   return (
-    <div id={props.id} className={classNames("tag body-2", props.className)}>
+    <div id={props.id} className={cn("tag body-2", props.className)}>
       {props.text}
     </div>
   );

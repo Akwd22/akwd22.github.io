@@ -1,0 +1,36 @@
+.notification {
+  display: grid;
+  align-items: center;
+  padding: 8px 24px;
+  background-color: var(--color-accentuation);
+  border-radius: var(--radius-large);
+  box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.29);
+  animation: test 5s;
+}
+
+.notification,
+.notification a,
+.notification-close {
+  color: var(--color-dark-text);
+}
+
+.notification-text {
+  grid-column: 1;
+  padding-right: 16px;
+}
+
+.notification-close {
+  grid-column: 2;
+  width: 16px;
+  height: 16px;
+}
+
+.notification-close:hover {
+  color: var(--color-light-text);
+}
+
+@media screen and (max-width: 768px) {
+  .notification {
+    padding: 6px 16px;
+  }
+}

@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import cn from "classnames";
 import { FunctionComponent } from "react";
 import { PropsWithIdAndClass } from "types";
 
@@ -20,7 +20,7 @@ interface ButtonIconProps extends PropsWithIdAndClass {
 /** Composant d'un bouton avec icône sans texte. */
 const ButtonIcon: FunctionComponent<ButtonIconProps> = (props) => {
   return (
-    <a href={props.href} target={props.target} rel="noreferrer" onClick={props.onClick} title={props.tooltip} id={props.id} className={classNames("button-icon", props.className)}>
+    <a href={props.href} target={props.target} rel="noreferrer" onClick={props.onClick} title={props.tooltip} id={props.id} className={cn("button-icon", props.className)}>
       {props.icon}
     </a>
   );
