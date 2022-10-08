@@ -40,12 +40,12 @@
   display: none;
 }
 
-.media-carousel-thumbnails img {
+.media-carousel-thumbnail,
+.media-carousel-thumbnail img {
   height: 100%;
 }
 
-.media-carousel-video:hover,
-.media-carousel-image:hover {
+.media-carousel-thumbnail:hover {
   filter: brightness(0.6);
   cursor: pointer;
 }
