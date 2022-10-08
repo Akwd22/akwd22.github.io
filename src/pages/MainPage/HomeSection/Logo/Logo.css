@@ -3,6 +3,7 @@
   width: 25vw;
   border: 4px var(--color-light-text) solid;
   border-radius: 100%;
+  cursor: help;
 }
 
 @media screen and (max-width: 960px) {
