@@ -89,6 +89,7 @@
 
 #eddy {
   color: var(--color-accentuation);
+  text-shadow: 0px 0px 30px rgba(var(--rgb-accentuation), 0.5);
 }
 
 #projects-button {

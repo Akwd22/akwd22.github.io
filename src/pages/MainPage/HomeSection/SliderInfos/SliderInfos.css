@@ -33,6 +33,7 @@
 
 .slider-inner-bar {
   background-color: var(--color-accentuation);
+  transition: width 0.5s ease-in-out;
 }
 
 .slider-content {

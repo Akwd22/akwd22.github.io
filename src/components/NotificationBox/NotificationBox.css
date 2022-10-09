@@ -25,8 +25,13 @@
   height: 16px;
 }
 
-.notification-close:hover {
+.notification-close.button:hover {
   color: var(--color-light-text);
+}
+
+.notification ::selection {
+  color: var(--color-dark-text);
+  background: var(--color-light-text);
 }
 
 @media screen and (max-width: 768px) {

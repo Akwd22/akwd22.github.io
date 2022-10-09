@@ -43,6 +43,7 @@
 .media-carousel-thumbnail,
 .media-carousel-thumbnail img {
   height: 100%;
+  transition: filter 200ms;
 }
 
 .media-carousel-thumbnail:hover {

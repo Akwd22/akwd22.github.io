@@ -17,6 +17,7 @@
   height: 100%;
   content: "";
   backdrop-filter: brightness(80%);
+  transition: backdrop-filter 1s;
 }
 
 .project-card:hover::after {

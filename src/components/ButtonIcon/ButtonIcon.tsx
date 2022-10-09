@@ -20,7 +20,7 @@ interface ButtonIconProps extends PropsWithIdAndClass {
 /** Composant d'un bouton avec icône sans texte. */
 const ButtonIcon: FunctionComponent<ButtonIconProps> = (props) => {
   return (
-    <a href={props.href} target={props.target} rel="noreferrer" onClick={props.onClick} title={props.tooltip} id={props.id} className={cn("button-icon", props.className)}>
+    <a href={props.href} target={props.target} rel="noreferrer" onClick={props.onClick} title={props.tooltip} id={props.id} className={cn("button-icon", "button", props.className)}>
       {props.icon}
     </a>
   );
