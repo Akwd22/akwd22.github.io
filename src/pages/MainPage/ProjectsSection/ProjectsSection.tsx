@@ -1,5 +1,5 @@
 import dataProjects, { TProject } from "data/projects";
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useEffect, useRef, useState } from "react";
 
 import ProjectCard from "./ProjectCard/ProjectCard";
 

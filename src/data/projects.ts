@@ -44,7 +44,7 @@ export interface TProjectMedia {
  * @returns Promesse contenant tous les projets.
  */
 export async function fetch(): Promise<TProject[]> {
-  return [bitflase, placeholder];
+  return [bitflase, placeholder, placeholder, bitflase, placeholder];
 }
 
 /**

@@ -38,6 +38,14 @@
   margin-top: 24px;
 }
 
+.project-card:nth-child(odd) .project-card-header.animate {
+  animation: card 0.5s ease-in both 0.25s;
+}
+
+.project-card:nth-child(even) .project-card-header.animate {
+  animation: card 0.5s ease-in both 0.75s;
+}
+
 @media screen and (max-width: 768px) {
   .project-card-header {
     padding: 24px;

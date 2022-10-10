@@ -5,6 +5,8 @@
   border-radius: 100%;
   cursor: help;
   transition: box-shadow 0.5s;
+
+  animation: a_homecontent 0.5s ease-out 0.5s both;
 }
 
 #home-logo img:hover {

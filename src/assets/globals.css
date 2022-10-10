@@ -210,6 +210,7 @@ li {
 
 ::-webkit-scrollbar-track {
   border-radius: var(--radius-small);
+  margin: 4px 0px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -219,4 +220,93 @@ li {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.8);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Animations                                 */
+/* -------------------------------------------------------------------------- */
+
+/* navbar liens */
+@keyframes a_test1 {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* navbar socials */
+@keyframes a_test2 {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* bouton mes projets */
+@keyframes a_test3 {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* logo */
+@keyframes a_logo {
+  0% {
+  }
+
+  100% {
+  }
+}
+
+/* contenu section home */
+@keyframes a_homecontent {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* salut c'est eddy, dév full stack */
+@keyframes appearing {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* card project */
+@keyframes card {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }

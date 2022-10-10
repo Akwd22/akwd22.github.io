@@ -1,9 +1,12 @@
+import cn from "classnames";
 import { TProject } from "data/projects";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import Tag from "components/Tag/Tag";
 import TagList from "components/TagList/TagList";
+
+import useInViewport from "hooks/useInViewport";
 
 import "./ProjectCard.css";
 
@@ -11,6 +14,11 @@ interface ProjectCardProps extends TProject {}
 
 /** Composant d'une carte d'un projet. */
 const ProjectCard: FunctionComponent<ProjectCardProps> = (props) => {
+  const headerRef = useRef<HTMLDivElement>();
+
+  /** Carte apparaît-elle dans le viewport ? */
+  const inViewport = useInViewport(headerRef, true);
+
   /** Afficher la liste de tags du projet. */
   const tags = () => {
     return props.tags.map((text, index) => <Tag text={text} key={index} />);
@@ -23,7 +31,7 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = (props) => {
 
   return (
     <Link to={`/projets/${props.slug}`} className="project-card" style={thumbnail()} title={`Voir le projet ${props.title}`}>
-      <div className="project-card-header">
+      <div className={cn("project-card-header", { animate: inViewport })} ref={headerRef}>
         <TagList>{tags()}</TagList>
         <h1 className="title-2">{props.title}</h1>
         <p>{props.summary}</p>
