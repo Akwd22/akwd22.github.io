@@ -240,6 +240,17 @@ li {
   }
 }
 
+/* Animation de glissement vers la gauche. */
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 /* Animation de glissement et fondu vers la gauche. */
 @keyframes fade-left {
   0% {
@@ -337,3 +348,4 @@ li {
     scale: 0;
   }
 }
+

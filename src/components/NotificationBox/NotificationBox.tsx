@@ -12,29 +12,33 @@ interface NotificationBoxProps extends NotificationData {
   onClose?: () => void;
 }
 
+type TState = "opening" | "closing" | "idle" | "hovered";
+
 /** Composant d'une notification. */
 const NotificationBox: FunctionComponent<NotificationBoxProps> = ({ text, onClose }) => {
-  /** Notification en train d'être fermée ? */
-  const [closing, setClosing] = useState(false);
-  /** Notification est-elle survolée par la souris ? */
-  const [hovered, setHovered] = useState(false);
-
-  // Fermer la notification si elle vient de l'être.
-  useEffect(() => {
-    if (closing) onClose();
-  }, [closing, onClose]);
+  /** État actuel de la boîte de notification. */
+  const [state, setState] = useState<TState>("opening");
 
   // Fermer automatiquement la notification au bout de quelques secondes,
   // si elle n'est pas survolée.
   useEffect(() => {
-    const closeTimeout = !hovered ? setTimeout(() => setClosing(true), 3000) : null;
+    const closeTimeout = state === "idle" ? setTimeout(() => setState("closing"), 3000) : null;
     return () => clearTimeout(closeTimeout);
-  }, [hovered]);
+  }, [state]);
 
   return createPortal(
-    <div className="notification" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+    <div
+      className="notification"
+      data-state={state}
+      onMouseEnter={() => setState("hovered")}
+      onMouseLeave={() => setState("idle")}
+      onAnimationEnd={() => {
+        if (state === "opening") setState("idle");
+        if (state === "closing") onClose();
+      }}
+    >
       <span className="notification-text">{text}</span>
-      <ButtonIcon className="notification-close" icon={<CrossIcon />} tooltip="Fermer la notification" onClick={() => setClosing(true)} />
+      <ButtonIcon className="notification-close" icon={<CrossIcon />} tooltip="Fermer la notification" onClick={onClose} />
     </div>,
     document.getElementById("notification")
   );
