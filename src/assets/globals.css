@@ -171,12 +171,15 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.25s ease-in-out, backdrop-filter 0.25s ease-in-out;
 }
 
 #popup:empty {
-  display: none; /* Cacher le conteneur si aucun popup ouvert. */
+  pointer-events: none;
+  background-color: transparent;
+  backdrop-filter: none;
 }
 
 /* ----------------------- Conteneur des notifications ---------------------- */
@@ -308,5 +311,35 @@ li {
   100% {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes a_projectpopup {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes a_mediaviewer {
+  0% {
+    scale: 0;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes a_mediaviewer2 {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 0;
   }
 }

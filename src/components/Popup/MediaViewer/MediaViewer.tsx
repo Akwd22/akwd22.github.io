@@ -1,3 +1,4 @@
+import cn from "classnames";
 import { TProject } from "data/projects";
 import { FunctionComponent, useRef, useState } from "react";
 import { createPortal } from "react-dom";
@@ -22,42 +23,44 @@ interface MediaViewerProps {
 }
 
 /** Composant de la visionneuse de médias en plein écran. */
-const MediaViewer: FunctionComponent<MediaViewerProps> = (props) => {
+const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias, onClose }) => {
+  /** Visionneuse en train de se fermer ? */
+  const [closing, setClosing] = useState(false);
   /** Index du média actuellement affiché. */
-  const [currentIndex, setCurrentIndex] = useState(props.currentIndex);
+  const [shownIndex, setShownIndex] = useState(currentIndex);
 
   const viewerRef = useRef<HTMLDivElement>();
 
-  useOutsideClick(viewerRef, () => props.onClose());
+  useOutsideClick(viewerRef, () => setClosing(true));
 
   /** Afficher le média précédent ou suivant. */
   const switchMedia = (direction: "next" | "previous") => {
-    let newIndex = currentIndex + (direction === "next" ? +1 : -1);
+    let newIndex = shownIndex + (direction === "next" ? +1 : -1);
 
-    if (newIndex >= props.medias.length) {
+    if (newIndex >= medias.length) {
       newIndex = 0;
     } else if (newIndex < 0) {
-      newIndex = props.medias.length - 1;
+      newIndex = medias.length - 1;
     }
 
-    setCurrentIndex(newIndex);
+    setShownIndex(newIndex);
   };
 
   return createPortal(
-    <div className="media-viewer" ref={viewerRef}>
+    <div className={cn("media-viewer", closing ? "closing" : "opening")} ref={viewerRef} onAnimationEnd={() => closing && onClose() /* TODO : hook ? */}>
       <div className="media-viewer-controls">
-        <ButtonIcon id="close-viewer-button" icon={<CloseIcon />} onClick={() => props.onClose()} tooltip="Fermer la visionneuse" />
+        <ButtonIcon id="close-viewer-button" icon={<CloseIcon />} onClick={() => setClosing(true)} tooltip="Fermer la visionneuse" />
         <ButtonIcon id="prev-viewer-button" icon={<ArrowLeftIcon />} onClick={() => switchMedia("previous")} tooltip="Voir l'image précédente" />
         <ButtonIcon id="next-viewer-button" icon={<ArrowRightIcon />} onClick={() => switchMedia("next")} tooltip="Voir l'image suivante" />
       </div>
 
-      {props.medias[currentIndex].type === "image" ? (
-        <img src={props.medias[currentIndex].imageUrl} alt="" />
+      {medias[shownIndex].type === "image" ? (
+        <img src={medias[shownIndex].imageUrl} alt="" />
       ) : (
         <iframe
           width="100%"
           height="100%"
-          src={props.medias[currentIndex].videoUrl}
+          src={medias[shownIndex].videoUrl}
           title="Lecteur vidéo"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -8,6 +8,14 @@
   min-width: 40%;
 }
 
+.media-viewer.opening {
+  animation: a_mediaviewer 0.25s ease-in-out both;
+}
+
+.media-viewer.closing {
+  animation: a_mediaviewer2 0.25s ease-in-out both;
+}
+
 .media-viewer img {
   max-width: 80vw;
   max-height: 80vh;
