@@ -58,14 +58,14 @@
 
 .home-content {
   display: flex;
-  /* animation: a_homecontent 0.5s ease-out 0.5s both; */
+  /* animation: fade-right 0.5s ease-out 0.5s both; */
 }
 
 .home-content-info {
   width: 60%;
   margin-left: 64px;
 
-  animation: a_test2 1s ease-out 0.75s both;
+  animation: fade-left 1s ease-out 0.75s both;
 }
 
 .home-content-slider {
@@ -88,7 +88,7 @@
   font-weight: 500;
   letter-spacing: 1.25px;
   text-transform: uppercase;
-  animation: a_test3 0.5s ease-out both 1.5s;
+  animation: fade-up 0.5s ease-out both 1.5s;
 }
 
 #eddy {

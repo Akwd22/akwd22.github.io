@@ -229,102 +229,95 @@ li {
 /*                                 Animations                                 */
 /* -------------------------------------------------------------------------- */
 
-/* navbar liens */
-@keyframes a_test1 {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* navbar socials */
-@keyframes a_test2 {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* bouton mes projets */
-@keyframes a_test3 {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* logo */
-@keyframes a_logo {
-  0% {
-  }
-
-  100% {
-  }
-}
-
-/* contenu section home */
-@keyframes a_homecontent {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* salut c'est eddy, dév full stack */
-@keyframes appearing {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-/* card project */
-@keyframes card {
-  0% {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes a_projectpopup {
+/* Animation de glissement vers le haut. */
+@keyframes slide-up {
   0% {
     transform: translateY(100%);
   }
 
   100% {
+    transform: translateY(0);
+  }
+}
+
+/* Animation de glissement et fondu vers la gauche. */
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(5vw);
+  }
+
+  100% {
+    opacity: 1;
     transform: none;
   }
 }
 
-@keyframes a_mediaviewer {
+/* Animation de glissement et fondu vers la droite. */
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-5vw);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation de glissement et fondu vers le haut. */
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10vh);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation de glissement et fondu vers le bas. */
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10vh);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation de fondu de disparition. */
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Animation de glissement et fondu vers la droite très faible. */
+@keyframes tiny-fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-1%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation d'agrandissement. */
+@keyframes grow {
   0% {
     scale: 0;
   }
@@ -334,7 +327,8 @@ li {
   }
 }
 
-@keyframes a_mediaviewer2 {
+/* Animation de rétrécissement. */
+@keyframes shrink {
   0% {
     scale: 1;
   }

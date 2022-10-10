@@ -9,11 +9,11 @@
 }
 
 .media-viewer.opening {
-  animation: a_mediaviewer 0.25s ease-in-out both;
+  animation: grow 0.25s ease-in-out both;
 }
 
 .media-viewer.closing {
-  animation: a_mediaviewer2 0.25s ease-in-out both;
+  animation: shrink 0.25s ease-in-out both;
 }
 
 .media-viewer img {

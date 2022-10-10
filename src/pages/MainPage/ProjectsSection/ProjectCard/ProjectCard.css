@@ -43,11 +43,11 @@
 }
 
 .project-card:nth-child(odd) .project-card-header.animate {
-  animation: card 0.5s ease-in both 0.25s;
+  animation: tiny-fade-right 0.5s ease-in both 0.25s;
 }
 
 .project-card:nth-child(even) .project-card-header.animate {
-  animation: card 0.5s ease-in both 0.75s;
+  animation: tiny-fade-right 0.5s ease-in both 0.75s;
 }
 
 @media screen and (max-width: 768px) {

@@ -7,8 +7,7 @@
 .navbar-links {
   display: flex;
   column-gap: clamp(48px, 5vw, 96px);
-
-  animation: a_test1 0.5s ease-out both;
+  animation: fade-right 0.5s ease-out both;
 }
 
 .navbar-links a {
@@ -17,7 +16,7 @@
 }
 
 .navbar .navbar-socials {
-  animation: a_test2 0.5s ease-out both;
+  animation: fade-left 0.5s ease-out both;
 }
 
 @media screen and (max-width: 768px) {
@@ -43,21 +42,34 @@
     column-gap: 16px;
   }
 
+  .navbar-links,
+  .navbar-menu .navbar-socials {
+    animation: none;
+  }
+
   .navbar-menu {
     position: absolute;
     right: 0;
     width: fit-content;
+    z-index: 1;
     margin-top: 16px;
     padding: 16px;
     background: linear-gradient(135deg, #373532, #211e1b);
     border-radius: var(--radius-small);
+    animation: fade-left 0.25s ease-out both;
+  }
+
+  .navbar-menu.closing {
+    animation: fade-out 0.25s ease-out both;
   }
 
   #akwd-button {
     width: 48px;
+    animation: fade-right 0.5s ease-out both;
   }
 
   #menu-button {
     width: 24px;
+    animation: fade-left 0.5s ease-out both;
   }
 }

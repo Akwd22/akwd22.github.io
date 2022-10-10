@@ -1,4 +1,5 @@
-import { FunctionComponent, useRef, useState } from "react";
+import { FunctionComponent, useEffect, useRef, useState } from "react";
+import cn from "classnames";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
 import SocialBar from "components/SocialBar/SocialBar";
@@ -37,20 +38,32 @@ const NavbarDesktop: FunctionComponent = () => {
 
 /** Composant de la barre de navigation compacte pour petit écran. */
 const NavbarMobile: FunctionComponent = () => {
+  const [isMenuClosing, setIsMenuClosing] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuRef = useRef<HTMLDivElement>();
-  useOutsideClick(menuRef, () => setIsMenuOpen(false));
+  useOutsideClick(menuRef, () => setIsMenuClosing(true));
+
+  /** Ouvrir le menu. */
+  const openMenu = () => {
+    setIsMenuClosing(false);
+    setIsMenuOpen(true);
+  };
 
   return (
     <>
       <div className="navbar-content">
         <ButtonIcon id="akwd-button" icon={<AkwdIcon />} href="/" tooltip="Aller à l'accueil" />
-        <ButtonIcon id="menu-button" icon={<BurgerIcon />} tooltip="Ouvrir le menu de navigation" onClick={() => setIsMenuOpen(!isMenuOpen)} />
+        <ButtonIcon id="menu-button" icon={<BurgerIcon />} tooltip="Ouvrir le menu de navigation" onClick={openMenu} />
       </div>
 
       {isMenuOpen && (
-        <div ref={menuRef} className="navbar-menu">
+        <div
+          ref={menuRef}
+          className={cn("navbar-menu", { closing: isMenuClosing })}
+          onClick={({ target }) => target !== menuRef.current && setIsMenuClosing(true)}
+          onAnimationEnd={() => isMenuClosing && setIsMenuOpen(false)}
+        >
           <NavbarLinks />
         </div>
       )}
