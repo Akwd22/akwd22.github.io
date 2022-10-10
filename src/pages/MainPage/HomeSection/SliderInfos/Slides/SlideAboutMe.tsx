@@ -5,7 +5,7 @@ import "./SlideAboutMe.css";
 /** Composant du diaporama résumant mon statut, mon identité, et mon état d'esprit. */
 const SlideAboutMe: FunctionComponent = () => {
   return (
-    <div className="slide-about-me">
+    <div className="slide slide-about-me">
       <p>
         Je suis développeur web full-stack tout juste diplômé d’une licence en informatique, mais avec une expérience autodidacte d'environ 2 années dans divers projets et
         technologies web.

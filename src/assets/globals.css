@@ -314,6 +314,17 @@ li {
   }
 }
 
+/* Animation de fondu d'apparition. */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 /* Animation de glissement et fondu vers la droite très faible. */
 @keyframes tiny-fade-right {
   0% {
@@ -348,4 +359,3 @@ li {
     scale: 0;
   }
 }
-

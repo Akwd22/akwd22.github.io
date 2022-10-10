@@ -40,6 +40,14 @@
   margin-top: 38px;
 }
 
+.slider-content.fade-in {
+  animation: fade-in 0.5s ease-out both;
+}
+
+.slider-content.fade-out {
+  animation: fade-out 0.5s ease-out both;
+}
+
 @media screen and (max-width: 960px) {
   .slider-bar {
     width: 250px;

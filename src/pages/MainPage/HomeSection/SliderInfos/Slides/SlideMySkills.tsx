@@ -5,7 +5,7 @@ import "./SlideMySkills.css";
 /** Composant du diaporama affichant la liste de mes compétences de développeur. */
 const SlideMySkills: FunctionComponent = () => {
   return (
-    <div className="slide-my-skills">
+    <div className="slide slide-my-skills">
       <div>
         <h4 className="title-4">Langages</h4>
         <ul>

@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 
 import SlideAboutMe from "./Slides/SlideAboutMe";
 import SlideMySkills from "./Slides/SlideMySkills";
@@ -20,8 +20,10 @@ const SLIDES = [
 
 /** Composant du diaporama contenant des diapositives résumant des informations sur moi. */
 const SliderInfos: FunctionComponent = () => {
-  /** Index du diaporama actif. */
-  const [currentSlide, setCurrentSlide] = useState(0);
+  /** Index de la diapositive active. */
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
+  /** Index de la diapositive qui va être affichée.  */
+  const [pendingSlide, setPendingSlide] = useState<number>(null);
 
   /** Afficher les boutons de transition vers chaque diaporama du slider. */
   const sliderButtons = () => {
@@ -29,7 +31,7 @@ const SliderInfos: FunctionComponent = () => {
       const isActive = index === currentSlide;
 
       return (
-        <span onClick={() => setCurrentSlide(index)} className={cn("button", { active: isActive })} key={slide.buttonLabel}>
+        <span onClick={() => setPendingSlide(index !== currentSlide ? index : null)} className={cn("button", { active: isActive })} key={slide.buttonLabel}>
           {slide.buttonLabel}
         </span>
       );
@@ -46,6 +48,14 @@ const SliderInfos: FunctionComponent = () => {
     return ((currentSlide + 1) / SLIDES.length) * 100 + "%";
   };
 
+  /** Changer la diapositif active contre la diapositive en attente. */
+  const switchSlide = () => {
+    if (pendingSlide !== null) {
+      setCurrentSlide(pendingSlide);
+      setPendingSlide(null);
+    }
+  };
+
   return (
     <div className="slider">
       <div className="slider-controls">
@@ -55,7 +65,9 @@ const SliderInfos: FunctionComponent = () => {
           <span className="slider-inner-bar" style={{ width: barPercent() }}></span>
         </div>
       </div>
-      <div className="slider-content">{activeSlider()}</div>
+      <div className={cn("slider-content", pendingSlide === null ? "fade-in" : "fade-out")} onAnimationEnd={switchSlide}>
+        {activeSlider()}
+      </div>
     </div>
   );
 };
