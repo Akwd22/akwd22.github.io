@@ -31,9 +31,9 @@ const SliderInfos: FunctionComponent = () => {
       const isActive = index === currentSlide;
 
       return (
-        <span onClick={() => setPendingSlide(index !== currentSlide ? index : null)} className={cn("button", { active: isActive })} key={slide.buttonLabel}>
+        <button onClick={() => setPendingSlide(index !== currentSlide ? index : null)} className={cn("button", { active: isActive })} key={slide.buttonLabel}>
           {slide.buttonLabel}
-        </span>
+        </button>
       );
     });
   };

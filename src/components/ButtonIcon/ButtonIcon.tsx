@@ -14,15 +14,23 @@ interface ButtonIconProps extends PropsWithIdAndClass {
   /** Infobulle au passage de la souris sur le bouton. */
   tooltip?: string;
 
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  autoFocus?: boolean;
+
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 /** Composant d'un bouton avec icône sans texte. */
 const ButtonIcon: FunctionComponent<ButtonIconProps> = (props) => {
+  /** Gestionnaire de clique sur le bouton. */
+  const clickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (props.href) window.open(props.href, props.target || "_self", "noreferrer");
+    if (props.onClick) props.onClick(event);
+  };
+
   return (
-    <a href={props.href} target={props.target} rel="noreferrer" onClick={props.onClick} title={props.tooltip} id={props.id} className={cn("button-icon", "button", props.className)}>
+    <button id={props.id} className={cn("button-icon", "button", props.className)} title={props.tooltip} onClick={clickHandler} autoFocus={props.autoFocus}>
       {props.icon}
-    </a>
+    </button>
   );
 };
 

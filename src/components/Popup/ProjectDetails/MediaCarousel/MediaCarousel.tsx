@@ -1,14 +1,13 @@
 import { TProject } from "data/projects";
+import FocusTrap from "focus-trap-react";
 import { FunctionComponent, useRef, useState } from "react";
 
-import MediaThumbnail from "./MediaThumbnail/MediaThumbnail";
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
-import LoadingIcon from "components/Icons/LoadingIcon/LoadingIcon";
 import MediaViewer from "components/Popup/MediaViewer/MediaViewer";
+import MediaThumbnail from "./MediaThumbnail/MediaThumbnail";
 
 import { ReactComponent as ArrowLeftIcon } from "assets/imgs/icons/arrow-left.svg";
 import { ReactComponent as ArrowRightIcon } from "assets/imgs/icons/arrow-right.svg";
-import { ReactComponent as PlayIcon } from "assets/imgs/icons/play.svg";
 import "./MediaCarousel.css";
 
 interface MediaCarouselProps {
@@ -49,7 +48,7 @@ const MediaCarousel: FunctionComponent<MediaCarouselProps> = (props) => {
 
   /** Afficher les miniatures de tous les médias. */
   const thumbnails = () => {
-    return props.medias.map((media, index) => <MediaThumbnail type={media.type} url={media.imageUrl} onClick={() => enlargeMedia(index)} />);
+    return props.medias.map((media, index) => <MediaThumbnail key={index} type={media.type} url={media.imageUrl} onClick={() => enlargeMedia(index)} />);
   };
 
   return (

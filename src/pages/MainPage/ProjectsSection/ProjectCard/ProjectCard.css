@@ -11,10 +11,6 @@
   background-repeat: no-repeat;
 }
 
-.project-card:focus {
-  outline: 0;
-}
-
 .project-card::after {
   position: absolute;
   width: 100%;
