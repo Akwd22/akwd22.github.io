@@ -1,11 +1,10 @@
 #home-logo img {
-  max-height: 480px;
-  width: 25vw;
+  min-width: 350px;
+  width: min(25vw, 45vh);
   border: 4px var(--color-light-text) solid;
   border-radius: 100%;
   cursor: help;
   transition: box-shadow 0.5s;
-
   animation: fade-right 0.5s ease-out 0.5s both;
 }
 
@@ -19,6 +18,7 @@
   }
 
   #home-logo img {
+    min-width: 125px;
     border-width: 2px;
   }
 }

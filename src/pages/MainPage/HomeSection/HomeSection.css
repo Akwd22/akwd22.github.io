@@ -1,35 +1,102 @@
 .home {
   position: relative;
   height: 100vh;
-  padding: clamp(24px, 3.3vw, 64px) clamp(32px, 8.3vw, 160px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* ------ Taille des polices dynamique relatif à la largeur de fenêtre ------ */
+/* -------------------------------------------------------------------------- */
+/*                             Tailles dynamiques                             */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------- Calcul des tailles --------------------------- */
+
+/* Variables des tailles. */
+.home {
+  /* TODO : expliquer ce bordel en commentaire. */
+
+  --vw-max: 1915; /* [Formule px -> vw] : vw = 100 * (px / max viewport width) 1915 */
+  --vh-max: 933; /* [Formule px -> vh] : vh = 100 * (px / max viewport height) 933 */
+
+  /* Taille minimale (en px). */
+  --fs-body-min: 14;
+  /* Taille maximale (en px). */
+  --fs-body-max: 16;
+  /* Taille mise à l'échelle selon la longueur du viewport. */
+  --fs-body-vw: clamp(var(--fs-body-min) * 1px, calc(100 * (var(--fs-body-max) / var(--vw-max)) * 1vw), var(--fs-body-max) * 1px);
+  /* Taille mise à l'échelle selon la hauteur du viewport. */
+  --fs-body-vh: clamp(var(--fs-body-min) * 1px, calc(100 * (var(--fs-body-max) / var(--vh-max)) * 1vh), var(--fs-body-max) * 1px);
+
+  --fs-button-min: 14;
+  --fs-button-max: 16;
+  --fs-button-vw: clamp(var(--fs-button-min) * 1px, calc(100 * (var(--fs-button-max) / var(--vw-max))) * 1vw, var(--fs-button-max) * 1px);
+  --fs-button-vh: clamp(var(--fs-button-min) * 1px, calc(100 * (var(--fs-button-max) / var(--vh-max))) * 1vh, var(--fs-button-max) * 1px);
+
+  --fs-title-1-min: 34;
+  --fs-title-1-max: 96;
+  --fs-title-1-vw: clamp(var(--fs-title-1-min) * 1px, calc(100 * (var(--fs-title-1-max) / var(--vw-max))) * 1vw, var(--fs-title-1-max) * 1px);
+  --fs-title-1-vh: clamp(var(--fs-title-1-min) * 1px, calc(100 * (var(--fs-title-1-max) / var(--vh-max))) * 1vh, var(--fs-title-1-max) * 1px);
+
+  --fs-title-2-min: 16;
+  --fs-title-2-max: 34;
+  --fs-title-2-vw: clamp(var(--fs-title-2-min) * 1px, calc(100 * (var(--fs-title-2-max) / var(--vw-max))) * 1vw, var(--fs-title-2-max) * 1px);
+  --fs-title-2-vh: clamp(var(--fs-title-2-min) * 1px, calc(100 * (var(--fs-title-2-max) / var(--vh-max))) * 1vh, var(--fs-title-2-max) * 1px);
+
+  --fs-title-4-min: 14;
+  --fs-title-4-max: 20;
+  --fs-title-4-vw: clamp(var(--fs-title-4-min) * 1px, calc(100 * (var(--fs-title-4-max) / var(--vw-max))) * 1vw, var(--fs-title-4-max) * 1px);
+  --fs-title-4-vh: clamp(var(--fs-title-4-min) * 1px, calc(100 * (var(--fs-title-4-max) / var(--vh-max))) * 1vh, var(--fs-title-4-max) * 1px);
+}
+
+/* Mise à l'échelle (quand grand écran) selon la longueur et la hauteur du viewport. */
+.home {
+  --fs-body: min(var(--fs-body-vw), var(--fs-body-vh));
+  --fs-button: min(var(--fs-button-vw), var(--fs-button-vh));
+  --fs-title-1: min(var(--fs-title-1-vw), var(--fs-title-1-vh));
+  --fs-title-2: min(var(--fs-title-2-vw), var(--fs-title-2-vh));
+  --fs-title-4: min(var(--fs-title-4-vw), var(--fs-title-4-vh));
+  --section-padding: clamp(24px, 6vh, 64px) clamp(32px, 8.3vw, 160px);
+}
+
+/* Mise à l'échelle (quand petit écran) uniquement selon la longueur du viewport. */
+@media screen and (max-height: 650px), screen and (max-width: 768px) {
+  .home {
+    --fs-body: var(--fs-body-vw);
+    --fs-button: var(--fs-button-vw);
+    --fs-title-1: var(--fs-title-1-vw);
+    --fs-title-2: var(--fs-title-2-vw);
+    --fs-title-4: var(--fs-title-4-vw);
+    --section-padding: clamp(24px, 3.3vw, 64px) clamp(32px, 8.3vw, 160px);
+  }
+}
+
+/* ------------------------- Application des tailles ------------------------ */
 
 .home {
-  font-size: clamp(14px, 0.8vw, 16px);
+  padding: var(--section-padding);
+  font-size: var(--fs-body);
 }
 
 .home .title-1 {
-  font-size: clamp(34px, 5vw, 96px);
+  font-size: var(--fs-title-1);
 }
 
 .home .title-2 {
-  font-size: clamp(16px, 1.8vw, 34px);
+  font-size: var(--fs-title-2);
 }
 
 .home .title-4 {
-  font-size: clamp(14px, 1.05vw, 20px);
+  font-size: var(--fs-title-4);
 }
 
 .home .button {
-  font-size: clamp(14px, 0.8vw, 16px);
+  font-size: var(--fs-button);
 }
 
-/* ------------------------- Arrière-plan de section ------------------------ */
+/* -------------------------------------------------------------------------- */
+/*                           Arrière-plan de section                          */
+/* -------------------------------------------------------------------------- */
 
 .home-background {
   position: absolute;
@@ -54,7 +121,9 @@
   pointer-events: none;
 }
 
-/* --------------------------- Contenu de section --------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                             Contenu de section                             */
+/* -------------------------------------------------------------------------- */
 
 .home-content {
   display: flex;
@@ -102,13 +171,11 @@
   height: 40px;
 }
 
-@media screen and (max-height: 816px) {
-  .home {
-    height: auto;
-    row-gap: 64px;
-  }
-}
+/* -------------------------------------------------------------------------- */
+/*                                   Layout                                   */
+/* -------------------------------------------------------------------------- */
 
+/* Breakpoint mode petit écran : layout par ligne et plus par colonne. */
 @media screen and (max-width: 960px) {
   .home-content {
     flex-direction: column;
@@ -130,9 +197,10 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+/* Breakpoints où la section ne remplit plus l'entièreté du viewport. */
+@media screen and (max-width: 960px) and (max-height: 880px), screen and (max-height: 650px), screen and (max-width: 768px) {
   .home {
     height: auto;
-    row-gap: 32px;
+    row-gap: 64px;
   }
 }

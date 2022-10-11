@@ -1,5 +1,4 @@
 import { TProject } from "data/projects";
-import FocusTrap from "focus-trap-react";
 import { FunctionComponent, useRef, useState } from "react";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";

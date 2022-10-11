@@ -1,6 +1,6 @@
 .project-details {
   position: fixed;
-  height: 80%;
+  height: 90%;
   width: clamp(0px, 80%, 1100px);
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@
   height: 40px;
 }
 
-@media screen and (max-width: 768px), screen and (max-height: 768px) {
+@media screen and (max-width: 500px), screen and (max-height: 600px) {
   .project-details {
     width: 100%;
     height: 100%;
