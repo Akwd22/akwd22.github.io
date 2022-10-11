@@ -1,5 +1,8 @@
 .media-viewer {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: var(--radius-large);
   overflow: hidden;
   user-select: none;
@@ -14,6 +17,13 @@
 
 .media-viewer.closing {
   animation: shrink 0.25s ease-in-out both;
+}
+
+.media-viewer .loading-icon {
+  position: absolute;
+  height: 64px;
+  width: 64px;
+  z-index: -1;
 }
 
 .media-viewer img {
@@ -57,6 +67,11 @@
 }
 
 @media screen and (max-width: 768px), screen and (max-height: 458px) {
+  .media-viewer .loading-icon {
+    height: 32px;
+    width: 32px;
+  }
+
   .media-viewer-controls {
     padding: 0 24px;
   }

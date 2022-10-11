@@ -4,6 +4,7 @@ import { FunctionComponent, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
+import LoadingIcon from "components/Icons/LoadingIcon/LoadingIcon";
 
 import useOutsideClick from "hooks/useOutsideClick";
 
@@ -24,7 +25,9 @@ interface MediaViewerProps {
 
 /** Composant de la visionneuse de médias en plein écran. */
 const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias, onClose }) => {
-  /** Visionneuse en train de se fermer ? */
+  /** Média est-il en train de charger ? */
+  const [loading, setLoading] = useState(true);
+  /** Visionneuse est-elle en train de se fermer ? */
   const [closing, setClosing] = useState(false);
   /** Index du média actuellement affiché. */
   const [shownIndex, setShownIndex] = useState(currentIndex);
@@ -43,6 +46,7 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
       newIndex = medias.length - 1;
     }
 
+    setLoading(true);
     setShownIndex(newIndex);
   };
 
@@ -54,8 +58,10 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
         <ButtonIcon id="next-viewer-button" icon={<ArrowRightIcon />} onClick={() => switchMedia("next")} tooltip="Voir l'image suivante" />
       </div>
 
+      {loading && <LoadingIcon />}
+
       {medias[shownIndex].type === "image" ? (
-        <img src={medias[shownIndex].imageUrl} alt="" />
+        <img src={medias[shownIndex].imageUrl} alt="" onLoad={() => setLoading(false)} />
       ) : (
         <iframe
           width="100%"
@@ -65,6 +71,7 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          onLoad={() => setLoading(false)}
         ></iframe>
       )}
     </div>,
