@@ -39,32 +39,3 @@
 .media-carousel-thumbnails::-webkit-scrollbar {
   display: none;
 }
-
-.media-carousel-thumbnail,
-.media-carousel-thumbnail img {
-  height: 100%;
-  transition: filter 200ms;
-}
-
-.media-carousel-thumbnail:hover {
-  filter: brightness(0.6);
-  cursor: pointer;
-}
-
-.media-carousel-video {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.media-carousel-video img {
-  filter: brightness(0.6);
-}
-
-.media-carousel-play-icon {
-  position: absolute;
-  height: 30%;
-  z-index: 1;
-  pointer-events: none;
-}

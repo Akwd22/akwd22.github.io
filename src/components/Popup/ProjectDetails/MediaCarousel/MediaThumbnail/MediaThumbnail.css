@@ -1,0 +1,35 @@
+.media-carousel-thumbnail {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media-carousel-thumbnail,
+.media-carousel-thumbnail img {
+  height: 100%;
+  transition: filter 200ms;
+}
+
+.media-carousel-thumbnail:hover {
+  filter: brightness(0.6);
+  cursor: pointer;
+}
+
+.media-carousel-thumbnail .loading-icon {
+  position: absolute;
+  height: 64px;
+  width: 64px;
+  z-index: -1;
+}
+
+.media-carousel-video img {
+  filter: brightness(0.6);
+}
+
+.media-carousel-play-icon {
+  position: absolute;
+  height: 30%;
+  z-index: 1;
+  pointer-events: none;
+}

@@ -1,7 +1,9 @@
 import { TProject } from "data/projects";
 import { FunctionComponent, useRef, useState } from "react";
 
+import MediaThumbnail from "./MediaThumbnail/MediaThumbnail";
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
+import LoadingIcon from "components/Icons/LoadingIcon/LoadingIcon";
 import MediaViewer from "components/Popup/MediaViewer/MediaViewer";
 
 import { ReactComponent as ArrowLeftIcon } from "assets/imgs/icons/arrow-left.svg";
@@ -47,12 +49,7 @@ const MediaCarousel: FunctionComponent<MediaCarouselProps> = (props) => {
 
   /** Afficher les miniatures de tous les médias. */
   const thumbnails = () => {
-    return props.medias.map((media, index) => (
-      <div key={index} className={"media-carousel-thumbnail media-carousel-" + media.type} onClick={() => enlargeMedia(index)}>
-        {media.type === "video" && <PlayIcon className="media-carousel-play-icon" />}
-        <img src={media.imageUrl} alt="" />
-      </div>
-    ));
+    return props.medias.map((media, index) => <MediaThumbnail type={media.type} url={media.imageUrl} onClick={() => enlargeMedia(index)} />);
   };
 
   return (
