@@ -51,7 +51,7 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
   };
 
   return createPortal(
-    <div className={cn("media-viewer", closing ? "closing" : "opening")} ref={viewerRef} onAnimationEnd={() => closing && onClose() /* TODO : hook ? */}>
+    <div className={cn("media-viewer", closing ? "closing" : "opening")} data-loading={loading} ref={viewerRef} onAnimationEnd={() => closing && onClose() /* TODO : hook ? */}>
       <div className="media-viewer-controls">
         <ButtonIcon id="close-viewer-button" icon={<CloseIcon />} onClick={() => setClosing(true)} tooltip="Fermer la visionneuse" />
         <ButtonIcon id="prev-viewer-button" icon={<ArrowLeftIcon />} onClick={() => switchMedia("previous")} tooltip="Voir l'image précédente" />

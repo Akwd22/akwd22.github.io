@@ -7,9 +7,12 @@
   overflow: hidden;
   user-select: none;
   background: var(--background-radial);
-  min-height: 40%;
-  min-width: 40%;
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.media-viewer[data-loading="true"] {
+  min-height: 225px;
+  min-width: 350px;
 }
 
 .media-viewer.opening {
@@ -44,7 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent 250px), linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent 250px);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent 30%), linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent 30%);
   pointer-events: none;
   padding: 0 40px;
 }
@@ -57,17 +60,22 @@
   position: absolute;
   top: 40px;
   right: 40px;
-  width: 48px;
-  height: 48px;
+  min-width: 24px;
+  width: 3%;
 }
 
 #next-viewer-button,
 #prev-viewer-button {
-  width: 64px;
-  height: 64px;
+  min-width: 32px;
+  width: 5%;
 }
 
 @media screen and (max-width: 768px), screen and (max-height: 458px) {
+  .media-viewer[data-loading="true"] {
+    min-width: 200px;
+    min-height: 175px;
+  }
+
   .media-viewer .loading-icon {
     height: 32px;
     width: 32px;
@@ -78,15 +86,7 @@
   }
 
   #close-viewer-button {
-    width: 24px;
-    height: 24px;
     top: 24px;
     right: 24px;
-  }
-
-  #next-viewer-button,
-  #prev-viewer-button {
-    width: 32px;
-    height: 32px;
   }
 }
