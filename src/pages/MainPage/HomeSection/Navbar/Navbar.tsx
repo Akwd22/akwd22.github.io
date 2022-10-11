@@ -1,5 +1,5 @@
-import { FunctionComponent, useEffect, useRef, useState } from "react";
 import cn from "classnames";
+import { FunctionComponent, useRef, useState } from "react";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
 import SocialBar from "components/SocialBar/SocialBar";
@@ -7,6 +7,7 @@ import SocialBar from "components/SocialBar/SocialBar";
 import useIsDesktop from "hooks/useIsDesktop";
 import useOutsideClick from "hooks/useOutsideClick";
 
+import CurriculumVitae from "assets/files/cv-eddy-druet.pdf";
 import { ReactComponent as AkwdIcon } from "assets/imgs/icons/akwd.svg";
 import { ReactComponent as BurgerIcon } from "assets/imgs/icons/burger.svg";
 import "./Navbar.css";
@@ -22,7 +23,7 @@ const NavbarLinks: FunctionComponent = () => {
         <a href="#mes-projets" className="button">
           Projets
         </a>
-        <a href="/" className="button">
+        <a href={CurriculumVitae} className="button" target="_blank" rel="noreferrer">
           Curriculum vitæ
         </a>
       </nav>
