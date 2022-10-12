@@ -1,16 +1,18 @@
-import notification, { NotificationData } from "utils/notification";
 import { FunctionComponent, useEffect, useState } from "react";
+import notification, { TNotificationData } from "utils/notification";
 
 import NotificationBox from "./NotificationBox/NotificationBox";
 
 /** Composant gérant et affichant les notifications. */
 const NotificationManager: FunctionComponent = () => {
-  const [notifications, setNotifications] = useState<NotificationData[]>([]);
+  /** Liste des notifications affichées. */
+  const [notifications, setNotifications] = useState<TNotificationData[]>([]);
 
   // Écouter les notifications déclenchées pour les afficher.
   useEffect(() => {
-    const handler = (data: NotificationData) => setNotifications([data, ...notifications]);
+    const handler = (data: TNotificationData) => setNotifications([data, ...notifications]);
     notification.listen(handler);
+
     return () => notification.unlisten(handler);
   }, [notifications]);
 

@@ -1,4 +1,4 @@
-import { NotificationData } from "utils/notification";
+import { TNotificationData } from "utils/notification";
 import { FunctionComponent, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -7,14 +7,14 @@ import ButtonIcon from "components/ButtonIcon/ButtonIcon";
 import { ReactComponent as CrossIcon } from "assets/imgs/icons/cross.svg";
 import "./NotificationBox.css";
 
-interface NotificationBoxProps extends NotificationData {
+interface NotificationBoxProps extends TNotificationData {
   /** Gestionnaire appelé lors de la fermeture de la notification. */
   onClose?: () => void;
 }
 
-type TState = "opening" | "closing" | "idle" | "hovered";
+type TState = "opening" | "closing" | "hovered" | "idle";
 
-/** Composant d'une notification. */
+/** Composant d'une boîte de notification. */
 const NotificationBox: FunctionComponent<NotificationBoxProps> = ({ text, onClose }) => {
   /** État actuel de la boîte de notification. */
   const [state, setState] = useState<TState>("opening");

@@ -1,10 +1,8 @@
-import cn from "classnames";
 import { TProject } from "data/projects";
 import { FunctionComponent, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
-import LoadingIcon from "components/Icons/LoadingIcon/LoadingIcon";
 
 import useOutsideClick from "hooks/useOutsideClick";
 
@@ -23,17 +21,19 @@ interface MediaViewerProps {
   onClose?: () => void;
 }
 
+type TState = "opening" | "closing" | "idle";
+
 /** Composant de la visionneuse de médias en plein écran. */
 const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias, onClose }) => {
+  /** Visionneuse est-elle en train de se fermer ? */
+  const [state, setState] = useState<TState>("opening");
   /** Média est-il en train de charger ? */
   const [loading, setLoading] = useState(true);
-  /** Visionneuse est-elle en train de se fermer ? */
-  const [state, setState] = useState<"opening" | "closing" | "idle">("opening");
+
   /** Index du média actuellement affiché. */
   const [shownIndex, setShownIndex] = useState(currentIndex);
 
   const viewerRef = useRef<HTMLDivElement>();
-
   useOutsideClick(viewerRef, () => setState("closing"));
 
   /** Afficher le média précédent ou suivant. */
@@ -50,12 +50,38 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
     setShownIndex(newIndex);
   };
 
+  /** Afficher le média. */
+  const media = () => {
+    const media = medias[shownIndex];
+
+    switch (media.type) {
+      case "image":
+        return <img className="media-viewer-image" src={media.imageUrl} alt="" onLoad={() => setLoading(false)} />;
+      case "video":
+        return (
+          <iframe
+            className="media-viewer-video"
+            width="100%"
+            height="100%"
+            src={medias[shownIndex].videoUrl}
+            title="Lecteur vidéo"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            onLoad={() => setLoading(false)}
+          ></iframe>
+        );
+      default:
+        throw new Error("Unknown media type:" + media.type);
+    }
+  };
+
   return createPortal(
     <div
-      className={cn("media-viewer")}
+      className="media-viewer"
+      ref={viewerRef}
       data-state={state}
       data-loading={loading}
-      ref={viewerRef}
       onAnimationEnd={() => {
         if (state === "opening") setState("idle");
         if (state === "closing") onClose();
@@ -63,28 +89,13 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
       }}
     >
       <div className="media-viewer-controls">
-        <ButtonIcon id="media-viewer-close" icon={<CloseIcon />} onClick={() => setState("closing")} tooltip="Fermer la visionneuse" />
-        <ButtonIcon id="media-viewer-prev" icon={<ArrowLeftIcon />} onClick={() => switchMedia("previous")} tooltip="Voir l'image précédente" />
-        <ButtonIcon id="media-viewer-next" icon={<ArrowRightIcon />} onClick={() => switchMedia("next")} tooltip="Voir l'image suivante" />
+        <ButtonIcon id="media-viewer-close" icon={<CloseIcon />} tooltip="Fermer la visionneuse" onClick={() => setState("closing")} />
+        <ButtonIcon id="media-viewer-prev" icon={<ArrowLeftIcon />} tooltip="Voir l'image précédente" onClick={() => switchMedia("previous")} />
+        <ButtonIcon id="media-viewer-next" icon={<ArrowRightIcon />} tooltip="Voir l'image suivante" onClick={() => switchMedia("next")} />
       </div>
 
-      {loading && <LoadingIcon />}
-
-      {medias[shownIndex].type === "image" ? (
-        <img className="media-viewer-image" src={medias[shownIndex].imageUrl} alt="" onLoad={() => setLoading(false)} />
-      ) : (
-        <iframe
-          className="media-viewer-video"
-          width="100%"
-          height="100%"
-          src={medias[shownIndex].videoUrl}
-          title="Lecteur vidéo"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          onLoad={() => setLoading(false)}
-        ></iframe>
-      )}
+      {loading && <span className="loading-icon"></span>}
+      {media()}
     </div>,
     document.getElementById("popup")
   );

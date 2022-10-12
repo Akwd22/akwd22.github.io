@@ -7,7 +7,7 @@ import { TagProps } from "components/Tag/Tag";
 import "./TagList.css";
 
 interface TagListProps extends PropsWithIdAndClass {
-  /** Un ou plusieurs éléments de composant `Tag`. */
+  /** Un ou plusieurs éléments du composant `Tag`. */
   children: ReactElement<TagProps> | ReactElement<TagProps>[];
 }
 

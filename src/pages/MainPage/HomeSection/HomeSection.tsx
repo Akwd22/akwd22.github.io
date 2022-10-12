@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
+import Navbar from "components/Navbar/Navbar";
 import Logo from "./Logo/Logo";
-import Navbar from "layouts/Navbar/Navbar";
 import SliderInfos from "./SliderInfos/SliderInfos";
 
 import { ReactComponent as ArrowIcon } from "assets/imgs/icons/arrow-down.svg";
@@ -22,7 +22,9 @@ const HomeSection: FunctionComponent = () => {
         <Logo />
         <div className="home-content-info">
           <div className="home-content-title">
-            <h1 className="home-title-greetings">Salut, c’est <span>Eddy</span></h1>
+            <h1 className="home-title-greetings">
+              Salut, c’est <span>Eddy</span>
+            </h1>
             <h2 className="home-title-job">Développeur web full-stack</h2>
           </div>
           <div className="home-content-slider">

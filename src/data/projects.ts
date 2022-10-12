@@ -15,18 +15,12 @@ export interface TProject {
   thumbnail?: string;
   /** Description du projet (format Markdown). */
   description: string;
-  /** Liens externes associés au projet. */
-  links: TProjectLink[];
+  /** URL du dépôt du projet. */
+  repository?: string;
+  /** URL du site où est hébergé le projet. */
+  website?: string;
   /** Images et vidéos du projet. */
   medias: TProjectMedia[];
-}
-
-/** Interface d'un lien externe de projet. */
-export interface TProjectLink {
-  /** Type du lien (ex. dépôt GitHub pour `repository`, ou un site quelconque pour `website`). */
-  type: "repository" | "website";
-  /** URL du lien. */
-  url: string;
 }
 
 /** Interface d'un média de projet. */

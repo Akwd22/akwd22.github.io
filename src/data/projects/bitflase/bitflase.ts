@@ -9,7 +9,6 @@ const project: TProject = {
   tags: ["TypeScript", "React", "Electron", "Node"],
   thumbnail: Thumbnail,
   description: "",
-  links: [],
   medias: [],
 };
 

@@ -93,16 +93,8 @@ const project: TProject = {
   i
 
   FIN`,
-  links: [
-    {
-      type: "repository",
-      url: "https://github.com/Akwd22/graph-degeneracy",
-    },
-    {
-      type: "website",
-      url: "https://www.eddydruet.fr/graph-degeneracy/",
-    },
-  ],
+  repository: "https://github.com/Akwd22/graph-degeneracy",
+  website: "https://www.eddydruet.fr/graph-degeneracy/",
   medias: [
     { type: "video", imageUrl: Image2, videoUrl: "https://www.youtube-nocookie.com/embed/tgVmvoZSV00" },
     { type: "image", imageUrl: Image1 },

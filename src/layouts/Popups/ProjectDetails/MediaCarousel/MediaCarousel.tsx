@@ -61,7 +61,7 @@ const MediaCarousel: FunctionComponent<MediaCarouselProps> = (props) => {
         {thumbnails()}
       </div>
 
-      {enlargedMedia !== null && <MediaViewer onClose={() => enlargeMedia(null)} currentIndex={enlargedMedia} medias={props.medias} />}
+      {enlargedMedia !== null && <MediaViewer currentIndex={enlargedMedia} medias={props.medias} onClose={() => enlargeMedia(null)} />}
     </div>
   );
 };

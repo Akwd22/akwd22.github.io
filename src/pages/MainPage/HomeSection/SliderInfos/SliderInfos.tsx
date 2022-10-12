@@ -25,6 +25,19 @@ const SliderInfos: FunctionComponent = () => {
   /** Index de la diapositive qui va être affichée.  */
   const [pendingSlide, setPendingSlide] = useState<number>(null);
 
+  /** Changer la diapositif active contre la diapositive en attente. */
+  const switchSlide = () => {
+    if (pendingSlide !== null) {
+      setCurrentSlide(pendingSlide);
+      setPendingSlide(null);
+    }
+  };
+
+  /** Calculer le pourcentage de remplissage de la barre du slider. */
+  const barPercent = () => {
+    return ((currentSlide + 1) / SLIDES.length) * 100 + "%";
+  };
+
   /** Afficher les boutons de transition vers chaque diaporama du slider. */
   const sliderButtons = () => {
     return SLIDES.map((slide, index) => {
@@ -41,19 +54,6 @@ const SliderInfos: FunctionComponent = () => {
   /** Retourner le composant du diaporama actuellement actif. */
   const activeSlider = () => {
     return SLIDES[currentSlide].component;
-  };
-
-  /** Calculer le pourcentage de remplissage de la barre du slider. */
-  const barPercent = () => {
-    return ((currentSlide + 1) / SLIDES.length) * 100 + "%";
-  };
-
-  /** Changer la diapositif active contre la diapositive en attente. */
-  const switchSlide = () => {
-    if (pendingSlide !== null) {
-      setCurrentSlide(pendingSlide);
-      setPendingSlide(null);
-    }
   };
 
   return (

@@ -16,17 +16,6 @@ import { ReactComponent as ExternalIcon } from "assets/imgs/icons/external.svg";
 import { ReactComponent as GitHubIcon } from "assets/imgs/icons/github.svg";
 import "./ProjectDetails.css";
 
-const LINK_TYPE_MAP = {
-  repository: {
-    icon: <GitHubIcon />,
-    tooltip: "Voir le dépôt GitHub",
-  },
-  website: {
-    icon: <ExternalIcon />,
-    tooltip: "Voir le projet en ligne",
-  },
-};
-
 /** Composant d'une popup de détail d'un projet. */
 const ProjectDetails: FunctionComponent = () => {
   /** Données du projet. */
@@ -36,16 +25,16 @@ const ProjectDetails: FunctionComponent = () => {
 
   const { slug } = useParams();
   const navigate = useNavigate();
+
   const detailsRef = useRef<HTMLDivElement>();
+  useOutsideClick(detailsRef, () => visible && navigate(".."));
 
-  useOutsideClick(detailsRef, () => {
-    if (visible) navigate("..");
-  });
-
+  // Récupérer les données du projet.
   useEffect(() => {
     dataProjects.fetchOne(slug).then(setProject);
   }, [slug]);
 
+  // Désactiver le défilement derrière la popup. (TODO : hook ?)
   useEffect(() => {
     document.body.classList.add("no-scroll");
     return () => document.body.classList.remove("no-scroll");
@@ -54,13 +43,6 @@ const ProjectDetails: FunctionComponent = () => {
   /** Afficher les tags du projet. */
   const tags = () => {
     return project.tags.map((text, index) => <Tag text={text} key={index} />);
-  };
-
-  /** Afficher les liens externes du projet. */
-  const links = () => {
-    return project.links.map((link) => (
-      <ButtonIcon key={link.type} icon={LINK_TYPE_MAP[link.type].icon} tooltip={LINK_TYPE_MAP[link.type].tooltip} href={link.url} target="_blank" />
-    ));
   };
 
   return (
@@ -79,7 +61,10 @@ const ProjectDetails: FunctionComponent = () => {
         <article className="project-details-content">
           <div className="project-details-title">
             <h3>Description</h3>
-            <div className="project-details-links">{links()}</div>
+            <div className="project-details-links">
+              {project.repository && <ButtonIcon icon={<GitHubIcon />} href={project.repository} target="_blank" tooltip="Voir le dépôt GitHub" />}
+              {project.website && <ButtonIcon icon={<ExternalIcon />} href={project.website} target="_blank" tooltip="Voir le projet en ligne" />}
+            </div>
           </div>
 
           <div className="project-details-description">

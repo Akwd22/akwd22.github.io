@@ -17,16 +17,17 @@ const NavbarLinks: FunctionComponent = () => {
   return (
     <>
       <nav className="navbar-links">
-        <a href="#accueil" className="button">
+        <a className="button" href="#accueil">
           À propos
         </a>
-        <a href="#mes-projets" className="button">
+        <a className="button" href="#mes-projets">
           Projets
         </a>
-        <a href={CurriculumVitae} className="button" target="_blank" rel="noreferrer">
+        <a className="button" href={CurriculumVitae} target="_blank" rel="noreferrer">
           Curriculum vitæ
         </a>
       </nav>
+
       <SocialBar />
     </>
   );
@@ -39,16 +40,16 @@ const NavbarDesktop: FunctionComponent = () => {
 
 /** Composant de la barre de navigation compacte pour petit écran. */
 const NavbarMobile: FunctionComponent = () => {
-  const [isMenuClosing, setIsMenuClosing] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuOpened, setMenuOpened] = useState(false);
+  const [menuClosing, setMenuClosing] = useState(false);
 
   const menuRef = useRef<HTMLDivElement>();
-  useOutsideClick(menuRef, () => setIsMenuClosing(true));
+  useOutsideClick(menuRef, () => setMenuClosing(true));
 
   /** Ouvrir le menu. */
   const openMenu = () => {
-    setIsMenuClosing(false);
-    setIsMenuOpen(true);
+    setMenuClosing(false);
+    setMenuOpened(true);
   };
 
   return (
@@ -58,12 +59,12 @@ const NavbarMobile: FunctionComponent = () => {
         <ButtonIcon id="menu-button" icon={<MenuIcon />} tooltip="Ouvrir le menu de navigation" onClick={openMenu} />
       </div>
 
-      {isMenuOpen && (
+      {menuOpened && (
         <div
+          className={cn("navbar-menu", { closing: menuClosing })}
           ref={menuRef}
-          className={cn("navbar-menu", { closing: isMenuClosing })}
-          onClick={({ target }) => target !== menuRef.current && setIsMenuClosing(true)}
-          onAnimationEnd={() => isMenuClosing && setIsMenuOpen(false)}
+          onClick={(e) => e.target !== menuRef.current && setMenuClosing(true)}
+          onAnimationEnd={() => menuClosing && setMenuOpened(false)}
         >
           <NavbarLinks />
         </div>

@@ -15,8 +15,6 @@ interface ProjectCardProps extends TProject {}
 /** Composant d'une carte d'un projet. */
 const ProjectCard: FunctionComponent<ProjectCardProps> = (props) => {
   const headerRef = useRef<HTMLDivElement>();
-
-  /** Carte apparaît-elle dans le viewport ? */
   const inViewport = useInViewport(headerRef, true);
 
   /** Afficher la liste de tags du projet. */
@@ -30,9 +28,10 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = (props) => {
   };
 
   return (
-    <Link to={`/projets/${props.slug}`} className="project-card" style={thumbnail()} title={`Voir le projet ${props.title}`}>
+    <Link to={`/projets/${props.slug}`} className="project-card" title={`Voir le projet ${props.title}`} style={thumbnail()}>
       <div className={cn("project-card-header", { animate: inViewport })} ref={headerRef}>
         <TagList>{tags()}</TagList>
+
         <h2 className="project-card-title">{props.title}</h2>
         <p>{props.summary}</p>
       </div>

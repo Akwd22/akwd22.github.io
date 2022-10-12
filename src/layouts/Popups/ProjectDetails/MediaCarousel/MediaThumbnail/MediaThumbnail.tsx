@@ -1,7 +1,5 @@
 import { FunctionComponent, useState } from "react";
 
-import LoadingIcon from "components/Icons/LoadingIcon/LoadingIcon";
-
 import { ReactComponent as PlayIcon } from "assets/imgs/icons/play.svg";
 import "./MediaThumbnail.css";
 
@@ -22,7 +20,7 @@ const MediaThumbnail: FunctionComponent<MediaThumbnailProps> = ({ type, url, onC
 
   return (
     <div className={"media-carousel-thumbnail thumbnail-" + type} onClick={onClick}>
-      {loading ? <LoadingIcon /> : type === "video" && <PlayIcon className="play-icon" />}
+      {loading ? <span className="loading-icon"></span> : type === "video" && <PlayIcon className="play-icon" />}
       <img src={url} alt="" onLoad={() => setLoading(false)} />
     </div>
   );
