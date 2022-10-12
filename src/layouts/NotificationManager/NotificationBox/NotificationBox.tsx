@@ -1,4 +1,4 @@
-import { NotificationData } from "notification";
+import { NotificationData } from "utils/notification";
 import { FunctionComponent, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 

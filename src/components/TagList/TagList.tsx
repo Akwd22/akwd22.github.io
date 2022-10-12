@@ -1,6 +1,6 @@
 import cn from "classnames";
 import { FunctionComponent, ReactElement } from "react";
-import { PropsWithIdAndClass } from "types";
+import { PropsWithIdAndClass } from "utils/types";
 
 import { TagProps } from "components/Tag/Tag";
 

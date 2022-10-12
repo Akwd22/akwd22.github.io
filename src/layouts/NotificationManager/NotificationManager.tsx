@@ -1,7 +1,7 @@
-import notification, { NotificationData } from "notification";
+import notification, { NotificationData } from "utils/notification";
 import { FunctionComponent, useEffect, useState } from "react";
 
-import NotificationBox from "components/NotificationBox/NotificationBox";
+import NotificationBox from "./NotificationBox/NotificationBox";
 
 /** Composant gérant et affichant les notifications. */
 const NotificationManager: FunctionComponent = () => {

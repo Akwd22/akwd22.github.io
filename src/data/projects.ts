@@ -1,5 +1,5 @@
-import bitflase from "./projects/bitflase";
-import placeholder from "./projects/placeholder";
+import bitflase from "./projects/bitflase/bitflase";
+import placeholder from "./projects/placeholder/placeholder";
 
 /** Interface d'un projet. */
 export interface TProject {

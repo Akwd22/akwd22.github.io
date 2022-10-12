@@ -1,7 +1,7 @@
 import cn from "classnames";
-import notification from "notification";
+import notification from "utils/notification";
 import { FunctionComponent } from "react";
-import { PropsWithIdAndClass } from "types";
+import { PropsWithIdAndClass } from "utils/types";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
 

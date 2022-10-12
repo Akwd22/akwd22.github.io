@@ -2,7 +2,7 @@ import { TProject } from "data/projects";
 import { FunctionComponent, useRef, useState } from "react";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
-import MediaViewer from "components/Popup/MediaViewer/MediaViewer";
+import MediaViewer from "layouts/Popups/MediaViewer/MediaViewer";
 import MediaThumbnail from "./MediaThumbnail/MediaThumbnail";
 
 import { ReactComponent as ArrowLeftIcon } from "assets/imgs/icons/arrow-left.svg";

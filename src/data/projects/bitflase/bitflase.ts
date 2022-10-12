@@ -1,6 +1,6 @@
 import { TProject } from "data/projects";
 
-import Thumbnail from "assets/imgs/projects/bitflase/thumbnail.png";
+import Thumbnail from "./thumbnail.png";
 
 const project: TProject = {
   slug: "bitflase",

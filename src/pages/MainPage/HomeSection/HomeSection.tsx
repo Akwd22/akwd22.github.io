@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
 import Logo from "./Logo/Logo";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "layouts/Navbar/Navbar";
 import SliderInfos from "./SliderInfos/SliderInfos";
 
 import { ReactComponent as ArrowIcon } from "assets/imgs/icons/arrow-down.svg";

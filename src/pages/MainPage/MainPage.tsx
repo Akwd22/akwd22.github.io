@@ -1,7 +1,6 @@
 import { FunctionComponent } from "react";
 import { Outlet } from "react-router-dom";
 
-import Footer from "components/Footer/Footer";
 import HomeSection from "./HomeSection/HomeSection";
 import ProjectsSection from "./ProjectsSection/ProjectsSection";
 
@@ -14,13 +13,10 @@ const MainPage: FunctionComponent = () => {
   return (
     <>
       <Outlet />
-
-      <main>
+      <main id="main-page">
         <HomeSection />
         <ProjectsSection />
       </main>
-
-      <Footer />
     </>
   );
 };

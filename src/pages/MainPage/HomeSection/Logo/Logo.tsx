@@ -1,4 +1,4 @@
-import notification from "notification";
+import notification from "utils/notification";
 import { FunctionComponent } from "react";
 
 import LogoImage from "assets/imgs/logo.svg";

@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import cn from "classnames";
-import { PropsWithIdAndClass } from "types";
+import { PropsWithIdAndClass } from "utils/types";
 
 import "./LoadingIcon.css";
 

@@ -1,8 +1,9 @@
 import { TProject } from "data/projects";
-import Image1 from "assets/imgs/projects/placeholder/1.jpg";
-import Image2 from "assets/imgs/projects/placeholder/2.jpg";
-import Image3 from "assets/imgs/projects/placeholder/3.jpg";
-import Image4 from "assets/imgs/projects/placeholder/4.jpg";
+
+import Image1 from "./1.jpg";
+import Image2 from "./2.jpg";
+import Image3 from "./3.jpg";
+import Image4 from "./4.jpg";
 
 const project: TProject = {
   slug: "placeholder",
