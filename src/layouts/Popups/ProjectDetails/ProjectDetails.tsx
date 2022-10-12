@@ -9,6 +9,7 @@ import Tag from "components/Tag/Tag";
 import TagList from "components/TagList/TagList";
 import MediaCarousel from "./MediaCarousel/MediaCarousel";
 
+import useDisableScroll from "hooks/useDisableScroll";
 import useOutsideClick from "hooks/useOutsideClick";
 
 import { ReactComponent as CloseIcon } from "assets/imgs/icons/close-black.svg";
@@ -28,17 +29,12 @@ const ProjectDetails: FunctionComponent = () => {
 
   const detailsRef = useRef<HTMLDivElement>();
   useOutsideClick(detailsRef, () => visible && navigate(".."));
+  useDisableScroll();
 
   // Récupérer les données du projet.
   useEffect(() => {
     dataProjects.fetchOne(slug).then(setProject);
   }, [slug]);
-
-  // Désactiver le défilement derrière la popup. (TODO : hook ?)
-  useEffect(() => {
-    document.body.classList.add("no-scroll");
-    return () => document.body.classList.remove("no-scroll");
-  }, []);
 
   /** Afficher les tags du projet. */
   const tags = () => {
