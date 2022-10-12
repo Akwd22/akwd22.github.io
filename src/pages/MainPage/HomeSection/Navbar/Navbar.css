@@ -11,7 +11,7 @@
 }
 
 .navbar-links a {
-  color: var(--color-light-text);
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -21,8 +21,8 @@
 
 @media screen and (max-width: 768px) {
   .navbar {
-    display: block;
     position: relative;
+    display: block;
   }
 
   .navbar-content {
@@ -42,7 +42,7 @@
     column-gap: 16px;
   }
 
-  .navbar-links,
+  .navbar-menu .navbar-links,
   .navbar-menu .navbar-socials {
     animation: none;
   }
@@ -54,9 +54,13 @@
     z-index: 1;
     margin-top: 16px;
     padding: 16px;
-    background: linear-gradient(135deg, #373532, #211e1b);
+    background: var(--bg-menu);
     border-radius: var(--radius-small);
     animation: fade-left 0.25s ease-out both;
+  }
+
+  .navbar-menu .button {
+    color: var(--rgb-light);
   }
 
   .navbar-menu.closing {

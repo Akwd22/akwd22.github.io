@@ -11,7 +11,7 @@ const SlideAboutMe: FunctionComponent = () => {
         technologies web.
       </p>
 
-      <h4 className="title-4">Mon état d'esprit</h4>
+      <h3>Mon état d'esprit</h3>
       <ul>
         <li>Maîtriser le plus de compétences pour être polyvalent,</li>
         <li>Fanatique du code propre, des conventions et de la qualité,</li>

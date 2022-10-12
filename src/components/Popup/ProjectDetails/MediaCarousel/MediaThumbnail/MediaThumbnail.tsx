@@ -21,8 +21,8 @@ const MediaThumbnail: FunctionComponent<MediaThumbnailProps> = ({ type, url, onC
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className={"media-carousel-thumbnail media-carousel-" + type} onClick={onClick}>
-      {loading ? <LoadingIcon /> : type === "video" && <PlayIcon className="media-carousel-play-icon" />}
+    <div className={"media-carousel-thumbnail thumbnail-" + type} onClick={onClick}>
+      {loading ? <LoadingIcon /> : type === "video" && <PlayIcon className="play-icon" />}
       <img src={url} alt="" onLoad={() => setLoading(false)} />
     </div>
   );

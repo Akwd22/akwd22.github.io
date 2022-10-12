@@ -9,7 +9,7 @@ import useOutsideClick from "hooks/useOutsideClick";
 
 import CurriculumVitae from "assets/files/cv-eddy-druet.pdf";
 import { ReactComponent as AkwdIcon } from "assets/imgs/icons/akwd.svg";
-import { ReactComponent as BurgerIcon } from "assets/imgs/icons/burger.svg";
+import { ReactComponent as MenuIcon } from "assets/imgs/icons/menu.svg";
 import "./Navbar.css";
 
 /** Composant contenant les liens de la barre de navigation. */
@@ -55,7 +55,7 @@ const NavbarMobile: FunctionComponent = () => {
     <>
       <div className="navbar-content">
         <ButtonIcon id="akwd-button" icon={<AkwdIcon />} href="/" tooltip="Aller à l'accueil" />
-        <ButtonIcon id="menu-button" icon={<BurgerIcon />} tooltip="Ouvrir le menu de navigation" onClick={openMenu} />
+        <ButtonIcon id="menu-button" icon={<MenuIcon />} tooltip="Ouvrir le menu de navigation" onClick={openMenu} />
       </div>
 
       {isMenuOpen && (

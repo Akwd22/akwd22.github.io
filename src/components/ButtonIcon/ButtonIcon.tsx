@@ -28,7 +28,7 @@ const ButtonIcon: FunctionComponent<ButtonIconProps> = (props) => {
   };
 
   return (
-    <button id={props.id} className={cn("button-icon", "button", props.className)} title={props.tooltip} onClick={clickHandler} autoFocus={props.autoFocus}>
+    <button id={props.id} className={cn("button", "button-icon", props.className)} title={props.tooltip} onClick={clickHandler} autoFocus={props.autoFocus}>
       {props.icon}
     </button>
   );

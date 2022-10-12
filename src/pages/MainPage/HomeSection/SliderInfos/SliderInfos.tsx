@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useState } from "react";
 
 import SlideAboutMe from "./Slides/SlideAboutMe";
 import SlideMySkills from "./Slides/SlideMySkills";
@@ -65,7 +65,7 @@ const SliderInfos: FunctionComponent = () => {
           <span className="slider-inner-bar" style={{ width: barPercent() }}></span>
         </div>
       </div>
-      <div className={cn("slider-content", pendingSlide === null ? "fade-in" : "fade-out")} onAnimationEnd={switchSlide}>
+      <div className="slider-content" data-state={pendingSlide === null ? "switch-end" : "switch-begin"} onAnimationEnd={switchSlide}>
         {activeSlider()}
       </div>
     </div>

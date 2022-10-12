@@ -7,7 +7,7 @@ const SlideMySkills: FunctionComponent = () => {
   return (
     <div className="slide slide-my-skills">
       <div>
-        <h4 className="title-4">Langages</h4>
+        <h3>Langages</h3>
         <ul>
           <li>JavaScript</li>
           <li>TypeScript</li>
@@ -18,7 +18,7 @@ const SlideMySkills: FunctionComponent = () => {
       </div>
 
       <div>
-        <h4 className="title-4">Technologies</h4>
+        <h3>Technologies</h3>
         <ul>
           <li>React</li>
           <li>Electron</li>
@@ -28,7 +28,7 @@ const SlideMySkills: FunctionComponent = () => {
       </div>
 
       <div>
-        <h4 className="title-4">Outils</h4>
+        <h3>Outils</h3>
         <ul>
           <li>npm</li>
           <li>webpack</li>

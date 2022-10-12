@@ -11,6 +11,10 @@
   transition: filter 200ms;
 }
 
+.media-carousel-thumbnail.thumbnail-video img {
+  filter: brightness(0.6);
+}
+
 .media-carousel-thumbnail:hover {
   filter: brightness(0.6);
   cursor: pointer;
@@ -23,13 +27,9 @@
   z-index: -1;
 }
 
-.media-carousel-video img {
-  filter: brightness(0.6);
-}
-
-.media-carousel-play-icon {
+.media-carousel-thumbnail .play-icon {
   position: absolute;
   height: 30%;
   z-index: 1;
-  pointer-events: none;
+  color: var(--color-light);
 }

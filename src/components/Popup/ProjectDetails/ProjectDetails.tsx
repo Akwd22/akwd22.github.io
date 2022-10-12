@@ -69,8 +69,8 @@ const ProjectDetails: FunctionComponent = () => {
       <div className="project-details" ref={detailsRef} style={{ visibility: visible ? "visible" : "hidden" }}>
         <header className="project-details-header">
           <div className="project-details-title">
-            <h1 className="title-2">{project.title}</h1>
-            <ButtonIcon id="close-details-button" icon={<CloseIcon />} tooltip="Fermer le projet" onClick={() => navigate("..")} />
+            <h2>{project.title}</h2>
+            <ButtonIcon id="project-details-close" icon={<CloseIcon />} tooltip="Fermer le projet" onClick={() => navigate("..")} />
           </div>
 
           <TagList>{tags()}</TagList>
@@ -78,7 +78,7 @@ const ProjectDetails: FunctionComponent = () => {
 
         <article className="project-details-content">
           <div className="project-details-title">
-            <h2 className="title-4">Description</h2>
+            <h3>Description</h3>
             <div className="project-details-links">{links()}</div>
           </div>
 

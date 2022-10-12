@@ -1,15 +1,16 @@
 #home-logo img {
   min-width: 350px;
   width: min(25vw, 45vh);
-  border: 4px var(--color-light-text) solid;
+  border: 4px var(--color-primary) solid;
   border-radius: 100%;
+  filter: var(--hue-logo);
   cursor: help;
   transition: box-shadow 0.5s;
   animation: fade-right 0.5s ease-out 0.5s both;
 }
 
 #home-logo img:hover {
-  box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 0px 15px 5px rgba(var(--rgb-primary), 25%);
 }
 
 @media screen and (max-width: 960px) {

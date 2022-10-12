@@ -33,7 +33,7 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = (props) => {
     <Link to={`/projets/${props.slug}`} className="project-card" style={thumbnail()} title={`Voir le projet ${props.title}`}>
       <div className={cn("project-card-header", { animate: inViewport })} ref={headerRef}>
         <TagList>{tags()}</TagList>
-        <h1 className="title-2">{props.title}</h1>
+        <h2 className="project-card-title">{props.title}</h2>
         <p>{props.summary}</p>
       </div>
     </Link>

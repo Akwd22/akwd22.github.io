@@ -1,0 +1,141 @@
+/* Animation de glissement vers le haut. */
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Animation de glissement vers la gauche. */
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Animation de glissement et fondu vers la gauche. */
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(5vw);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Animation de glissement et fondu vers la droite. */
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-5vw);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation de glissement et fondu vers le haut. */
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10vh);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation de glissement et fondu vers le bas. */
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10vh);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation de fondu de disparition. */
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Animation de fondu d'apparition. */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation de glissement et fondu vers la droite très faible. */
+@keyframes tiny-fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-1%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation d'agrandissement. */
+@keyframes grow {
+  0% {
+    scale: 0;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+/* Animation de rétrécissement. */
+@keyframes shrink {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 0;
+  }
+}
+
+/* Animation de rotation. */
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

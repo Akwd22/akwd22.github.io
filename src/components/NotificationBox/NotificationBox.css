@@ -2,9 +2,9 @@
   display: grid;
   align-items: center;
   padding: 8px 24px;
-  background-color: var(--color-accentuation);
   border-radius: var(--radius-large);
-  box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.29);
+  background-color: var(--color-accentuation);
+  box-shadow: 0px 0px 10px 1px rgba(var(--rgb-primary), 30%);
 }
 
 .notification[data-state="opening"] {
@@ -13,12 +13,6 @@
 
 .notification[data-state="closing"] {
   animation: fade-out 1s linear both;
-}
-
-.notification,
-.notification a,
-.notification-close {
-  color: var(--color-dark-text);
 }
 
 .notification-text {
@@ -32,13 +26,19 @@
   height: 16px;
 }
 
-.notification-close.button:hover {
-  color: var(--color-light-text);
+.notification,
+.notification a,
+.notification-close {
+  color: var(--color-secondary);
+}
+
+.notification .notification-close:hover {
+  color: var(--color-primary);
 }
 
 .notification ::selection {
-  color: var(--color-dark-text);
-  background: var(--color-light-text);
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
 }
 
 @media screen and (max-width: 768px) {

@@ -22,10 +22,8 @@ const HomeSection: FunctionComponent = () => {
         <Logo />
         <div className="home-content-info">
           <div className="home-content-title">
-            <h1 className="title-1">
-              Salut, c’est <span id="eddy">Eddy</span>
-            </h1>
-            <h2 className="title-2">Développeur web full-stack</h2>
+            <h1 className="home-title-greetings">Salut, c’est <span>Eddy</span></h1>
+            <h2 className="home-title-job">Développeur web full-stack</h2>
           </div>
           <div className="home-content-slider">
             <SliderInfos />
@@ -35,7 +33,7 @@ const HomeSection: FunctionComponent = () => {
 
       <div className="projects-button">
         <p>Mes projets</p>
-        <ButtonIcon id="projects-button" icon={<ArrowIcon />} href="#mes-projets" tooltip="Voir la liste de mes projets" />
+        <ButtonIcon icon={<ArrowIcon />} href="#mes-projets" tooltip="Voir la liste de mes projets" />
       </div>
     </section>
   );

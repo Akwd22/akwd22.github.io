@@ -1,11 +1,3 @@
-.home {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 /* -------------------------------------------------------------------------- */
 /*                             Tailles dynamiques                             */
 /* -------------------------------------------------------------------------- */
@@ -14,59 +6,72 @@
 
 /* Variables des tailles. */
 .home {
-  /* TODO : expliquer ce bordel en commentaire. */
+  /**
+   * Pour avoir une taille dynamique de police :
+   *  - on utilise les unités vw et vh pour mettre à l'échelle selon la taille du viewport
+   *  1) on indique une taille min. police (px) à ne pas dépasser lors de la mise à l'échelle,
+   *  2) on indique une taille max. police (px) à ne pas dépasser lors de la mise à l'échelle,
+   *  3) on met à l'échelle la taille max. selon la longueur du viewport (vw),
+   *  4) on met à l'échelle la taille max. selon la hauteur du viewport (vh).
+   *  => il suffit ensuite d'utiliser la mise à l'échelle en vw ou vh obtenue comme taille de police.
+   *
+   * Formules de mise à l'échelle :
+   *  - par rapport à la longueur du viewport : vw = 100 * (taille max. en px / long. max. viewport en px)
+   *  - par rapport à la hauteur du viewport : vh = 100 * (taille max. en px / haut. max. viewport en px)
+   *  et on clamp(taille min. ; vw ou vh ; taille max.) pour rester dans l'intervalle de taille min-max.
+   */
 
-  --vw-max: 1915; /* [Formule px -> vw] : vw = 100 * (px / max viewport width) 1915 */
-  --vh-max: 933; /* [Formule px -> vh] : vh = 100 * (px / max viewport height) 933 */
+  /* Longueur max. (px) de référence du viewport pour le calcul de la mise à l'échelle.  */
+  --vw-max: 1915;
+  /* Hauteur max. (px) de référence du viewport pour le calcul de la mise à l'échelle. */
+  --vh-max: 933;
 
-  /* Taille minimale (en px). */
+  --fs-h1-min: 34;
+  --fs-h1-max: 96;
+  --fs-h1-vw: clamp(var(--fs-h1-min) * 1px, calc(100 * (var(--fs-h1-max) / var(--vw-max))) * 1vw, var(--fs-h1-max) * 1px);
+  --fs-h1-vh: clamp(var(--fs-h1-min) * 1px, calc(100 * (var(--fs-h1-max) / var(--vh-max))) * 1vh, var(--fs-h1-max) * 1px);
+
+  --fs-h2-min: 16;
+  --fs-h2-max: 34;
+  --fs-h2-vw: clamp(var(--fs-h2-min) * 1px, calc(100 * (var(--fs-h2-max) / var(--vw-max))) * 1vw, var(--fs-h2-max) * 1px);
+  --fs-h2-vh: clamp(var(--fs-h2-min) * 1px, calc(100 * (var(--fs-h2-max) / var(--vh-max))) * 1vh, var(--fs-h2-max) * 1px);
+
+  --fs-h3-min: 14;
+  --fs-h3-max: 20;
+  --fs-h3-vw: clamp(var(--fs-h3-min) * 1px, calc(100 * (var(--fs-h3-max) / var(--vw-max))) * 1vw, var(--fs-h3-max) * 1px);
+  --fs-h3-vh: clamp(var(--fs-h3-min) * 1px, calc(100 * (var(--fs-h3-max) / var(--vh-max))) * 1vh, var(--fs-h3-max) * 1px);
+
   --fs-body-min: 14;
-  /* Taille maximale (en px). */
   --fs-body-max: 16;
-  /* Taille mise à l'échelle selon la longueur du viewport. */
   --fs-body-vw: clamp(var(--fs-body-min) * 1px, calc(100 * (var(--fs-body-max) / var(--vw-max)) * 1vw), var(--fs-body-max) * 1px);
-  /* Taille mise à l'échelle selon la hauteur du viewport. */
   --fs-body-vh: clamp(var(--fs-body-min) * 1px, calc(100 * (var(--fs-body-max) / var(--vh-max)) * 1vh), var(--fs-body-max) * 1px);
 
   --fs-button-min: 14;
   --fs-button-max: 16;
   --fs-button-vw: clamp(var(--fs-button-min) * 1px, calc(100 * (var(--fs-button-max) / var(--vw-max))) * 1vw, var(--fs-button-max) * 1px);
   --fs-button-vh: clamp(var(--fs-button-min) * 1px, calc(100 * (var(--fs-button-max) / var(--vh-max))) * 1vh, var(--fs-button-max) * 1px);
-
-  --fs-title-1-min: 34;
-  --fs-title-1-max: 96;
-  --fs-title-1-vw: clamp(var(--fs-title-1-min) * 1px, calc(100 * (var(--fs-title-1-max) / var(--vw-max))) * 1vw, var(--fs-title-1-max) * 1px);
-  --fs-title-1-vh: clamp(var(--fs-title-1-min) * 1px, calc(100 * (var(--fs-title-1-max) / var(--vh-max))) * 1vh, var(--fs-title-1-max) * 1px);
-
-  --fs-title-2-min: 16;
-  --fs-title-2-max: 34;
-  --fs-title-2-vw: clamp(var(--fs-title-2-min) * 1px, calc(100 * (var(--fs-title-2-max) / var(--vw-max))) * 1vw, var(--fs-title-2-max) * 1px);
-  --fs-title-2-vh: clamp(var(--fs-title-2-min) * 1px, calc(100 * (var(--fs-title-2-max) / var(--vh-max))) * 1vh, var(--fs-title-2-max) * 1px);
-
-  --fs-title-4-min: 14;
-  --fs-title-4-max: 20;
-  --fs-title-4-vw: clamp(var(--fs-title-4-min) * 1px, calc(100 * (var(--fs-title-4-max) / var(--vw-max))) * 1vw, var(--fs-title-4-max) * 1px);
-  --fs-title-4-vh: clamp(var(--fs-title-4-min) * 1px, calc(100 * (var(--fs-title-4-max) / var(--vh-max))) * 1vh, var(--fs-title-4-max) * 1px);
 }
 
 /* Mise à l'échelle (quand grand écran) selon la longueur et la hauteur du viewport. */
 .home {
+  --fs-h1: min(var(--fs-h1-vw), var(--fs-h1-vh));
+  --fs-h2: min(var(--fs-h2-vw), var(--fs-h2-vh));
+  --fs-h3: min(var(--fs-h3-vw), var(--fs-h3-vh));
   --fs-body: min(var(--fs-body-vw), var(--fs-body-vh));
   --fs-button: min(var(--fs-button-vw), var(--fs-button-vh));
-  --fs-title-1: min(var(--fs-title-1-vw), var(--fs-title-1-vh));
-  --fs-title-2: min(var(--fs-title-2-vw), var(--fs-title-2-vh));
-  --fs-title-4: min(var(--fs-title-4-vw), var(--fs-title-4-vh));
+
   --section-padding: clamp(24px, 6vh, 64px) clamp(32px, 8.3vw, 160px);
 }
 
 /* Mise à l'échelle (quand petit écran) uniquement selon la longueur du viewport. */
 @media screen and (max-height: 650px), screen and (max-width: 768px) {
   .home {
+    --fs-h1: var(--fs-h1-vw);
+    --fs-h2: var(--fs-h2-vw);
+    --fs-h3: var(--fs-h3-vw);
     --fs-body: var(--fs-body-vw);
     --fs-button: var(--fs-button-vw);
-    --fs-title-1: var(--fs-title-1-vw);
-    --fs-title-2: var(--fs-title-2-vw);
-    --fs-title-4: var(--fs-title-4-vw);
+
     --section-padding: clamp(24px, 3.3vw, 64px) clamp(32px, 8.3vw, 160px);
   }
 }
@@ -78,16 +83,16 @@
   font-size: var(--fs-body);
 }
 
-.home .title-1 {
-  font-size: var(--fs-title-1);
+.home h1 {
+  font-size: var(--fs-h1);
 }
 
-.home .title-2 {
-  font-size: var(--fs-title-2);
+.home h2 {
+  font-size: var(--fs-h2);
 }
 
-.home .title-4 {
-  font-size: var(--fs-title-4);
+.home h3 {
+  font-size: var(--fs-h3);
 }
 
 .home .button {
@@ -95,8 +100,16 @@
 }
 
 /* -------------------------------------------------------------------------- */
-/*                           Arrière-plan de section                          */
+/*                                Mise en page                                */
 /* -------------------------------------------------------------------------- */
+
+.home {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .home-background {
   position: absolute;
@@ -105,7 +118,7 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: url(assets/imgs/bg-noise.png), url(assets/imgs/bg-pattern.svg), var(--background-radial);
+  background-image: var(--img-bg-noise), var(--img-bg-pattern), var(--bg-content);
   background-repeat: repeat, no-repeat, no-repeat;
   background-position: top left, bottom left, top left;
   background-size: auto, 80%, 100%;
@@ -121,33 +134,32 @@
   pointer-events: none;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                             Contenu de section                             */
-/* -------------------------------------------------------------------------- */
-
 .home-content {
   display: flex;
-  /* animation: fade-right 0.5s ease-out 0.5s both; */
 }
 
 .home-content-info {
   width: 60%;
   margin-left: 64px;
-
   animation: fade-left 1s ease-out 0.75s both;
+}
+
+.home-title-greetings {
+  margin: 0;
+}
+
+.home-title-greetings span {
+  color: var(--color-accentuation);
+  text-shadow: 0px 0px 30px rgba(var(--rgb-accentuation), 50%);
+}
+
+.home-title-job {
+  margin-top: 8px;
+  color: rgba(var(--rgb-primary), 40%);
 }
 
 .home-content-slider {
   margin-top: 64px;
-}
-
-.home-content-info .title-1 {
-  margin: 0;
-}
-
-.home-content-info .title-2 {
-  margin-top: 8px;
-  color: rgba(255, 255, 255, 0.4);
 }
 
 .projects-button {
@@ -160,22 +172,13 @@
   animation: fade-up 0.5s ease-out both 1.5s;
 }
 
-#eddy {
-  color: var(--color-accentuation);
-  text-shadow: 0px 0px 30px rgba(var(--rgb-accentuation), 0.5);
-}
-
-#projects-button {
+.projects-button .button-icon {
   margin: auto;
   width: 40px;
   height: 40px;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                   Layout                                   */
-/* -------------------------------------------------------------------------- */
-
-/* Breakpoint mode petit écran : layout par ligne et plus par colonne. */
+/* Point de cassure : (mode petit écran) layout par ligne et plus par colonne. */
 @media screen and (max-width: 960px) {
   .home-content {
     flex-direction: column;
@@ -187,17 +190,16 @@
     width: 100%;
   }
 
+  .home-content-title {
+    text-align: center;
+  }
+
   .home-content-slider {
     margin-top: 32px;
   }
-
-  .home-content-info .title-1,
-  .home-content-info .title-2 {
-    text-align: center;
-  }
 }
 
-/* Breakpoints où la section ne remplit plus l'entièreté du viewport. */
+/* Points de cassure : où la section ne remplit plus l'entièreté du viewport. */
 @media screen and (max-width: 960px) and (max-height: 880px), screen and (max-height: 650px), screen and (max-width: 768px) {
   .home {
     height: auto;

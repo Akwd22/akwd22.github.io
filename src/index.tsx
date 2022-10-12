@@ -6,7 +6,10 @@ import NotificationManager from "components/NotificationManager/NotificationMana
 import ProjectDetails from "components/Popup/ProjectDetails/ProjectDetails";
 import MainPage from "pages/MainPage/MainPage";
 
-import "assets/globals.css";
+import "assets/styles/globals.css";
+import "assets/styles/defaults.css";
+import "assets/styles/fonts.css";
+import "assets/styles/anims.css";
 
 const root = ReactDOM.createRoot(document.getElementById("app"));
 

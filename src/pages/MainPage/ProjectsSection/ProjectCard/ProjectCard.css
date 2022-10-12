@@ -1,14 +1,14 @@
 .project-card {
   position: relative;
-  display: flex;
   min-height: 250px;
-  height: 50vh;
   width: 50%;
+  height: 50vh;
+  display: flex;
   flex-grow: 1;
-  text-decoration: none;
-  color: var(--color-light-text);
+  color: var(--color-light);
   background-size: cover;
   background-repeat: no-repeat;
+  text-decoration: none;
 }
 
 .project-card::after {
@@ -28,12 +28,12 @@
   height: fit-content;
   width: 100%;
   padding: 32px;
-  align-self: flex-end;
-  background: linear-gradient(rgba(60, 60, 60, 0), rgba(10, 10, 10, 0.8));
   z-index: 1;
+  align-self: flex-end;
+  background: linear-gradient(rgba(60, 60, 60, 0%), rgba(10, 10, 10, 80%));
 }
 
-.project-card-header h1 {
+.project-card-title {
   margin-bottom: 8px;
   margin-top: 24px;
 }

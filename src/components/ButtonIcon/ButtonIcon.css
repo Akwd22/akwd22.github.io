@@ -2,6 +2,5 @@
   display: block;
   border: none;
   background: none;
-  color: var(--color-light-text);
-  text-decoration: none;
+  color: var(--color-primary);
 }

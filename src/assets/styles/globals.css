@@ -1,0 +1,46 @@
+/* -------------------------------------------------------------------------- */
+/*                             Variables globales                             */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------- Couleurs -------------------------------- */
+
+:root {
+  /* Couleurs génériques. */
+  --color-primary: #f5f5f5;
+  --color-secondary: #0a0a0a;
+  --color-background: #181311;
+  --color-accentuation: #f99418;
+  --color-light: #f5f5f5;
+  --rgb-primary: 245, 245, 245;
+  --rgb-secondary: 10, 10, 10;
+  --rgb-background: 24, 19, 17;
+  --rgb-accentuation: 249, 148, 24;
+  --rgb-light: 245, 245, 245;
+
+  /* Couleurs spécifiques. */
+  --rgb-scroll-thumb: 150, 150, 150;
+  --hue-logo: hue-rotate(0deg);
+}
+
+/* ------------------------------ Arrière-plans ----------------------------- */
+
+:root {
+  --bg-content: radial-gradient(ellipse at 0 0, rgba(39, 36, 31, 100%), rgba(4, 4, 4, 100%));
+  --bg-header: radial-gradient(ellipse at 0 0, rgba(249, 91, 24, 50%), rgba(249, 91, 24, 80%));
+  --bg-menu: linear-gradient(135deg, rgba(55, 53, 50, 100%), rgba(33, 30, 27, 100%));
+}
+
+/* --------------------------------- Images --------------------------------- */
+
+:root {
+  --img-bg-noise: url(assets/imgs/bg-noise.png);
+  --img-bg-pattern: url(assets/imgs/bg-pattern.svg);
+  --img-list-marker: url(assets/imgs/icons/list-marker.svg);
+}
+
+/* -------------------------------- Bordures -------------------------------- */
+
+:root {
+  --radius-large: 20px;
+  --radius-small: 5px;
+}

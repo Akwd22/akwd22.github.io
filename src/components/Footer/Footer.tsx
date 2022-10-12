@@ -11,7 +11,7 @@ const Footer: FunctionComponent = () => {
   const isDesktop = useIsDesktop();
 
   return (
-    <footer className="page-footer">
+    <footer className="footer-page">
       <SocialBar />
       <p>
         Développé par <a href="/">Eddy Druet</a>
