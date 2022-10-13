@@ -1,8 +1,8 @@
 import bitflase from "./projects/bitflase/bitflase";
 import placeholder from "./projects/placeholder/placeholder";
 
-/** Interface d'un projet. */
-export interface TProject {
+/** Type décrivant les données d'un projet. */
+export type TProject = {
   /** Identifiant du projet (utilisé dans l'URL). */
   slug: string;
   /** Titre du projet. */
@@ -21,17 +21,17 @@ export interface TProject {
   website?: string;
   /** Images et vidéos du projet. */
   medias: TProjectMedia[];
-}
+};
 
-/** Interface d'un média de projet. */
-export interface TProjectMedia {
+/** Type décrivant un média de projet. */
+export type TProjectMedia = {
   /** Type du média. */
   type: "image" | "video";
   /** URL de l'image (miniature de la vidéo si type vidéo) */
   imageUrl: string;
   /** URL de la vidéo (uniquement si type vidéo). */
   videoUrl?: string;
-}
+};
 
 /**
  * Charger tous les projets.

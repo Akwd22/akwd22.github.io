@@ -4,6 +4,7 @@ import { FunctionComponent, useRef, useState } from "react";
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
 import SocialBar from "components/SocialBar/SocialBar";
 
+import useAnimationState from "hooks/useAnimationState";
 import useIsDesktop from "hooks/useIsDesktop";
 import useOutsideClick from "hooks/useOutsideClick";
 
@@ -40,16 +41,35 @@ const NavbarDesktop: FunctionComponent = () => {
 
 /** Composant de la barre de navigation compacte pour petit écran. */
 const NavbarMobile: FunctionComponent = () => {
+  /** Menu est-il ouvert ? */
   const [menuOpened, setMenuOpened] = useState(false);
-  const [menuClosing, setMenuClosing] = useState(false);
 
   const menuRef = useRef<HTMLDivElement>();
-  useOutsideClick(menuRef, () => setMenuClosing(true));
+
+  const setState = useAnimationState(
+    menuRef,
+    {
+      opening: {
+        duration: 250,
+        toState: "idle",
+      },
+
+      closing: {
+        duration: 250,
+        onEnd: () => setMenuOpened(false),
+      },
+
+      idle: {},
+    },
+    "idle"
+  );
+
+  useOutsideClick(menuRef, () => setState("closing"));
 
   /** Ouvrir le menu. */
   const openMenu = () => {
-    setMenuClosing(false);
     setMenuOpened(true);
+    setState("opening");
   };
 
   return (
@@ -60,12 +80,7 @@ const NavbarMobile: FunctionComponent = () => {
       </div>
 
       {menuOpened && (
-        <div
-          className={cn("navbar-menu", { closing: menuClosing })}
-          ref={menuRef}
-          onClick={(e) => e.target !== menuRef.current && setMenuClosing(true)}
-          onAnimationEnd={() => menuClosing && setMenuOpened(false)}
-        >
+        <div className="navbar-menu" ref={menuRef} onClick={(e) => e.target !== menuRef.current && setState("closing")}>
           <NavbarLinks />
         </div>
       )}

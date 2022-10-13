@@ -1,8 +1,10 @@
 import cn from "classnames";
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useRef, useState } from "react";
 
 import SlideAboutMe from "./Slides/SlideAboutMe";
 import SlideMySkills from "./Slides/SlideMySkills";
+
+import useAnimationState from "hooks/useAnimationState";
 
 import "./SliderInfos.css";
 
@@ -25,12 +27,35 @@ const SliderInfos: FunctionComponent = () => {
   /** Index de la diapositive qui va être affichée.  */
   const [pendingSlide, setPendingSlide] = useState<number>(null);
 
-  /** Changer la diapositif active contre la diapositive en attente. */
-  const switchSlide = () => {
-    if (pendingSlide !== null) {
-      setCurrentSlide(pendingSlide);
-      setPendingSlide(null);
-    }
+  const contentRef = useRef<HTMLDivElement>();
+
+  const setState = useAnimationState(
+    contentRef,
+    {
+      "switch-begin": {
+        duration: 500,
+        toState: "switch-end",
+        onEnd: () => {
+          if (pendingSlide === null) return;
+          setCurrentSlide(pendingSlide); // Changer la diapositive une fois que l'autre a disparu.
+          setPendingSlide(null);
+        },
+      },
+
+      "switch-end": {
+        duration: 500,
+        toState: "idle",
+      },
+
+      idle: {},
+    },
+    "idle"
+  );
+
+  /** Démarrer le changement d'une nouvelle diapositive. */
+  const beginSwitch = (newIndex: number) => {
+    setPendingSlide(newIndex);
+    setState("switch-begin");
   };
 
   /** Calculer le pourcentage de remplissage de la barre du slider. */
@@ -44,7 +69,7 @@ const SliderInfos: FunctionComponent = () => {
       const isActive = index === currentSlide;
 
       return (
-        <button onClick={() => setPendingSlide(index !== currentSlide ? index : null)} className={cn("button", { active: isActive })} key={slide.buttonLabel}>
+        <button onClick={() => index !== currentSlide && beginSwitch(index)} className={cn("button", { active: isActive })} key={slide.buttonLabel}>
           {slide.buttonLabel}
         </button>
       );
@@ -65,7 +90,7 @@ const SliderInfos: FunctionComponent = () => {
           <span className="slider-inner-bar" style={{ width: barPercent() }}></span>
         </div>
       </div>
-      <div className="slider-content" data-state={pendingSlide === null ? "switch-end" : "switch-begin"} onAnimationEnd={switchSlide}>
+      <div className="slider-content" ref={contentRef}>
         {activeSlider()}
       </div>
     </div>

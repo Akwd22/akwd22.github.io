@@ -6,7 +6,7 @@ import { MutableRefObject, useEffect, useMemo, useState } from "react";
  * @param once Faut-il arrêter les prochaines détections lorsque la première apparition a eu lieu ?
  * @returns `true` si l'élément apparaît sur le viewport.
  */
-const useInViewport = (ref: MutableRefObject<Element>, once: boolean = false): boolean => {
+function useInViewport(ref: MutableRefObject<Element>, once: boolean = false): boolean {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   const observer = useMemo(
@@ -30,6 +30,6 @@ const useInViewport = (ref: MutableRefObject<Element>, once: boolean = false): b
   }, [ref, observer]);
 
   return isIntersecting;
-};
+}
 
 export default useInViewport;

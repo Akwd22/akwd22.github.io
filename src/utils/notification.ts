@@ -1,10 +1,10 @@
-/** Interface contenant les données d'une notification à déclencher. */
-export interface TNotificationData {
+/** Type décrivant les données d'une notification à déclencher. */
+export type TNotificationData = {
   /** Texte ou contenu de la notification. */
   text: string | React.ReactElement;
   /** Identifiant de la notification. */
   id?: number;
-}
+};
 
 export type TNotificationListener = (data: TNotificationData) => void;
 

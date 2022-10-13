@@ -36,17 +36,6 @@
     row-gap: 8px;
   }
 
-  .navbar-menu .navbar-socials {
-    justify-content: flex-end;
-    margin-top: 16px;
-    column-gap: 16px;
-  }
-
-  .navbar-menu .navbar-links,
-  .navbar-menu .navbar-socials {
-    animation: none;
-  }
-
   .navbar-menu {
     position: absolute;
     right: 0;
@@ -56,15 +45,29 @@
     padding: 16px;
     background: var(--bg-menu);
     border-radius: var(--radius-small);
+  }
+
+  .navbar-menu[data-state="opening"] {
     animation: fade-left 0.25s ease-out both;
+  }
+
+  .navbar-menu[data-state="closing"] {
+    animation: fade-out 0.25s ease-out both;
   }
 
   .navbar-menu .button {
     color: var(--rgb-light);
   }
 
-  .navbar-menu.closing {
-    animation: fade-out 0.25s ease-out both;
+  .navbar-menu .navbar-socials {
+    justify-content: flex-end;
+    margin-top: 16px;
+    column-gap: 16px;
+  }
+
+  .navbar-menu .navbar-links,
+  .navbar-menu .navbar-socials {
+    animation: none;
   }
 
   #akwd-button {

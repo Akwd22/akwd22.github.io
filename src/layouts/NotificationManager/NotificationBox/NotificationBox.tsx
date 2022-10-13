@@ -1,8 +1,10 @@
-import { TNotificationData } from "utils/notification";
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useRef } from "react";
 import { createPortal } from "react-dom";
+import { TNotificationData } from "utils/notification";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
+
+import useAnimationState from "hooks/useAnimationState";
 
 import { ReactComponent as CrossIcon } from "assets/imgs/icons/cross.svg";
 import "./NotificationBox.css";
@@ -12,31 +14,35 @@ interface NotificationBoxProps extends TNotificationData {
   onClose?: () => void;
 }
 
-type TState = "opening" | "closing" | "hovered" | "idle";
-
 /** Composant d'une boîte de notification. */
 const NotificationBox: FunctionComponent<NotificationBoxProps> = ({ text, onClose }) => {
-  /** État actuel de la boîte de notification. */
-  const [state, setState] = useState<TState>("opening");
+  const notificationRef = useRef<HTMLDivElement>();
 
-  // Fermer automatiquement la notification au bout de quelques secondes,
-  // si elle n'est pas survolée.
-  useEffect(() => {
-    const closeTimeout = state === "idle" ? setTimeout(() => setState("closing"), 3000) : null;
-    return () => clearTimeout(closeTimeout);
-  }, [state]);
+  const setState = useAnimationState(
+    notificationRef,
+    {
+      opening: {
+        duration: 250,
+        toState: "idle",
+      },
+
+      closing: {
+        duration: 1000,
+        onEnd: onClose,
+      },
+
+      idle: {
+        duration: 3000, // Fermer auto. la notif. au bout de quelques secondes.
+        toState: "closing",
+      },
+
+      hovered: {},
+    },
+    "opening"
+  );
 
   return createPortal(
-    <div
-      className="notification"
-      data-state={state}
-      onMouseEnter={() => setState("hovered")}
-      onMouseLeave={() => setState("idle")}
-      onAnimationEnd={() => {
-        if (state === "opening") setState("idle");
-        if (state === "closing") onClose();
-      }}
-    >
+    <div className="notification" ref={notificationRef} onMouseEnter={() => setState("hovered")} onMouseLeave={() => setState("idle")}>
       <span className="notification-text">{text}</span>
       <ButtonIcon className="notification-close" icon={<CrossIcon />} tooltip="Fermer la notification" onClick={onClose} />
     </div>,

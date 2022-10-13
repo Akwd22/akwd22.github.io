@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
  * @param query Requête média à vérifier. Par exemple : `(max-width: 768px)`.
  * @returns `true` si la requête média `query` est vérifiée.
  */
-const useMediaQuery = (query: string): boolean => {
+function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(false);
 
   useEffect(() => {
@@ -24,6 +24,6 @@ const useMediaQuery = (query: string): boolean => {
   }, [matches, query]);
 
   return matches;
-};
+}
 
 export default useMediaQuery;

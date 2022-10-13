@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
 
+import useAnimationState from "hooks/useAnimationState";
 import useOutsideClick from "hooks/useOutsideClick";
 
 import { ReactComponent as ArrowLeftIcon } from "assets/imgs/icons/arrow-left.svg";
@@ -21,19 +22,33 @@ interface MediaViewerProps {
   onClose?: () => void;
 }
 
-type TState = "opening" | "closing" | "idle";
-
 /** Composant de la visionneuse de médias en plein écran. */
 const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias, onClose }) => {
-  /** Visionneuse est-elle en train de se fermer ? */
-  const [state, setState] = useState<TState>("opening");
+  /** Index du média actuellement affiché. */
+  const [shownIndex, setShownIndex] = useState(currentIndex);
   /** Média est-il en train de charger ? */
   const [loading, setLoading] = useState(true);
 
-  /** Index du média actuellement affiché. */
-  const [shownIndex, setShownIndex] = useState(currentIndex);
-
   const viewerRef = useRef<HTMLDivElement>();
+
+  const setState = useAnimationState(
+    viewerRef,
+    {
+      opening: {
+        duration: 250,
+        toState: "idle",
+      },
+
+      closing: {
+        duration: 250,
+        onEnd: onClose,
+      },
+
+      idle: {},
+    },
+    "opening"
+  );
+
   useOutsideClick(viewerRef, () => setState("closing"));
 
   /** Afficher le média précédent ou suivant. */
@@ -77,17 +92,7 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
   };
 
   return createPortal(
-    <div
-      className="media-viewer"
-      ref={viewerRef}
-      data-state={state}
-      data-loading={loading}
-      onAnimationEnd={() => {
-        if (state === "opening") setState("idle");
-        if (state === "closing") onClose();
-        /* TODO : hook ? */
-      }}
-    >
+    <div className="media-viewer" ref={viewerRef} data-loading={loading}>
       <div className="media-viewer-controls">
         <ButtonIcon id="media-viewer-close" icon={<CloseIcon />} tooltip="Fermer la visionneuse" onClick={() => setState("closing")} />
         <ButtonIcon id="media-viewer-prev" icon={<ArrowLeftIcon />} tooltip="Voir l'image précédente" onClick={() => switchMedia("previous")} />
