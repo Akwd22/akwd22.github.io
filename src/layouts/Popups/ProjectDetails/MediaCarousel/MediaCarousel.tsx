@@ -47,7 +47,9 @@ const MediaCarousel: FunctionComponent<MediaCarouselProps> = (props) => {
 
   /** Afficher les miniatures de tous les médias. */
   const thumbnails = () => {
-    return props.medias.map((media, index) => <MediaThumbnail key={index} type={media.type} url={media.imageUrl} onClick={() => enlargeMedia(index)} />);
+    return props.medias.map((media, index) => (
+      <MediaThumbnail key={index} type={media.type} orientation={media.orientation} url={media.imageUrl} onClick={() => enlargeMedia(index)} />
+    ));
   };
 
   return (

@@ -1,5 +1,8 @@
-import bitflase from "./projects/bitflase/bitflase";
-import placeholder from "./projects/placeholder/placeholder";
+// import autolearn from "./projects/auto-learn/auto-learn";
+// import bitflase from "./projects/bitflase/bitflase";
+// import eshook from "./projects/eshook/eshook";
+// import portfolio from "./projects/portfolio/portfolio";
+// import shakermagique from "./projects/shaker-magique/shaker-magique";
 
 /** Type décrivant les données d'un projet. */
 export type TProject = {
@@ -27,6 +30,8 @@ export type TProject = {
 export type TProjectMedia = {
   /** Type du média. */
   type: "image" | "video";
+  /** Orientation du média (paysage par défaut). */
+  orientation?: "landscape" | "portrait";
   /** URL de l'image (miniature de la vidéo si type vidéo) */
   imageUrl: string;
   /** URL de la vidéo (uniquement si type vidéo). */
@@ -38,7 +43,7 @@ export type TProjectMedia = {
  * @returns Promesse contenant tous les projets.
  */
 export async function fetch(): Promise<TProject[]> {
-  return [bitflase, placeholder];
+  return [];
 }
 
 /**
