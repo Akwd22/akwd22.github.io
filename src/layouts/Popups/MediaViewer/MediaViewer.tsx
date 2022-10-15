@@ -71,7 +71,7 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
 
     switch (media.type) {
       case "image":
-        return <img className="media-viewer-image" src={media.imageUrl} alt="" onLoad={() => setLoading(false)} />;
+        return <img className="media-viewer-image" src={media.imageUrl} title={media.description} alt="" onLoad={() => setLoading(false)} />;
       case "video":
         return (
           <iframe

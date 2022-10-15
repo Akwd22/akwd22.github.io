@@ -47,6 +47,10 @@
   overflow-y: auto;
 }
 
+.project-details-description p {
+  margin: revert;
+}
+
 #project-details-close {
   width: 40px;
   height: 40px;
