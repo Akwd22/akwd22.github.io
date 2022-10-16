@@ -17,13 +17,13 @@ const project: TProject = {
   slug: "shaker-magique",
   title: "Shaker Magique",
   summary: "Un site web permettant à un organisateur de soirée de gérer sa carte de cocktails et son stock d'ingrédients pour les proposer aux utilisateurs facilement.",
-  tags: ["React", "Django", "Rest API", "SQL", "Responsive"],
+  tags: ["React", "Django", "Rest API", "SQL", "Responsive", "Agile"],
   thumbnail: ImageD_Home,
   description: `
-  Ce projet est un site web réalisé en groupe de **6 étudiants** dans le cadre du projet de **semestre n°3** du **DUT informatique**. J'ai participé à toutes les sphères du projet : **web-design**, **front-end**, **back-end**, ainsi que la **gestion de projet**.
+  Ce projet est un site web réalisé en groupe de **6 étudiants** dans le cadre du projet de **3ème semestre** du **DUT** informatique. J'ai participé **à toutes les sphères du projet** : analyse, web-design, front-end, back-end, ainsi que la gestion de projet.
 
   Le projet s'est déroulé en 3 phases :
-  * Phase d'analyse des besoins : diagrammes de cas d'utilisation, séquences, et entité-relation en **UML** ; maquette UI avec **Adobe XD**
+  * Phase d'analyse des besoins : diagrammes de cas d'utilisation, séquences, et entité-relation en UML ; maquette UI avec [Adobe XD](https://www.adobe.com/fr/products/xd.html)
   * Phase de développement : implémentation des fonctionnalités sur une période de **2 mois**
   * Phase finale : correction des bugs, peaufinage visuel, et réunion avec le client pour présenter le livrable fini
 
