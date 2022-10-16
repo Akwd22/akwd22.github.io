@@ -14,9 +14,9 @@ const Footer: FunctionComponent = () => {
     <footer id="footer-page">
       <SocialBar />
       <p>
-        Développé par <a href="/">Eddy Druet</a>
+        Développé en React par <a href="/">Eddy Druet</a>
         {isDesktop ? " • " : <br />}
-        Logo et aide pour le design par <a href="https://clementgili.fr/">Clément Gili</a>
+        Aide pour le design par <a href="https://clementgili.fr/">Clément Gili</a>
       </p>
     </footer>
   );
