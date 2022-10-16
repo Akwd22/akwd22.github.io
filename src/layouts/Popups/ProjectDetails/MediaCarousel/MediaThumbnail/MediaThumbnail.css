@@ -13,6 +13,7 @@
 
 .media-carousel-thumbnail img {
   object-fit: cover;
+  object-position: top;
 }
 
 .media-carousel-thumbnail[data-orientation="landscape"] img {
@@ -23,7 +24,6 @@
 .media-carousel-thumbnail[data-orientation="portrait"] img {
   width: 100px;
   height: 100%;
-  object-position: top;
 }
 
 .media-carousel-thumbnail[data-type="video"] img {
