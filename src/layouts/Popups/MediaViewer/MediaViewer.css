@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to right, rgba(0, 0, 0, 80%), transparent 30%), linear-gradient(to left, rgba(0, 0, 0, 80%), transparent 30%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 80%), transparent 10%), linear-gradient(to left, rgba(0, 0, 0, 80%), transparent 10%);
   pointer-events: none;
 }
 

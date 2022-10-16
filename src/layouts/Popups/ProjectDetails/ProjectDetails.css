@@ -44,10 +44,11 @@
 .project-details-description {
   height: 0;
   flex: 1 0 auto;
+  padding-right: 16px;
   overflow-y: auto;
 }
 
-.project-details-description p {
+.project-details-description :not(li) {
   margin: revert;
 }
 
