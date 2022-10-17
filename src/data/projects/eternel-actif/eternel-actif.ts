@@ -26,11 +26,11 @@ const project: TProject = {
   tags: ["WordPress", "WooCommerce", "PHP", "MVC", "Stage"],
   thumbnail: Image_Home,
   description: `
-  Ce site web a été réalisé **tout seul** dans mon **stage** de fin d'études de **DUT** informatique en **2 mois** et en **télétravail**. Eternel Actif est un projet entrepreneurial né en 2020 par trois étudiants toulousains en commerce : [Valentin Luzuy](https://fr.linkedin.com/in/valentin-luzuy-77991b130), [Kamil Bennani](https://fr.linkedin.com/in/kamil-bennani-092247138), et [Jade Wagner](https://fr.linkedin.com/in/jade-wagner-68b35a146). Pour lancer leur projet, ils ont eu besoin d'un développeur pour créer un site web de réservation d'activités en ligne.
+  Ce site web a été réalisé **tout seul** dans mon **stage** de fin d'études de **DUT** informatique en **2 mois** et en **télétravail**. Eternel Actif est un projet entrepreneurial né en 2020 par trois étudiants toulousains en commerce : [Valentin Luzuy](https://fr.linkedin.com/in/valentin-luzuy-77991b130), [Kamil Bennani](https://fr.linkedin.com/in/kamil-bennani-092247138), et [Jade Wagner](https://fr.linkedin.com/in/jade-wagner-68b35a146). Pour lancer leur projet, ils ont eu besoin d'un développeur pour créer un site web de réservation d'activités en ligne.
 
   ### Responsabilités
 
-  Mes missions à partir d'un cahier des charges lors de ce stage ont été :
+  Mes missions à partir d'un cahier des charges lors de ce stage ont été :
 
   * Améliorer, et éventuellement, corriger le contenu existant
   * Développer les fonctionnalités de base, dont l'instauration d'une plateforme e-commerce et marketplace
@@ -43,7 +43,7 @@ const project: TProject = {
 
   ### Fonctionnalités
 
-  En tant que membre senior :
+  En tant que membre senior :
 
   * Créer son profil utilisateur
   * Consulter un catalogue d'activités gratuites ou payantes
@@ -52,7 +52,7 @@ const project: TProject = {
   * Consulter son historique de réservations, d'activités publiées, et ses factures
   * Lire les actualités publiées dans le blog
 
-  En tant que partenaire professionnel :
+  En tant que partenaire professionnel :
 
   * Demander une adhésion en tant que partenaire
   * Publier des activités payantes dans le catalogue

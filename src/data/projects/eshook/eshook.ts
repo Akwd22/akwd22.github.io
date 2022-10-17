@@ -23,7 +23,7 @@ const project: TProject = {
 
   La bibliothèque se substitue à l'objet natif [EventSource](https://developer.mozilla.org/fr/docs/Web/API/EventSource) pour permettre d'intercepter, modifier, ou simuler les messages événementiels du serveur.
 
-  Voici les fonctions de la bibliothèque :
+  Voici les fonctions de la bibliothèque :
 
   * Intercepter les nouvelles connexions au serveur, et modifier l'URL de connexion
   * Intercepter les événements entrants, les modifier, ou les bloquer

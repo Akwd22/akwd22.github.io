@@ -31,12 +31,12 @@
   --fs-h1-vw: clamp(var(--fs-h1-min) * 1px, calc(100 * (var(--fs-h1-max) / var(--vw-max))) * 1vw, var(--fs-h1-max) * 1px);
   --fs-h1-vh: clamp(var(--fs-h1-min) * 1px, calc(100 * (var(--fs-h1-max) / var(--vh-max))) * 1vh, var(--fs-h1-max) * 1px);
 
-  --fs-h2-min: 16;
+  --fs-h2-min: 18;
   --fs-h2-max: 34;
   --fs-h2-vw: clamp(var(--fs-h2-min) * 1px, calc(100 * (var(--fs-h2-max) / var(--vw-max))) * 1vw, var(--fs-h2-max) * 1px);
   --fs-h2-vh: clamp(var(--fs-h2-min) * 1px, calc(100 * (var(--fs-h2-max) / var(--vh-max))) * 1vh, var(--fs-h2-max) * 1px);
 
-  --fs-h3-min: 14;
+  --fs-h3-min: 16;
   --fs-h3-max: 20;
   --fs-h3-vw: clamp(var(--fs-h3-min) * 1px, calc(100 * (var(--fs-h3-max) / var(--vw-max))) * 1vw, var(--fs-h3-max) * 1px);
   --fs-h3-vh: clamp(var(--fs-h3-min) * 1px, calc(100 * (var(--fs-h3-max) / var(--vh-max))) * 1vh, var(--fs-h3-max) * 1px);

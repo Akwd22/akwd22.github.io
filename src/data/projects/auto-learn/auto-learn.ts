@@ -34,7 +34,7 @@ const project: TProject = {
 
   J'ai eu un rôle important en tant que **Project Owner** dans la stratégie de projet **Scrum**. Je me suis chargé d'établir l'outil de gestion de projet [ClickUp](https://clickup.com/), de constituer le backlog et les user stories. J'ai réalisé les diagrammes de cas d'utilisation, de classes, et entité-relation en concert avec l'équipe.
 
-  Nous avons organisé le développement en 4 sprints de deux semaines avec réunions inter-sprint, chaque sprint étant dédié à une epic story :
+  Nous avons organisé le développement en 4 sprints de deux semaines avec réunions inter-sprint, chaque sprint étant dédié à une epic story :
 
   * Gestion de la connexion et inscription
   * Gestion du profil utilisateur
