@@ -71,11 +71,12 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
 
     switch (media.type) {
       case "image":
-        return <img className="media-viewer-image" src={media.imageUrl} title={media.description} alt="" onLoad={() => setLoading(false)} />;
+        return <img className="media-viewer-media" data-type={media.type} src={media.imageUrl} title={media.description} alt="" onLoad={() => setLoading(false)} />;
       case "video":
         return (
           <iframe
-            className="media-viewer-video"
+            className="media-viewer-media"
+            data-type={media.type}
             width="100%"
             height="100%"
             src={medias[shownIndex].videoUrl}
@@ -92,15 +93,17 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
   };
 
   return createPortal(
-    <div className="media-viewer" ref={viewerRef} data-loading={loading}>
+    <div className="media-viewer" ref={viewerRef}>
       <div className="media-viewer-controls">
-        <ButtonIcon id="media-viewer-close" icon={<CloseIcon />} tooltip="Fermer la visionneuse" onClick={() => setState("closing")} />
-        <ButtonIcon id="media-viewer-prev" icon={<ArrowLeftIcon />} tooltip="Voir l'image précédente" onClick={() => switchMedia("previous")} />
-        <ButtonIcon id="media-viewer-next" icon={<ArrowRightIcon />} tooltip="Voir l'image suivante" onClick={() => switchMedia("next")} />
+        <ButtonIcon id="media-viewer-previous" icon={<ArrowLeftIcon />} tooltip="Média précédent" onClick={() => switchMedia("previous")} />
+        <ButtonIcon id="media-viewer-next" icon={<ArrowRightIcon />} tooltip="Média suivant" onClick={() => switchMedia("next")} />
+        <ButtonIcon id="media-viewer-close" icon={<CloseIcon />} tooltip="Fermer la visionneuse de média" onClick={() => setState("closing")} />
       </div>
 
-      {loading && <span className="loading-icon"></span>}
-      {media()}
+      <div className="media-viewer-content" data-loading={loading}>
+        {loading && <span className="loading-icon"></span>}
+        {media()}
+      </div>
     </div>,
     document.getElementById("popup")
   );

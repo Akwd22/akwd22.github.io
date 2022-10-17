@@ -1,93 +1,82 @@
 .media-viewer {
-  position: fixed;
   display: flex;
-  justify-content: center;
   align-items: center;
+}
+
+.media-viewer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   border-radius: var(--radius-large);
   background: var(--bg-content);
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 20%);
-  overflow: hidden;
-  user-select: none;
 }
 
-.media-viewer[data-state="opening"] {
-  animation: grow 0.25s ease-in-out both;
-}
-
-.media-viewer[data-state="closing"] {
-  animation: shrink 0.25s ease-in-out both;
-}
-
-.media-viewer[data-loading="true"] {
-  min-height: 225px;
-  min-width: 350px;
-}
-
-.media-viewer .loading-icon {
-  position: absolute;
-  height: 64px;
-  width: 64px;
-  z-index: -1;
-}
-
-.media-viewer-image {
-  max-width: 80vw;
+.media-viewer-media[data-type="image"] {
+  max-width: 75vw;
   max-height: 80vh;
 }
 
-.media-viewer-video {
-  width: 80vw;
+.media-viewer-media[data-type="video"] {
+  width: 75vw;
   height: 80vh;
 }
 
 .media-viewer-controls {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 0 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(to right, rgba(0, 0, 0, 80%), transparent 10%), linear-gradient(to left, rgba(0, 0, 0, 80%), transparent 10%);
-  pointer-events: none;
 }
 
 .media-viewer-controls .button-icon {
-  pointer-events: all;
+  position: absolute;
   color: var(--color-light);
 }
 
+#media-viewer-previous,
+#media-viewer-next {
+  min-width: 32px;
+  width: 4%;
+}
+
+#media-viewer-previous {
+  left: 4%;
+}
+
+#media-viewer-next {
+  right: 4%;
+}
+
 #media-viewer-close {
-  position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 4%;
+  right: 4%;
   min-width: 24px;
   width: 3%;
 }
 
-#media-viewer-next,
-#media-viewer-prev {
-  min-width: 32px;
-  width: 5%;
+.media-viewer[data-state="opening"] .media-viewer-content {
+  animation: grow 0.25s ease-in-out both;
 }
 
-@media screen and (max-width: 768px), screen and (max-height: 458px) {
-  .media-viewer[data-loading="true"] {
-    min-width: 200px;
-    min-height: 175px;
-  }
+.media-viewer[data-state="closing"] .media-viewer-content {
+  animation: shrink 0.25s ease-in-out both;
+}
 
-  .media-viewer .loading-icon {
-    height: 32px;
-    width: 32px;
-  }
+.media-viewer[data-state="opening"] .media-viewer-controls {
+  animation: fade-in 0.25s ease both;
+}
 
-  .media-viewer-controls {
-    padding: 0 24px;
-  }
+.media-viewer[data-state="closing"] .media-viewer-controls {
+  animation: fade-out 0.25s ease both;
+}
 
-  #media-viewer-close {
-    top: 24px;
-    right: 24px;
-  }
+.media-viewer-content .loading-icon {
+  position: absolute;
+  height: 64px;
+  width: 64px;
+  z-index: 1;
+
+  /* Inverser la couleur de l'icône avec l'arrière-plan. */
+  filter: invert(50%);
+  mix-blend-mode: difference;
 }
