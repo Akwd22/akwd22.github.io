@@ -38,3 +38,14 @@
 .media-carousel-thumbnails::-webkit-scrollbar {
   display: none;
 }
+
+@media screen and (max-width: 768px) {
+  .media-carousel-controls {
+    background: linear-gradient(to right, rgba(0, 0, 0, 80%), transparent 80px), linear-gradient(to left, rgba(0, 0, 0, 80%), transparent 80px);
+  }
+
+  .media-carousel-controls .button-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
