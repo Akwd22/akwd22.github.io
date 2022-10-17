@@ -1,27 +1,27 @@
 import { TProject } from "data/projects";
 
-import Image_Home from "./light/home.png";
-import Image_Courses from "./dark/courses.png";
-import Image_Tests from "./light/tests.png";
-import Image_Profile from "./dark/profile.png";
+import Image_Home from "./images/light/home.png";
+import Image_Courses from "./images/dark/courses.png";
+import Image_Tests from "./images/light/tests.png";
+import Image_Profile from "./images/dark/profile.png";
 
-import Image_CourseVideo from "./light/course-video.png";
-import Image_CourseText from "./dark/course-text.png";
+import Image_CourseVideo from "./images/light/course-video.png";
+import Image_CourseText from "./images/dark/course-text.png";
 
-import Image_TestIntro from "./light/test-intro.png";
-import Image_TestQuestion1 from "./dark/test-question-uni.png";
-import Image_TestQuestion2 from "./light/test-question-input.png";
-import Image_TestQuestion3 from "./dark/test-question-multi.png";
-import Image_TestEnd from "./light/test-end.png";
+import Image_TestIntro from "./images/light/test-intro.png";
+import Image_TestQuestion1 from "./images/dark/test-question-uni.png";
+import Image_TestQuestion2 from "./images/light/test-question-input.png";
+import Image_TestQuestion3 from "./images/dark/test-question-multi.png";
+import Image_TestEnd from "./images/light/test-end.png";
 
-import Image_EditCourseVideo from "./dark/edit-course-video.png";
-import Image_EditCourseText from "./light/edit-course-text.png";
-import Image_EditTest from "./dark/edit-test.png";
+import Image_EditCourseVideo from "./images/dark/edit-course-video.png";
+import Image_EditCourseText from "./images/light/edit-course-text.png";
+import Image_EditTest from "./images/dark/edit-test.png";
 
-import Image_Users from "./light/users.png";
-import Image_Settings from "./dark/settings.png";
-import Image_Login from "./light/login.png";
-import Image_Register from "./dark/register.png";
+import Image_Users from "./images/light/users.png";
+import Image_Settings from "./images/dark/settings.png";
+import Image_Login from "./images/light/login.png";
+import Image_Register from "./images/dark/register.png";
 
 const project: TProject = {
   slug: "auto-learn",
@@ -50,6 +50,8 @@ const project: TProject = {
   * Visionnez des cours vidéo ou textuels
   * Suivez vos cours et tests commencés et terminés
   * Thème clair et foncé selon la préférence de l'appareil
+
+  *Survolez les images pour une description de celle-ci.*
   `,
   repository: "https://github.com/Akwd22/auto-learn",
   medias: [

@@ -59,6 +59,8 @@ const project: TProject = {
   * Percevoir des commissions tous les mois à chaque réservation de ses activités
   * Consulter l'historique des réservations et les gains obtenus
   * Recevoir un e-mail à chaque nouvelle réservation
+
+  *Survolez les images pour une description de celle-ci.*
   `,
   website: "https://web.archive.org/web/20220308202659/https://eternelactif.fr/",
   medias: [

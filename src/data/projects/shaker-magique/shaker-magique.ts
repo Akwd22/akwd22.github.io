@@ -1,17 +1,17 @@
 import { TProject } from "data/projects";
 
-import ImageD_Home from "./desktop/home.png";
-import ImageD_CocktailDetails from "./desktop/cocktail-details.png";
-import ImageD_Login from "./desktop/login.png";
-import ImageD_Register from "./desktop/register.png";
-import ImageD_Profile from "./desktop/profile.png";
-import ImageD_JoinHost from "./desktop/join-host.png";
-import ImageD_HostCocktails from "./desktop/host-cocktails.png";
-import ImageD_HostIngredients from "./desktop/host-ingredients.png";
-import ImageD_CreateCocktail from "./desktop/create-cocktail.png";
-import ImageD_CreateIngredient from "./desktop/create-ingredient.png";
-import ImageM_Home from "./mobile/home.png";
-import ImageM_CocktailDetails from "./mobile/cocktail-details.png";
+import ImageD_Home from "./images/desktop/home.png";
+import ImageD_CocktailDetails from "./images/desktop/cocktail-details.png";
+import ImageD_Login from "./images/desktop/login.png";
+import ImageD_Register from "./images/desktop/register.png";
+import ImageD_Profile from "./images/desktop/profile.png";
+import ImageD_JoinHost from "./images/desktop/join-host.png";
+import ImageD_HostCocktails from "./images/desktop/host-cocktails.png";
+import ImageD_HostIngredients from "./images/desktop/host-ingredients.png";
+import ImageD_CreateCocktail from "./images/desktop/create-cocktail.png";
+import ImageD_CreateIngredient from "./images/desktop/create-ingredient.png";
+import ImageM_Home from "./images/mobile/home.png";
+import ImageM_CocktailDetails from "./images/mobile/cocktail-details.png";
 
 const project: TProject = {
   slug: "shaker-magique",
@@ -37,6 +37,8 @@ const project: TProject = {
   * En tant qu'hôte, gérez vos recettes de cocktails et votre stock d'ingrédients
   * Trouvez des recettes de cocktails grâce à différents filtres de recherche
   * Notez sur 5 étoiles les recettes de cocktails
+
+  *Survolez les images pour une description de celle-ci.*
   `,
   repository: "https://github.com/Akwd22/shaker-magique",
   medias: [
