@@ -7,10 +7,6 @@
   transition: filter 200ms;
 }
 
-.media-carousel-thumbnail:not(:last-child) {
-  border-right: 1px solid transparent;
-}
-
 .media-carousel-thumbnail img {
   object-fit: cover;
   object-position: top;

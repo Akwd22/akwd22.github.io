@@ -1,7 +1,7 @@
 .project-card {
   position: relative;
   min-height: 250px;
-  width: 50%;
+  width: calc(50% - 1px);
   height: 50vh;
   display: flex;
   flex-grow: 1;

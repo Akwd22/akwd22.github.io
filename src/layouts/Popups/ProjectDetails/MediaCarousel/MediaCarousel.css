@@ -27,6 +27,7 @@
 .media-carousel-thumbnails {
   display: flex;
   height: 100%;
+  column-gap: 1px;
   overflow-y: hidden;
   overflow-x: scroll;
   -ms-overflow-style: none;
