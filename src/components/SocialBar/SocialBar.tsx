@@ -36,7 +36,7 @@ const SocialBar: FunctionComponent<PropsWithIdAndClass> = (props) => {
 
   return (
     <nav id={props.id} className={cn("navbar-socials", props.className)}>
-      <ButtonIcon icon={<LinkedInIcon />} href="https://www.linkedin.com/in/eddy-druet-b5b065207" target="_blank" tooltip="Aller sur mon LinkedIn" />
+      <ButtonIcon icon={<LinkedInIcon />} href="https://www.linkedin.com/in/eddy-druet/" target="_blank" tooltip="Aller sur mon LinkedIn" />
       <ButtonIcon icon={<GitHubIcon />} href="https://github.com/Akwd22" target="_blank" tooltip="Aller sur mon GitHub" />
       <ButtonIcon icon={<EmailIcon />} tooltip="Voir mon adresse e-mail" onClick={copyEmail} />
     </nav>
