@@ -1,3 +1,7 @@
+.slider {
+  min-height: 245px;
+}
+
 .slider-buttons {
   display: flex;
   column-gap: 40px;
