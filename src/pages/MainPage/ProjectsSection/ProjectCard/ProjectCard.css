@@ -8,6 +8,7 @@
   color: var(--color-light);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: top;
   text-decoration: none;
 }
 
