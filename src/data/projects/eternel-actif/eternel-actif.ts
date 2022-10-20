@@ -60,7 +60,7 @@ const project: TProject = {
   * Consulter l'historique des réservations et les gains obtenus
   * Recevoir un e-mail à chaque nouvelle réservation
 
-  *Survolez les images pour une description de celle-ci.*
+  *Survolez les images pour une description de celles-ci.*
   `,
   website: "https://web.archive.org/web/20220308202659/https://eternelactif.fr/",
   medias: [

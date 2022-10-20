@@ -38,7 +38,7 @@ const project: TProject = {
   * Trouvez des recettes de cocktails grâce à différents filtres de recherche
   * Notez sur 5 étoiles les recettes de cocktails
 
-  *Survolez les images pour une description de celle-ci.*
+  *Survolez les images pour une description de celles-ci.*
   `,
   repository: "https://github.com/Akwd22/shaker-magique",
   medias: [

@@ -51,7 +51,7 @@ const project: TProject = {
   * Suivez vos cours et tests commencés et terminés
   * Thème clair et foncé selon la préférence de l'appareil
 
-  *Survolez les images pour une description de celle-ci.*
+  *Survolez les images pour une description de celles-ci.*
   `,
   repository: "https://github.com/Akwd22/auto-learn",
   medias: [

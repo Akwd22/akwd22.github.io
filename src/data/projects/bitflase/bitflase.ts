@@ -16,7 +16,7 @@ const project: TProject = {
   description: `
   *Pour respecter la propriété intellectuelle de TradingView, le code source et l'exécutable du projet restent privés et à usage personnel.*
 
-  Cette application web est un projet **privé** et **personnel** avec un ami pour trader des cryptomonnaies. Nous voulions utiliser le site web de graphiques financiers [TradingView](https://fr.tradingview.com/), mais il **ne permettait pas** de se connecter au courtier de cryptomonnaies [Binance](https://www.binance.com/).
+  Cette application web est un projet **privé** et **personnel** fait en duo pour trader des cryptomonnaies. Nous voulions utiliser le site web de graphiques financiers [TradingView](https://fr.tradingview.com/), mais il **ne permettait pas** de se connecter au courtier de cryptomonnaies [Binance](https://www.binance.com/).
 
   ### Principes techniques
 
@@ -44,7 +44,7 @@ const project: TProject = {
   * Système de notification pour le suivi de l'état des ordres
   * Thème transparent avec couleurs personnalisables
 
-  *Survolez les images pour une description de celle-ci.*
+  *Survolez les images pour une description de celles-ci.*
   `,
   medias: [
     {
