@@ -1,3 +1,7 @@
-# https://www.robotstxt.org/robotstxt.html
+# Bloquer l'archivage Wayback Machine.
+User-agent: ia_archiver
+Disallow: /
+
+# Bloquer les ressources (ex. images, PDF).
 User-agent: *
-Disallow:
+Disallow: /static
