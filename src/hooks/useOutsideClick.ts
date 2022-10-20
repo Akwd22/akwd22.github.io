@@ -7,11 +7,11 @@ import { MutableRefObject, useEffect } from "react";
  */
 function useOutsideClick(ref: MutableRefObject<Node>, callback: (event: Event) => void): void {
   useEffect(() => {
-    const listener = (e: Event) => {
+    function listener(e: Event) {
       if (ref.current && !ref.current.contains(e.target as Node)) {
         callback(e);
       }
-    };
+    }
 
     document.addEventListener("mousedown", listener);
 

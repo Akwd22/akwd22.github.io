@@ -12,7 +12,7 @@ export interface TagProps extends PropsWithIdAndClass {
 /** Composant d'un tag contenant du texte. */
 const Tag: FunctionComponent<TagProps> = (props) => {
   return (
-    <div id={props.id} className={cn("tag", "body-2", props.className)}>
+    <div id={props.id} className={cn("tag", props.className)}>
       {props.text}
     </div>
   );

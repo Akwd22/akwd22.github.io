@@ -4,7 +4,7 @@ import { FunctionComponent, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import Tag from "components/Tag/Tag";
-import TagList from "components/TagList/TagList";
+import TagList from "components/Tag/TagList";
 
 import useInViewport from "hooks/useInViewport";
 
@@ -18,14 +18,14 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = (props) => {
   const inViewport = useInViewport(headerRef, true);
 
   /** Afficher la liste de tags du projet. */
-  const tags = () => {
+  function tags() {
     return props.tags.map((text, index) => <Tag text={text} key={index} />);
-  };
+  }
 
   /** Afficher la miniature du projet. */
-  const thumbnail = () => {
+  function thumbnail() {
     return { backgroundImage: props.thumbnail && `url(${props.thumbnail})` };
-  };
+  }
 
   return (
     <Link to={`/projets/${props.slug}`} className="project-card" title={`Voir le projet ${props.title}`} style={thumbnail()}>

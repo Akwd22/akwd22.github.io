@@ -2,5 +2,6 @@
   padding: 4px 16px;
   border-radius: var(--radius-large);
   color: var(--color-secondary);
+  font-size: 14px;
   background-color: var(--color-primary);
 }

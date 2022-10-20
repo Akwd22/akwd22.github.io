@@ -17,12 +17,12 @@
   width: 100%;
   height: 100%;
   content: "";
-  backdrop-filter: brightness(80%);
-  transition: backdrop-filter 1s;
+  background-color: rgba(0, 0, 0, 30%);
+  transition: background-color 1s;
 }
 
 .project-card:hover::after {
-  backdrop-filter: brightness(100%);
+  background-color: transparent;
 }
 
 .project-card-header {

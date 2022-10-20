@@ -2,23 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Footer from "layouts/Footer/Footer";
-import NotificationManager from "layouts/NotificationManager/NotificationManager";
-import ProjectDetails from "layouts/Popups/ProjectDetails/ProjectDetails";
-import ArchivePage from "pages/ArchivePage/ArchivePage";
 import MainPage from "pages/MainPage/MainPage";
+import ArchivePage from "pages/ArchivePage/ArchivePage";
+import ProjectDetails from "popups/ProjectDetails/ProjectDetails";
 
-import "assets/styles/anims.css";
+import Footer from "components/Footer/Footer";
+import ToastManager from "components/ToastManager/ToastManager";
+
+import "assets/styles/variables.css";
 import "assets/styles/defaults.css";
 import "assets/styles/fonts.css";
-import "assets/styles/globals.css";
+import "assets/styles/anims.css";
 import "assets/styles/icons.css";
 
 const root = ReactDOM.createRoot(document.getElementById("app"));
 
 root.render(
   <React.StrictMode>
-    <NotificationManager />
+    <ToastManager />
 
     <BrowserRouter>
       <Routes>

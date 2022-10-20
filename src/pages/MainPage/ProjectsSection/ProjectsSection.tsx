@@ -1,7 +1,7 @@
 import dataProjects, { TProject } from "data/projects";
 import { FunctionComponent, useEffect, useState } from "react";
 
-import ProjectCard from "./ProjectCard/ProjectCard";
+import ProjectCard from "./ProjectCard";
 
 import "./ProjectsSection.css";
 
@@ -16,9 +16,9 @@ const ProjectsSection: FunctionComponent = () => {
   }, []);
 
   /** Afficher les cartes de chacun de mes projets. */
-  const cards = () => {
+  function cards() {
     return projects.map((project) => <ProjectCard {...project} key={project.slug} />);
-  };
+  }
 
   return (
     <section id="mes-projets" className="projects">

@@ -52,7 +52,7 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
   useOutsideClick(viewerRef, () => setState("closing"));
 
   /** Afficher le média précédent ou suivant. */
-  const switchMedia = (direction: "next" | "previous") => {
+  function switchMedia(direction: "next" | "previous") {
     let newIndex = shownIndex + (direction === "next" ? +1 : -1);
 
     if (newIndex >= medias.length) {
@@ -63,10 +63,10 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
 
     setLoading(true);
     setShownIndex(newIndex);
-  };
+  }
 
   /** Afficher le média. */
-  const media = () => {
+  function media() {
     const media = medias[shownIndex];
 
     switch (media.type) {
@@ -90,7 +90,7 @@ const MediaViewer: FunctionComponent<MediaViewerProps> = ({ currentIndex, medias
       default:
         throw new Error("Unknown media type:" + media.type);
     }
-  };
+  }
 
   return createPortal(
     <div className="media-viewer" ref={viewerRef}>

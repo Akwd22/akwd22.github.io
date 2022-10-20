@@ -6,7 +6,7 @@ import SlideMySkills from "./Slides/SlideMySkills";
 
 import useAnimationState from "hooks/useAnimationState";
 
-import "./SliderInfos.css";
+import "./Slider.css";
 
 /** Liste des diapositives du slider. */
 const SLIDES = [
@@ -53,18 +53,18 @@ const SliderInfos: FunctionComponent = () => {
   );
 
   /** Démarrer le changement d'une nouvelle diapositive. */
-  const beginSwitch = (newIndex: number) => {
+  function beginSwitch(newIndex: number) {
     setPendingSlide(newIndex);
     setState("switch-begin");
-  };
+  }
 
   /** Calculer le pourcentage de remplissage de la barre du slider. */
-  const barPercent = () => {
+  function barPercent() {
     return ((currentSlide + 1) / SLIDES.length) * 100 + "%";
-  };
+  }
 
   /** Afficher les boutons de transition vers chaque diaporama du slider. */
-  const sliderButtons = () => {
+  function sliderButtons() {
     return SLIDES.map((slide, index) => {
       const isActive = index === currentSlide;
 
@@ -74,12 +74,12 @@ const SliderInfos: FunctionComponent = () => {
         </button>
       );
     });
-  };
+  }
 
   /** Retourner le composant du diaporama actuellement actif. */
-  const activeSlider = () => {
+  function activeSlider() {
     return SLIDES[currentSlide].component;
-  };
+  }
 
   return (
     <div className="slider">

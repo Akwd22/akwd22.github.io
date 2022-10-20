@@ -30,7 +30,7 @@ const project: TProject = {
   tags: ["JavaScript", "PHP", "SQL", "MVC", "Scrum"],
   thumbnail: Image_Courses,
   description: `
-  Ce projet est un projet académique en groupe de **6 étudiants** réalisé lors de la **3ème année** de **licence** en informatique. J'ai participé à la **conception UML** et au développement **back-end**.
+  Ce projet est un projet universitaire en groupe de **6 étudiants** réalisé lors de la **3ème année** de **licence** en informatique. J'ai participé à la **conception UML** et au développement **back-end**.
 
   J'ai eu un rôle important en tant que **Project Owner** dans la stratégie de projet **Scrum**. Je me suis chargé d'établir l'outil de gestion de projet [ClickUp](https://clickup.com/), de constituer le backlog et les user stories. J'ai réalisé les diagrammes de cas d'utilisation, de classes, et entité-relation en concert avec l'équipe.
 

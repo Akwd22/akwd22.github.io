@@ -7,7 +7,7 @@ import useAnimationState from "hooks/useAnimationState";
 import useIsDesktop from "hooks/useIsDesktop";
 import useOutsideClick from "hooks/useOutsideClick";
 
-import CurriculumVitae from "assets/files/cv-eddy-druet.pdf";
+import CurriculumVitae from "assets/docs/cv-eddy-druet.pdf";
 import { ReactComponent as AkwdIcon } from "assets/imgs/icons/akwd.svg";
 import { ReactComponent as MenuIcon } from "assets/imgs/icons/menu.svg";
 import "./Navbar.css";
@@ -66,10 +66,10 @@ const NavbarMobile: FunctionComponent = () => {
   useOutsideClick(menuRef, () => setState("closing"));
 
   /** Ouvrir le menu. */
-  const openMenu = () => {
+  function openMenu() {
     setMenuOpened(true);
     setState("opening");
-  };
+  }
 
   return (
     <>

@@ -1,10 +1,10 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import notification, { TNotificationData } from "utils/notification";
 
-import NotificationBox from "./NotificationBox/NotificationBox";
+import ToastBox from "./ToastBox";
 
 /** Composant gérant et affichant les notifications. */
-const NotificationManager: FunctionComponent = () => {
+const ToastManager: FunctionComponent = () => {
   /** Liste des notifications affichées. */
   const [notifications, setNotifications] = useState<TNotificationData[]>([]);
 
@@ -17,17 +17,17 @@ const NotificationManager: FunctionComponent = () => {
   }, [notifications]);
 
   /** Fermer une certaine notification. */
-  const closeNotification = (id: number) => {
+  function closeToast(id: number) {
     setNotifications(notifications.filter((data) => data.id !== id));
-  };
+  }
 
   return (
     <>
       {notifications.map((data) => (
-        <NotificationBox {...data} key={data.id} onClose={() => closeNotification(data.id)} />
+        <ToastBox {...data} key={data.id} onClose={() => closeToast(data.id)} />
       ))}
     </>
   );
 };
 
-export default NotificationManager;
+export default ToastManager;

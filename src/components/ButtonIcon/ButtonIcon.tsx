@@ -22,10 +22,10 @@ interface ButtonIconProps extends PropsWithIdAndClass {
 /** Composant d'un bouton avec icône sans texte. */
 const ButtonIcon: FunctionComponent<ButtonIconProps> = (props) => {
   /** Gestionnaire de clique sur le bouton. */
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+  function handleClick(event: MouseEvent<HTMLButtonElement>) {
     if (props.href) window.open(props.href, props.target || "_self", "noreferrer");
     if (props.onClick) props.onClick(event);
-  };
+  }
 
   return (
     <button id={props.id} className={cn("button", "button-icon", props.className)} title={props.tooltip} onClick={handleClick}>

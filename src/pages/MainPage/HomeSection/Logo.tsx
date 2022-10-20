@@ -7,7 +7,7 @@ import "./Logo.css";
 /** Composant représentant mon logo principal. */
 const Logo: FunctionComponent = () => {
   /** Afficher la notification de remerciement. */
-  const notifyThanks = () => {
+  function notifyThanks() {
     notification.notify({
       text: (
         <>
@@ -15,7 +15,7 @@ const Logo: FunctionComponent = () => {
         </>
       ),
     });
-  };
+  }
 
   return (
     <div id="home-logo">

@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
 import Tag from "components/Tag/Tag";
-import TagList from "components/TagList/TagList";
+import TagList from "components/Tag/TagList";
 import MediaCarousel from "./MediaCarousel/MediaCarousel";
 
 import useDisableScroll from "hooks/useDisableScroll";
@@ -37,14 +37,14 @@ const ProjectDetails: FunctionComponent = () => {
   }, [slug]);
 
   /** Afficher les tags du projet. */
-  const tags = () => {
+  function tags() {
     return project.tags.map((text, index) => <Tag text={text} key={index} />);
-  };
+  }
 
   return (
     project &&
     createPortal(
-      <div className="project-details" ref={detailsRef} style={{ visibility: visible ? "visible" : "hidden" }}>
+      <article className="project-details" ref={detailsRef} style={{ visibility: visible ? "visible" : "hidden" }}>
         <header className="project-details-header">
           <div className="project-details-title">
             <h2>{project.title}</h2>
@@ -54,7 +54,7 @@ const ProjectDetails: FunctionComponent = () => {
           <TagList>{tags()}</TagList>
         </header>
 
-        <article className="project-details-content">
+        <section className="project-details-content">
           <div className="project-details-title">
             <h3>Description</h3>
             <div className="project-details-links">
@@ -66,12 +66,12 @@ const ProjectDetails: FunctionComponent = () => {
           <div className="project-details-description">
             <ReactMarkdown>{project.description}</ReactMarkdown>
           </div>
-        </article>
+        </section>
 
-        <div className="project-details-carousel">
+        <section className="project-details-carousel">
           {project.medias.length > 0 && <MediaCarousel medias={project.medias} onMediaEnlarge={(isEnlarged) => setVisible(!isEnlarged)} />}
-        </div>
-      </div>,
+        </section>
+      </article>,
       document.getElementById("popup")
     )
   );

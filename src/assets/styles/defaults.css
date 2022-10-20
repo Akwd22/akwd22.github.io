@@ -93,7 +93,7 @@ a {
   backdrop-filter: none;
 }
 
-#notification {
+#toast {
   position: fixed;
   right: 48px;
   bottom: 64px;
@@ -105,7 +105,7 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  #notification {
+  #toast {
     right: 0;
     left: 0;
     bottom: 32px;

@@ -13,7 +13,7 @@ import "./SocialBar.css";
 /** Composant de la barre contenant les liens vers mes réseaux sociaux. */
 const SocialBar: FunctionComponent<PropsWithIdAndClass> = (props) => {
   /** Copier l'e-mail dans le presse-papier. */
-  const copyEmail = async () => {
+  async function copyEmail() {
     const email = "eddydruet93@gmail.com";
 
     let notificationText: string;
@@ -32,7 +32,7 @@ const SocialBar: FunctionComponent<PropsWithIdAndClass> = (props) => {
         </>
       ),
     });
-  };
+  }
 
   return (
     <nav id={props.id} className={cn("navbar-socials", props.className)}>

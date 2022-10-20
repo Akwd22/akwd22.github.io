@@ -7,19 +7,19 @@ import ButtonIcon from "components/ButtonIcon/ButtonIcon";
 import useAnimationState from "hooks/useAnimationState";
 
 import { ReactComponent as CrossIcon } from "assets/imgs/icons/cross.svg";
-import "./NotificationBox.css";
+import "./ToastBox.css";
 
-interface NotificationBoxProps extends TNotificationData {
+interface ToastBoxProps extends TNotificationData {
   /** Gestionnaire appelé lors de la fermeture de la notification. */
   onClose?: () => void;
 }
 
 /** Composant d'une boîte de notification. */
-const NotificationBox: FunctionComponent<NotificationBoxProps> = ({ text, onClose }) => {
-  const notificationRef = useRef<HTMLDivElement>();
+const ToastBox: FunctionComponent<ToastBoxProps> = ({ text, onClose }) => {
+  const toastRef = useRef<HTMLDivElement>();
 
   const setState = useAnimationState(
-    notificationRef,
+    toastRef,
     {
       opening: {
         duration: 250,
@@ -42,12 +42,12 @@ const NotificationBox: FunctionComponent<NotificationBoxProps> = ({ text, onClos
   );
 
   return createPortal(
-    <div className="notification" ref={notificationRef} onMouseEnter={() => setState("hovered")} onMouseLeave={() => setState("idle")}>
-      <span className="notification-text">{text}</span>
-      <ButtonIcon className="notification-close" icon={<CrossIcon />} tooltip="Fermer la notification" onClick={onClose} />
+    <div className="toast" ref={toastRef} onMouseEnter={() => setState("hovered")} onMouseLeave={() => setState("idle")}>
+      <span className="toast-text">{text}</span>
+      <ButtonIcon className="toast-close" icon={<CrossIcon />} tooltip="Fermer la notification" onClick={onClose} />
     </div>,
-    document.getElementById("notification")
+    document.getElementById("toast")
   );
 };
 
-export default NotificationBox;
+export default ToastBox;

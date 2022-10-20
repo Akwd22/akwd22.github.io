@@ -1,4 +1,4 @@
-.notification {
+.toast {
   display: grid;
   align-items: center;
   padding: 8px 24px;
@@ -7,46 +7,46 @@
   box-shadow: 0px 0px 10px 1px rgba(var(--rgb-primary), 30%);
 }
 
-.notification[data-state="opening"] {
+.toast[data-state="opening"] {
   animation: slide-left 0.25s ease-out both;
 }
 
-.notification[data-state="closing"] {
+.toast[data-state="closing"] {
   animation: fade-out 1s linear both;
 }
 
-.notification-text {
+.toast-text {
   grid-column: 1;
   padding-right: 16px;
 }
 
-.notification-close {
+.toast-close {
   grid-column: 2;
   width: 16px;
   height: 16px;
 }
 
-.notification,
-.notification a,
-.notification-close {
+.toast,
+.toast a,
+.toast-close {
   color: var(--color-secondary);
 }
 
-.notification .notification-close:hover {
+.toast .toast-close:hover {
   color: var(--color-primary);
 }
 
-.notification ::selection {
+.toast ::selection {
   color: var(--color-secondary);
   background-color: var(--color-primary);
 }
 
 @media screen and (max-width: 768px) {
-  .notification {
+  .toast {
     padding: 6px 16px;
   }
 
-  .notification[data-state="opening"] {
+  .toast[data-state="opening"] {
     animation: slide-up 0.25s ease-out both;
   }
 }

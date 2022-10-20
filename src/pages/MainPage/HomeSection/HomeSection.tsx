@@ -2,8 +2,8 @@ import { FunctionComponent } from "react";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
 import Navbar from "components/Navbar/Navbar";
-import Logo from "./Logo/Logo";
-import SliderInfos from "./SliderInfos/SliderInfos";
+import Logo from "./Logo";
+import Slider from "./Slider/Slider";
 
 import { ReactComponent as ArrowIcon } from "assets/imgs/icons/arrow-down.svg";
 import "./HomeSection.css";
@@ -16,8 +16,6 @@ const HomeSection: FunctionComponent = () => {
         <Navbar />
       </header>
 
-      <div className="home-background"></div>
-
       <div className="home-content">
         <Logo />
         <div className="home-content-info">
@@ -28,15 +26,25 @@ const HomeSection: FunctionComponent = () => {
             <h2 className="home-title-job">Développeur web full-stack</h2>
           </div>
           <div className="home-content-slider">
-            <SliderInfos />
+            <Slider />
           </div>
         </div>
       </div>
 
-      <div className="projects-button">
-        <p>Mes projets</p>
-        <ButtonIcon icon={<ArrowIcon />} href="#mes-projets" tooltip="Voir la liste de mes projets" />
+      <div className="home-bottom">
+        <ButtonIcon
+          icon={
+            <>
+              <p>Mes projets</p>
+              <ArrowIcon className="icon" />
+            </>
+          }
+          href="#mes-projets"
+          tooltip="Voir la liste de mes projets"
+        />
       </div>
+
+      <div className="home-background"></div>
     </section>
   );
 };

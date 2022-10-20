@@ -2,8 +2,8 @@ import { TProject } from "data/projects";
 import { FunctionComponent, useRef, useState } from "react";
 
 import ButtonIcon from "components/ButtonIcon/ButtonIcon";
-import MediaViewer from "layouts/Popups/MediaViewer/MediaViewer";
-import MediaThumbnail from "./MediaThumbnail/MediaThumbnail";
+import MediaViewer from "popups/MediaViewer/MediaViewer";
+import MediaThumbnail from "./MediaThumbnail";
 
 import { ReactComponent as ArrowLeftIcon } from "assets/imgs/icons/arrow-left.svg";
 import { ReactComponent as ArrowRightIcon } from "assets/imgs/icons/arrow-right.svg";
@@ -25,7 +25,7 @@ const MediaCarousel: FunctionComponent<MediaCarouselProps> = (props) => {
   const carouselRef = useRef<HTMLDivElement>();
 
   /** Effectuer un défilement vers la gauche ou la droite. */
-  const horizontalScroll = (direction: "left" | "right") => {
+  function horizontalScroll(direction: "left" | "right") {
     const div = carouselRef.current;
     const offset = div.scrollWidth / props.medias.length;
 
@@ -34,21 +34,21 @@ const MediaCarousel: FunctionComponent<MediaCarouselProps> = (props) => {
       left: div.scrollLeft + (direction === "left" ? -offset : +offset),
       behavior: "smooth",
     });
-  };
+  }
 
   /**
    * Mettre en plein écran ou réduire un média.
    * @param mediaIndex Index du média à agrandir. `null` pour n'agrandir aucun média.
    */
-  const enlargeMedia = (mediaIndex: number | null) => {
+  function enlargeMedia(mediaIndex: number | null) {
     setEnlargedMedia(mediaIndex);
     props.onMediaEnlarge(mediaIndex !== null);
-  };
+  }
 
   /** Afficher les miniatures de tous les médias. */
-  const thumbnails = () => {
+  function thumbnails() {
     return props.medias.map((media, index) => <MediaThumbnail key={index} media={media} onClick={() => enlargeMedia(index)} />);
-  };
+  }
 
   return (
     <div className="media-carousel">
