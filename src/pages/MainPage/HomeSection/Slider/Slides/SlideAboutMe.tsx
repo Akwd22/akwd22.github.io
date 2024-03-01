@@ -7,7 +7,7 @@ const SlideAboutMe: FunctionComponent = () => {
   return (
     <div className="slide slide-about-me">
       <p>
-        Je suis développeur web full-stack tout juste diplômé d’une licence en informatique, mais avec une expérience autodidacte d'environ 2 années dans divers projets et
+        Je suis développeur web full-stack diplômé d’une licence en informatique, avec une expérience autodidacte d'environ 2 années dans divers projets et
         technologies web.
       </p>
 
