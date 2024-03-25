@@ -22,7 +22,7 @@ const project: TProject = {
   slug: "eternel-actif",
   title: "Eternel Actif",
   summary:
-    "Une plateforme en ligne proposant diverses activités destinées aux seniors connectés. Ils peuvent publier et participer à des activités gratuites ou payantes par des établissements partenaires.",
+    "Une plateforme en ligne destinée aux seniors connectés, leur permettant de publier ou de s'inscrire à des activités gratuites ou payantes proposées par des établissements partenaires.",
   tags: ["WordPress", "WooCommerce", "PHP", "MVC", "Stage"],
   thumbnail: Image_Home,
   description: `

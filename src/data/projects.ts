@@ -45,7 +45,7 @@ export type TProjectMedia = {
  * @returns Promesse contenant tous les projets.
  */
 export async function fetch(): Promise<TProject[]> {
-  return [bitflase, autolearn, shakermagique, eternelactif, eshook];
+  return [shakermagique, autolearn, bitflase, eshook, eternelactif];
 }
 
 /**

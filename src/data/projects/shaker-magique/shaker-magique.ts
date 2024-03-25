@@ -16,7 +16,7 @@ import ImageM_CocktailDetails from "./images/mobile/cocktail-details.png";
 const project: TProject = {
   slug: "shaker-magique",
   title: "Shaker Magique",
-  summary: "Un site web permettant à un organisateur de soirée de gérer sa carte de cocktails et son stock d'ingrédients pour les proposer aux utilisateurs facilement.",
+  summary: "Un site web permettant aux organisateurs de soirées de gérer leur carte de cocktails et de les proposer aux invités en fonction des ingrédients disponibles.",
   tags: ["React", "Django", "Rest API", "SQL", "Responsive", "Agile"],
   thumbnail: ImageD_Home,
   description: `

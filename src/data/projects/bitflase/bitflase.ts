@@ -10,7 +10,7 @@ import Image_ProtectionPanel from "./images/tp-sl-panel.png";
 const project: TProject = {
   slug: "bitflase",
   title: "Bitflase",
-  summary: "Une plateforme de trading permettant de connecter la plateforme existante TradingView au courtier de cryptomonnaies Binance de façon non-officielle.",
+  summary: "Une plateforme de trading permettant de connecter la plateforme d'analyse TradingView au courtier de cryptomonnaies Binance de façon non-officielle.",
   tags: ["React", "Electron", "TypeScript", "Node", "API", "WebSocket"],
   thumbnail: Image_PositionOpen1,
   description: `

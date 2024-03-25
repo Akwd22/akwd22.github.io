@@ -6,7 +6,7 @@ const project: TProject = {
   slug: "eshook",
   title: "Event Source Hook",
   summary: "Une bibliothèque JavaScript permettant de facilement intercepter, modifier, et simuler des messages événementiels du serveur sur une page web.",
-  tags: ["TypeScript", "Node", "CI", "Jasmine", "Bibliothèque"],
+  tags: ["TypeScript", "Node", "Jasmine", "Intégration continue"],
   thumbnail: Image_Thumbnail,
   description: `
   Cette bibliothèque JavaScript est un projet **personnel** que j'ai eu besoin de créer pour mon usage personnel dans mon projet [Bitflase](/projets/bitflase). J'en ai donc profité pour la **publier** sur [npm](https://www.npmjs.com/package/event-source-hook) puisqu'il n'en existait aucune.

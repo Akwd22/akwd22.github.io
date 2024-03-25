@@ -9,21 +9,21 @@ const SlideMySkills: FunctionComponent = () => {
       <div>
         <h3>Langages</h3>
         <ul>
-          <li>JavaScript</li>
-          <li>TypeScript</li>
           <li>C#</li>
           <li>PHP</li>
-          <li>Java</li>
           <li>SQL</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>HTML / CSS</li>
         </ul>
       </div>
 
       <div>
         <h3>Technologies</h3>
         <ul>
+          <li>ASP.NET Core (+ EF)</li>
           <li>React</li>
           <li>jQuery</li>
-          <li>ASP.NET</li>
           <li>Electron</li>
           <li>Jest / Jasmine</li>
         </ul>

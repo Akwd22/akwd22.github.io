@@ -26,7 +26,7 @@ import Image_Register from "./images/dark/register.png";
 const project: TProject = {
   slug: "auto-learn",
   title: "Auto Learn",
-  summary: "Un site web pour apprendre avec des cours et se tester avec des quiz ainsi que suivre sa progression en créant un profil utilisateur.",
+  summary: "Un site web pour apprendre via des cours en vidéo ou écrits, de se tester avec des quiz, le tout en suivant sa progression sur son profil utilisateur.",
   tags: ["JavaScript", "PHP", "SQL", "MVC", "Scrum"],
   thumbnail: Image_Courses,
   description: `
