@@ -30,11 +30,11 @@ const project: TProject = {
   tags: ["JavaScript", "PHP", "SQL", "MVC", "Scrum"],
   thumbnail: Image_Courses,
   description: `
-  Ce projet est un projet universitaire en groupe de **6 étudiants** réalisé lors de la **3ème année** de **licence** en informatique. J'ai participé à la **conception UML** et au développement **back-end**.
+  Ce projet est un projet universitaire en groupe de **6 étudiants** réalisé lors de la **3ème année** de **licence** en informatique. J'ai contribué à la **conception** en **UML** et au développement back-end.
 
-  J'ai eu un rôle important en tant que **Project Owner** dans la stratégie de projet **Scrum**. Je me suis chargé d'établir l'outil de gestion de projet [ClickUp](https://clickup.com/), de constituer le backlog et les user stories. J'ai réalisé les diagrammes de cas d'utilisation, de classes, et entité-relation en concert avec l'équipe.
+  J'ai eu un rôle important en tant que **Product Owner** dans la stratégie de projet **Scrum**. Je me suis chargé d'établir l'outil de gestion de projet [ClickUp](https://clickup.com/), de constituer le backlog et les user stories. J'ai réalisé les diagrammes de cas d'utilisation, de classes, et d'entité-relation en concert avec l'équipe.
 
-  Nous avons organisé le développement en 4 sprints de deux semaines avec réunions inter-sprint, chaque sprint étant dédié à une epic story :
+  Nous avons organisé le développement en **4 sprints de deux semaines** avec réunions inter-sprint, chaque sprint étant dédié à une epic story :
 
   * Gestion de la connexion et inscription
   * Gestion du profil utilisateur
@@ -43,13 +43,13 @@ const project: TProject = {
 
   ### Fonctionnalités
 
-  Un site web pour apprendre avec des **cours** et se tester avec des **quiz** en suivant sa progression en créant un profil utilisateur.
+  Un site web pour apprendre via des cours en vidéo ou écrits, de se tester avec des quiz, le tout en suivant sa progression sur son profil utilisateur.
 
-  * Passez des tests de connaissances et obtenez des suggestions de cours en fonction de votre score
-  * Trouvez des cours et des tests grâce à divers filtres de recherche
-  * Visionnez des cours vidéo ou textuels
-  * Suivez vos cours et tests commencés et terminés
-  * Thème clair et foncé selon la préférence de l'appareil
+  * Visionnez des cours sous forme de vidéos ou de documents écrits
+  * Suivez votre progression dans les cours et les tests que vous avez commencés et terminés
+  * Passez des évaluations de connaissances et recevez des recommandations de cours en fonction de vos résultats
+  * Trouvez des cours et des tests en utilisant différents filtres de recherche
+  * Thème clair ou foncé en fonction de vos préférences d'affichage sur l'appareil
 
   *Survolez les images pour une description de celles-ci.*
   `,

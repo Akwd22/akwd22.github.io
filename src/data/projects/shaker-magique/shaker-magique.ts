@@ -20,22 +20,22 @@ const project: TProject = {
   tags: ["React", "Django", "Rest API", "SQL", "Responsive", "Agile"],
   thumbnail: ImageD_Home,
   description: `
-  Ce projet est un site web réalisé en groupe de **6 étudiants** dans le cadre du projet de **3ème semestre** du **DUT** informatique. J'ai participé **à toutes les sphères du projet** : analyse, web-design, front-end, back-end, ainsi que la gestion de projet.
+  Ce projet est un site web pour un **client réel**, développé en groupe de **6 étudiants** dans le cadre du projet du **3ème semestre** du **DUT** informatique. J'ai **contribué à toutes les phases** du projet, incluant l'analyse, le design web, le front-end, le back-end, ainsi que la gestion du projet.
 
-  Le projet s'est déroulé en 3 phases :
-  * Phase d'analyse des besoins : diagrammes de cas d'utilisation, séquences, et entité-relation en UML ; maquette UI avec [Adobe XD](https://www.adobe.com/fr/products/xd.html)
-  * Phase de développement : implémentation des fonctionnalités sur une période de **2 mois**
-  * Phase finale : correction des bugs, peaufinage visuel, et réunion avec le client pour présenter le livrable fini
+  Le projet s'est déroulé en trois phases :
+  * Phase d'analyse des besoins : diagrammes de cas d'utilisation, de séquences et d'entité-relation ; maquettes avec [Adobe XD](https://www.adobe.com/fr/products/xd.html)
+  * Phase de développement : mise en œuvre des fonctionnalités sur une période de **deux mois**
+  * Phase finale : correction des bugs, amélioration visuelle et **déploiement chez le client**
 
-  La conduite de projet a été menée par **méthodes agiles** où nous avions régulièrement contact avec le client pour montrer et faire valider les avancées. Nous avons réalisé des visioconférences **toutes les 2 semaines** pour montrer l'état du projet.
+  La conduite de projet a suivi des **méthodes agiles**, impliquant un contact régulier avec le client pour présenter et valider les avancées. Nous avons organisé des **visioconférences** toutes les **deux semaines** afin de présenter l'état d'avancement du projet.
 
   ### Fonctionnalités
 
-  L'intérêt du site web réside dans la possibilité de **proposer sa propre carte de cocktails** à ses amis lors de soirées par exemple, en fonction des ingrédients que l'organisateur de la soirée (hôte) **a en stock**. Car oui, si vous proposez un cocktail dans votre menu, mais que vous n'avez pas tous les ingrédients pour le réaliser, alors il n'apparaîtra pas, sauf si vous cochez le filtre ad hoc.
+  Le site web offre la possibilité de partager des cartes de cocktails avec des amis lors de soirées, en tenant compte des ingrédients disponibles chez l'organisateur de la soirée (l'hôte). En effet, si l'organisateur propose un cocktail mais qu'il ne dispose pas de tous les ingrédients nécessaires, il ne sera pas affiché, à moins que l'invité ne sélectionne le filtre correspondant.
 
-  * En tant qu'invité, rejoignez hôte de soirée pour consulter sa carte de cocktails disponibles
+  * En tant qu'invité, rejoignez un hôte de soirée avec son code pour consulter ses cocktails disponibles
   * En tant qu'hôte, gérez vos recettes de cocktails et votre stock d'ingrédients
-  * Trouvez des recettes de cocktails grâce à différents filtres de recherche
+  * Trouvez des cocktails grâce à différents filtres de recherche
   * Notez sur 5 étoiles les recettes de cocktails
 
   *Survolez les images pour une description de celles-ci.*

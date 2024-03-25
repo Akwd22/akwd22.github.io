@@ -26,20 +26,21 @@ const project: TProject = {
   tags: ["WordPress", "WooCommerce", "PHP", "MVC", "Stage"],
   thumbnail: Image_Home,
   description: `
-  Ce site web a été réalisé **tout seul** dans mon **stage** de fin d'études de **DUT** informatique en **2 mois** et en **télétravail**. Eternel Actif est un projet entrepreneurial né en 2020 par trois étudiants toulousains en commerce : [Valentin Luzuy](https://fr.linkedin.com/in/valentin-luzuy-77991b130), [Kamil Bennani](https://fr.linkedin.com/in/kamil-bennani-092247138), et [Jade Wagner](https://fr.linkedin.com/in/jade-wagner-68b35a146). Pour lancer leur projet, ils ont eu besoin d'un développeur pour créer un site web de réservation d'activités en ligne.
+  Ce site web a été développé **seul** pendant mon **stage** de fin d'études de **DUT** informatique sur **2 mois**, en **télétravail**. Eternel Actif est un projet entrepreneurial né en 2020 de l'initiative de trois étudiants toulousains en commerce : [Valentin Luzuy](https://fr.linkedin.com/in/valentin-luzuy-77991b130), [Kamil Bennani](https://fr.linkedin.com/in/kamil-bennani-092247138), et [Jade Wagner](https://fr.linkedin.com/in/jade-wagner-68b35a146). Pour lancer leur projet, ils recherchaient un développeur pour créer un site web de réservation d'activités en ligne.
 
   ### Responsabilités
 
-  Mes missions à partir d'un cahier des charges lors de ce stage ont été :
+  Mes missions, à partir d'un **cahier des charges**, étaient les suivantes :
 
-  * Améliorer, et éventuellement, corriger le contenu existant
-  * Développer les fonctionnalités de base, dont l'instauration d'une plateforme e-commerce et marketplace
-  * Conseiller technique, veille concurrentielle, et réalisation de documents de maintenance
-  * Participer aux sessions de brainstorming
+  * Améliorer et corriger le contenu existant
+  * Développer une plateforme de réservation d'activités
+  * Fournir des conseils techniques et rédiger des documents de maintenance
+  * Effectuer une veille concurrentielle
+  * Participer aux réunions quotidiennes
 
-  Pour cela, j'ai dû développer un plugin WordPress pour implémenter les fonctionnalités dont aucun plugin gratuit n'existait sur le marché. Plus précisément, j'ai étendu les plugins [WooCommerce](https://fr.wordpress.org/plugins/woocommerce/) et [WC Marketplace](https://fr.wordpress.org/plugins/dc-woocommerce-multi-vendor/) pour les adapter à une plateforme de réservation d'activités dont des tiers peuvent percevoir des commissions sur leurs activités.
+  Pour ce faire, j'ai **développé un plugin** WordPress afin d'ajouter des fonctionnalités que aucun plugin gratuit ne proposait. Plus spécifiquement, j'ai étendu les capacités des plugins [WooCommerce](https://fr.wordpress.org/plugins/woocommerce/) et [WC Marketplace](https://fr.wordpress.org/plugins/dc-woocommerce-multi-vendor/) pour les adapter à une plateforme de réservation d'activités. Cette plateforme permet à des tiers de percevoir des commissions sur les activités qu'ils proposent.
 
-  Concernant le système de profil, j'ai dû étendre le plugin [Ultimate Member](https://fr.wordpress.org/plugins/ultimate-member/) pour le connecter avec le système de réservation pour avoir un historique de réservations et avoir les informations de l'organisateur et des participants à l'activité.
+  Concernant le système de profil, j'ai étendu le plugin [Ultimate Member](https://fr.wordpress.org/plugins/ultimate-member/) afin de le connecter au système de réservation. Cela permet d'avoir un historique des réservations ainsi que les informations relatives à l'organisateur et aux participants à l'activité.
 
   ### Fonctionnalités
 
@@ -49,14 +50,14 @@ const project: TProject = {
   * Consulter un catalogue d'activités gratuites ou payantes
   * Réserver des activités à partir du catalogue
   * Publier des activités gratuites dans le catalogue
-  * Consulter son historique de réservations, d'activités publiées, et ses factures
+  * Consulter son historique de réservations, d'activités publiées et ses factures
   * Lire les actualités publiées dans le blog
 
   En tant que partenaire professionnel :
 
   * Demander une adhésion en tant que partenaire
   * Publier des activités payantes dans le catalogue
-  * Percevoir des commissions tous les mois à chaque réservation de ses activités
+  * Percevoir des commissions chaque mois à chaque réservation de ses activités
   * Consulter l'historique des réservations et les gains obtenus
   * Recevoir un e-mail à chaque nouvelle réservation
 

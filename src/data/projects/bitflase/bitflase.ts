@@ -16,30 +16,32 @@ const project: TProject = {
   description: `
   *Pour respecter la propriété intellectuelle de TradingView, le code source et l'exécutable du projet restent privés et à usage personnel.*
 
-  Cette application web est un projet **privé** et **personnel** fait en duo pour trader des cryptomonnaies. Nous voulions utiliser le site web de graphiques financiers [TradingView](https://fr.tradingview.com/), mais il **ne permettait pas** de se connecter au courtier de cryptomonnaies [Binance](https://www.binance.com/).
+  Cette application web est un **projet personnel** à deux, axé sur le trading de cryptomonnaies. Initialement, notre intention était d'utiliser le site web de graphiques financiers [TradingView](https://fr.tradingview.com/), mais nous avons rencontré une **limitation** : il ne permettait pas de se connecter au courtier de cryptomonnaies [Binance](https://www.binance.com/).
 
   ### Principes techniques
 
-  C'est pourquoi, nous avons commencé ce projet pour intégrer de façon **non-officielle** le courtier Binance sur TradingView. Pour cela, nous avons dû dans un 1er temps, modifier le code source de TradingView en injectant notre propre code afin de :
+  Pour surmonter cet obstacle, nous avons entrepris l'**intégration** de manière **non officielle** du **courtier Binance sur TradingView**. Pour y parvenir, nous avons dû, dans un premier temps, **modifier le code source** de TradingView en y **ajoutant notre propre code** afin de :
+
+
 
   * Ajouter un thème transparent
-  * Détourner les requêtes réseaux pour y insérer nos propres requêtes
+  * Modifier les requêtes réseau pour y intégrer les nôtres
 
-  Dans un 2ème temps, nous avons créé notre interface utilisateur de trading en React autour du graphique TradingView que nous avons connecté à l'API de Binance. **Je me suis occupé du back-end** (détourner TradingView et interactions avec l'API de Binance), notamment :
+  Dans un second temps, nous avons conçu une interface utilisateur de trading en React autour du graphique TradingView, que nous avons ensuite connectée à l'API de Binance. Mon rôle principal a été de m'occuper du développement du back-end, impliquant notamment :
 
-  * Architecture pensée pour connecter facilement d'autres courtiers que Binance avec des [patterns adaptateurs](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception))
-  * Architecture événementielle faite pour être branché avec le front-end React
-  * Utilisation d'une grande partie de l'[API de Binance](https://binance-docs.github.io/apidocs/futures/en/#general-info) (données du marché, données du compte)
-  * Utilisation des websockets de l'API de Binance pour une actualisation en temps réel des données
-  * API de courtier factice (mock) pour faciliter le développement et le débogage
+  * Architecture pensée pour connecter aisément d'autres courtiers que Binance grâce au [pattern adaptateur](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception))
+  * Architecture événementielle conçus pour s'associer au front-end React
+  * Utilisation étendue de l'[API de Binance](https://binance-docs.github.io/apidocs/futures/en/#general-info) pour récupérer les données de marché et de compte
+  * Utilisation des websockets de Binance pour la mise à jour en temps réel des données
+  * API factice (mock) de courtier pour faciliter le développement et le débogage
 
   ### Fonctionnalités
 
-  L'environnement graphique n'est pas de nous, mais fourni par TradingView que nous avons détourné. Voici nos fonctionnalités ajoutées :
+  Quant aux fonctionnalités, bien que l'environnement graphique soit fourni par TradingView, nous avons enrichi l'application avec les éléments suivants :
 
   * Application Windows
-  * Connecter son compte Binance sur le graphique financier TradingView
-  * Affichage du solde du compte, levier utilisé, et ROI de la position ouverte
+  * Connecter son compte Binance au graphique financier TradingView
+  * Affichage du solde du compte, du levier utilisé et du ROI de la position ouverte
   * Panneau latéral droit pour placer des ordres d'achat et de vente
   * Système de notification pour le suivi de l'état des ordres
   * Thème transparent avec couleurs personnalisables

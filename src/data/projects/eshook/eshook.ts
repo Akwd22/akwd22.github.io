@@ -9,24 +9,24 @@ const project: TProject = {
   tags: ["TypeScript", "Node", "Jasmine", "Intégration continue"],
   thumbnail: Image_Thumbnail,
   description: `
-  Cette bibliothèque JavaScript est un projet **personnel** que j'ai eu besoin de créer pour mon usage personnel dans mon projet [Bitflase](/projets/bitflase). J'en ai donc profité pour la **publier** sur [npm](https://www.npmjs.com/package/event-source-hook) puisqu'il n'en existait aucune.
+  Cette bibliothèque JavaScript est un **projet personnel** que j'ai développé pour répondre à un besoin spécifique dans mon projet [Bitflase](/projets/bitflase). Par la suite, j'ai décidé de la **rendre publique** en la publiant sur [npm](https://www.npmjs.com/package/event-source-hook), car aucune autre solution similaire n'était disponible.
 
   ### Apports
 
-  C'est un projet plus petit, mais intéressant, car j'ai pu créer plusieurs **tests unitaires** avec le framework Jasmine. J'ai également automatisé l'exécution des tests unitaires sur Chrome, Firefox, Safari et le build du projet avec de **l'intégration continue** avec **GitHub Actions**. J'ai aussi utilisé **Babel** pour générer une version polyfill pour les **navigateurs anciens**.
+  C'est un projet plus petit, mais intéressant, car j'ai pu concevoir plusieurs **tests unitaires** avec le framework Jasmine. J'ai également **automatisé** l'exécution de ces tests sur Chrome, Firefox et Safari ainsi que le processus de construction du projet grâce à l'**intégration continue** avec GitHub Actions. J'ai aussi utilisé Babel pour générer une version polyfill **compatible** avec les **navigateurs anciens**.
 
-  Par ailleurs, j'ai eu l'opportunité de **contribuer** à un [projet open-source](https://github.com/EventSource/eventsource/pull/289) pour résoudre un bug que j'ai rencontré à l'issue de ce projet.
+  En outre, j'ai eu l'opportunité de **contribuer** à un [projet open-source](https://github.com/EventSource/eventsource/pull/289) pour résoudre un bug que j'avais rencontré à l'issue de ce projet.
 
-  Pour résumer, ce projet m'a permis de découvrir le monde open-source et comment y contribuer notamment par la publication d'une bibliothèque et de la qualité nécessaire comme les tests, la documentation de l'API, etc. bien que je le faisais déjà jusqu'à présent.
+  En résumé, ce projet m'a initié au monde de l'open-source et à ses mécanismes de contribution, notamment en ce qui concerne la publication d'une bibliothèque ainsi que les standards de qualité comme les tests et la documentation de l'API, même si j'avais déjà une certaine expérience dans ce domaine.
 
   ### Fonctionnalités
 
-  La bibliothèque se substitue à l'objet natif [EventSource](https://developer.mozilla.org/fr/docs/Web/API/EventSource) pour permettre d'intercepter, modifier, ou simuler les messages événementiels du serveur.
+  Cette bibliothèque remplace l'objet natif [EventSource](https://developer.mozilla.org/fr/docs/Web/API/EventSource) pour permettre l'interception, la modification ou la simulation des messages événementiels provenant du serveur.
 
-  Voici les fonctions de la bibliothèque :
+  Voici les principales fonctions :
 
-  * Intercepter les nouvelles connexions au serveur, et modifier l'URL de connexion
-  * Intercepter les événements entrants, les modifier, ou les bloquer
+  * Intercepter les nouvelles connexions au serveur et modifier l'URL de connexion
+  * Intercepter les événements entrants, les modifier ou les bloquer
   * Simuler un événement entrant
   `,
   repository: "https://github.com/Akwd22/event-source-hook",
