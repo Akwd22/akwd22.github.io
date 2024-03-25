@@ -7,7 +7,6 @@ import useAnimationState from "hooks/useAnimationState";
 import useIsDesktop from "hooks/useIsDesktop";
 import useOutsideClick from "hooks/useOutsideClick";
 
-import CurriculumVitae from "assets/docs/cv-eddy-druet.pdf";
 import { ReactComponent as AkwdIcon } from "assets/imgs/icons/akwd.svg";
 import { ReactComponent as MenuIcon } from "assets/imgs/icons/menu.svg";
 import "./Navbar.css";
@@ -23,7 +22,7 @@ const NavbarLinks: FunctionComponent = () => {
         <a className="button" href="#mes-projets">
           Projets
         </a>
-        <a className="button" href={CurriculumVitae} target="_blank" rel="noreferrer">
+        <a className="button" href="/cv" target="_blank" rel="noreferrer">
           Curriculum vitæ
         </a>
       </nav>
