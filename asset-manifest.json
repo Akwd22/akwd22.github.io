@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.7084f4d5.css",
-    "main.js": "/static/js/main.b91ff9d2.js",
+    "main.js": "/static/js/main.8991129c.js",
     "static/media/notification.png": "/static/media/notification.2b14288bf118b3920b25.png",
     "static/media/home-all.png": "/static/media/home-all.410e3fbf30d801efc2ef.png",
     "static/media/position-open-2.png": "/static/media/position-open-2.59d5a9178fed4f75239b.png",
     "static/media/order-panel.png": "/static/media/order-panel.06fe2ab92715e4ce225d.png",
-    "static/media/cv-eddy-druet.pdf": "/static/media/cv-eddy-druet.c2f0affc6f6f9f60736d.pdf",
+    "static/media/cv-eddy-druet.pdf": "/static/media/cv-eddy-druet.acb646ba5766956eccb4.pdf",
     "static/media/position-open-1.png": "/static/media/position-open-1.eb470da72cf357badb74.png",
     "static/media/chart.png": "/static/media/chart.2e7239dadf596daf46c1.png",
     "static/media/home.png": "/static/media/home.09dcdfc715fa05acf61a.png",
@@ -20,6 +20,7 @@
     "static/media/Roboto-Light.ttf": "/static/media/Roboto-Light.333da16a3f3cc391d087.ttf",
     "static/media/login.png": "/static/media/login.cc33015ba91eac8828f9.png",
     "static/media/activity-history.png": "/static/media/activity-history.8acf68e3a8389525ae89.png",
+    "static/media/logo.svg": "/static/media/logo.b62e1ac3cb09d89ac08e5e5c891e71ed.svg",
     "static/media/profile.png": "/static/media/profile.c979ca4f109eff7a9b59.png",
     "static/media/members.png": "/static/media/members.21857595504122ab0043.png",
     "static/media/create-activity.png": "/static/media/create-activity.f026cf6a67cfc762392e.png",
@@ -28,7 +29,6 @@
     "static/media/activity-details.png": "/static/media/activity-details.9b457ffd9b27546d0202.png",
     "static/media/booking-invoice.png": "/static/media/booking-invoice.8ca356ba91fc0c02288c.png",
     "static/media/activities.png": "/static/media/activities.b737248d67e52e24b774.png",
-    "static/media/logo.svg": "/static/media/logo.9ad199fce95a42049e50ef8b69cbcac3.svg",
     "static/media/booking.png": "/static/media/booking.76211dc513ffc6c2b01c.png",
     "static/media/course-text.png": "/static/media/course-text.179f4d869cd8e23fd992.png",
     "static/media/account-settings.png": "/static/media/account-settings.331a418b74a5713537a0.png",
@@ -68,10 +68,10 @@
     "static/media/list-marker.svg": "/static/media/list-marker.f58746958d4323afb4e7.svg",
     "static/media/play.svg": "/static/media/play.68ded9a6946db4b9ce7273aaa1c4b5a2.svg",
     "main.7084f4d5.css.map": "/static/css/main.7084f4d5.css.map",
-    "main.b91ff9d2.js.map": "/static/js/main.b91ff9d2.js.map"
+    "main.8991129c.js.map": "/static/js/main.8991129c.js.map"
   },
   "entrypoints": [
     "static/css/main.7084f4d5.css",
-    "static/js/main.b91ff9d2.js"
+    "static/js/main.8991129c.js"
   ]
 }
