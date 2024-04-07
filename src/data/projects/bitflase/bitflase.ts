@@ -10,27 +10,22 @@ import Image_ProtectionPanel from "./images/tp-sl-panel.png";
 const project: TProject = {
   slug: "bitflase",
   title: "Bitflase",
-  summary: "Une plateforme de trading permettant de connecter la plateforme d'analyse TradingView au courtier de cryptomonnaies Binance de façon non-officielle.",
+  summary: "Une plateforme de trading permettant de connecter la plateforme d'analyse financière TradingView au courtier de cryptomonnaies Binance.",
   tags: ["React", "Electron", "TypeScript", "Node", "API", "WebSocket"],
   thumbnail: Image_PositionOpen1,
   description: `
-  *Pour respecter la propriété intellectuelle de TradingView, le code source et l'exécutable du projet restent privés et à usage personnel.*
+  *This is a private project for personal use and is not distributed online in any way, and it is not affiliated with TradingView.*
 
-  Cette application web est un **projet personnel** à deux, axé sur le trading de cryptomonnaies. Initialement, notre intention était d'utiliser le site web de graphiques financiers [TradingView](https://fr.tradingview.com/), mais nous avons rencontré une **limitation** : il ne permettait pas de se connecter au courtier de cryptomonnaies [Binance](https://www.binance.com/).
+  Cette application web est un **projet personnel**, axé sur le trading de cryptomonnaies. Initialement, notre intention était d'utiliser le site web de graphiques financiers [TradingView](https://fr.tradingview.com/), mais nous avons rencontré une **limitation** : il ne permettait pas de se connecter au courtier de cryptomonnaies [Binance](https://www.binance.com/).
 
   ### Principes techniques
 
-  Pour surmonter cet obstacle, nous avons entrepris l'**intégration** de manière **non officielle** du **courtier Binance sur TradingView**. Pour y parvenir, nous avons dû, dans un premier temps, **modifier le code source** de TradingView en y **ajoutant notre propre code** afin de :
+  Pour surmonter cet obstacle, nous avons entrepris l'**intégration** du **courtier Binance sur TradingView**. Pour y parvenir, nous avons conçu une interface utilisateur de trading en React autour du graphique TradingView, que nous avons ensuite connectée à l'API de Binance.
 
+  Mon rôle principal a été de m'occuper du développement du back-end, impliquant notamment :
 
-
-  * Ajouter un thème transparent
-  * Modifier les requêtes réseau pour y intégrer les nôtres
-
-  Dans un second temps, nous avons conçu une interface utilisateur de trading en React autour du graphique TradingView, que nous avons ensuite connectée à l'API de Binance. Mon rôle principal a été de m'occuper du développement du back-end, impliquant notamment :
-
-  * Architecture pensée pour connecter aisément d'autres courtiers que Binance grâce au [pattern adaptateur](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception))
-  * Architecture événementielle conçus pour s'associer au front-end React
+  * Architecture pensée pour connecter aisément d'autres courtiers que Binance grâce au patron [adaptateur](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception))
+  * Architecture événementielle conçue pour s'associer au front-end React
   * Utilisation étendue de l'[API de Binance](https://binance-docs.github.io/apidocs/futures/en/#general-info) pour récupérer les données de marché et de compte
   * Utilisation des websockets de Binance pour la mise à jour en temps réel des données
   * API factice (mock) de courtier pour faciliter le développement et le débogage
