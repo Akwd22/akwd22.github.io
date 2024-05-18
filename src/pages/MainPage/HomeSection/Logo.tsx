@@ -11,7 +11,7 @@ const Logo: FunctionComponent = () => {
     notification.notify({
       text: (
         <>
-          Merci <a href="https://clementgili.fr/">Clément Gili</a> pour le logo !
+          Merci à Clément G. pour le logo !
         </>
       ),
     });
