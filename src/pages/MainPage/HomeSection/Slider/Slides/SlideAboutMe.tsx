@@ -7,7 +7,7 @@ const SlideAboutMe: FunctionComponent = () => {
   return (
     <div className="slide slide-about-me">
       <p>
-        Je suis un développeur web junior en C#/PHP, titulaire d’une licence en informatique, avec un approfondissement personnel acquis à travers la réalisation de projets sur
+        Je suis un développeur web junior, titulaire d’une licence en informatique, avec un approfondissement personnel acquis à travers la réalisation de projets sur
         diverses technologies web.
       </p>
 

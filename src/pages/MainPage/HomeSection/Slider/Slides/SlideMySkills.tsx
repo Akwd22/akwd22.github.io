@@ -33,6 +33,7 @@ const SlideMySkills: FunctionComponent = () => {
         <h3>Outils</h3>
         <ul>
           <li>WordPress</li>
+          <li>Node.js</li>
           <li>Git</li>
         </ul>
       </div>
